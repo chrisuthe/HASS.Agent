@@ -171,7 +171,7 @@ namespace HASS.Agent.Functions
                     Variables.MainForm?.HideTrayIcon();
 
                     // stop hotkey
-                    Variables.MainForm?.Invoke(new MethodInvoker(delegate
+                    Variables.MainForm?.Invoke(new System.Windows.Forms.MethodInvoker(delegate
                     {
                         Variables.HotKeyListener?.RemoveAll();
                         Variables.HotKeyListener?.Dispose();
@@ -412,7 +412,7 @@ namespace HASS.Agent.Functions
             if (!string.IsNullOrEmpty(url)) webViewInfo.Url = url;
 
             // show it from within the UI thread
-            Variables.MainForm.Invoke(new MethodInvoker(delegate
+            Variables.MainForm.Invoke(new System.Windows.Forms.MethodInvoker(delegate
             {
                 var webView = new WebView(webViewInfo);
                 webView.Opacity = 0;
@@ -446,7 +446,7 @@ namespace HASS.Agent.Functions
             webViewInfo.IsTrayIconWebView = true;
 
             // prepare the webview
-            Variables.MainForm.Invoke(new MethodInvoker(delegate
+            Variables.MainForm.Invoke(new System.Windows.Forms.MethodInvoker(delegate
             {
                 // optionally close an existing one
                 Variables.TrayIconWebView?.ForceClose();
@@ -506,7 +506,7 @@ namespace HASS.Agent.Functions
 
         private static void LaunchTrayIconBackgroundLoadedWebView()
         {
-            Variables.MainForm.Invoke(new MethodInvoker(delegate
+            Variables.MainForm.Invoke(new System.Windows.Forms.MethodInvoker(delegate
             {
                 // make sure it's ready
                 if (Variables.TrayIconWebView == null || Variables.TrayIconWebView.IsDisposed)
@@ -519,7 +519,7 @@ namespace HASS.Agent.Functions
 
         private static void LaunchTrayIconCustomWebView(WebViewInfo webViewInfo)
         {
-            Variables.MainForm.Invoke(new MethodInvoker(delegate
+            Variables.MainForm.Invoke(new System.Windows.Forms.MethodInvoker(delegate
             {
                 var x = Screen.PrimaryScreen.WorkingArea.Width - webViewInfo.Width;
                 var y = Screen.PrimaryScreen.WorkingArea.Height - webViewInfo.Height;
@@ -642,53 +642,152 @@ namespace HASS.Agent.Functions
             }
         }
 
+        #region WinVerifyTrust P/Invoke
+
+        private static readonly Guid WINTRUST_ACTION_GENERIC_VERIFY_V2 =
+            new("00AAC56B-CD44-11d0-8CC2-00C04FC295EE");
+
+        [DllImport("wintrust.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        private static extern int WinVerifyTrust(IntPtr hwnd,
+            [MarshalAs(UnmanagedType.LPStruct)] Guid pgActionID,
+            ref WINTRUST_DATA pWVTData);
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        private struct WINTRUST_FILE_INFO
+        {
+            public uint cbStruct;
+            public string pcwszFilePath;
+            public IntPtr hFile;
+            public IntPtr pgKnownSubject;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        private struct WINTRUST_DATA
+        {
+            public uint cbStruct;
+            public IntPtr pPolicyCallbackData;
+            public IntPtr pSIPClientData;
+            public uint dwUIChoice;
+            public uint fdwRevocationChecks;
+            public uint dwUnionChoice;
+            public IntPtr pFile;
+            public uint dwStateAction;
+            public IntPtr hWVTStateData;
+            public IntPtr pwszURLReference;
+            public uint dwProvFlags;
+            public uint dwUIContext;
+            public IntPtr pSignatureSettings;
+        }
+
+        private const uint WTD_UI_NONE = 2;
+        private const uint WTD_REVOKE_NONE = 0;
+        private const uint WTD_CHOICE_FILE = 1;
+        private const uint WTD_STATEACTION_VERIFY = 1;
+        private const uint WTD_CACHE_ONLY_URL_RETRIEVAL = 0x1000;
+
+        #endregion
+
         /// <summary>
-        /// Checks the local file to see if it has the right signature
+        /// Checks the local file to see if it has a valid Authenticode signature
+        /// and the signer certificate matches the expected hash.
         /// </summary>
-        /// <param name="localFile"></param>
-        /// <returns></returns>
+        /// <param name="localFile">Path to the file to verify</param>
+        /// <returns>True if signature is valid AND certificate hash matches</returns>
         internal static bool ConfirmCertificate(string localFile)
         {
             try
             {
                 if (!File.Exists(localFile))
                 {
-                    Log.Error("[CERT] File not found, can't check certificate: {file}", localFile);
+                    Log.Error("[CERT] File not found: {file}", localFile);
                     return false;
                 }
 
-                // load the cert, and specifically its hash
-                var certInfo = X509Certificate.CreateFromSignedFile(localFile);
-                var certHash = certInfo.GetCertHashString();
-
-                // hash found?
-                if (string.IsNullOrWhiteSpace(certHash))
+                // Phase 1: Verify Authenticode signature using WinVerifyTrust
+                var signatureResult = VerifyAuthenticodeSignature(localFile);
+                if (signatureResult != 0)
                 {
-                    Log.Error("[CERT] IMPORTANT: Certificate check returned an empty hash - CHECK IF ITS PROPERLY SIGNED: {file}", localFile);
+                    Log.Error("[CERT] Signature verification FAILED: {file}. Error: {error}",
+                        localFile, GetWinVerifyTrustErrorMessage(signatureResult));
                     return false;
                 }
 
-                // compare hashes
-                if (certHash != Variables.CertificateHash)
+                // Phase 2: Extract and compare certificate hash
+#pragma warning disable SYSLIB0057 // X509Certificate.CreateFromSignedFile is obsolete
+                var cert = X509Certificate.CreateFromSignedFile(localFile);
+#pragma warning restore SYSLIB0057
+
+                var hash = cert.GetCertHashString();
+                if (!string.Equals(hash, Variables.CertificateHash, StringComparison.OrdinalIgnoreCase))
                 {
-                    Log.Error("[CERT] IMPORTANT: Certificate check FAILED: {file}", localFile);
+                    Log.Error("[CERT] Certificate hash mismatch: {file}. Expected: {expected}, Got: {actual}",
+                        localFile, Variables.CertificateHash, hash);
                     return false;
                 }
 
-                // all good
-                Log.Information("[CERT] Certificate check passed for file: {file}", localFile);
+                Log.Information("[CERT] Certificate check passed: {file}", localFile);
                 return true;
-            }
-            catch (CryptographicException ex)
-            {
-                Log.Fatal(ex, "[CERT] IMPORTANT: Something went wrong while checking local file certificate - CHECK IF ITS ACTUALLY SIGNED: {file}", localFile);
-                return false;
             }
             catch (Exception ex)
             {
-                Log.Fatal(ex, "[CERT] Error while checking certificate of local file: {file}", localFile);
+                Log.Fatal(ex, "[CERT] Error checking certificate: {file}", localFile);
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Verifies the Authenticode signature of a file using WinVerifyTrust.
+        /// </summary>
+        /// <param name="filePath">Path to the file to verify</param>
+        /// <returns>0 if valid, error code otherwise</returns>
+        private static int VerifyAuthenticodeSignature(string filePath)
+        {
+            var fileInfo = new WINTRUST_FILE_INFO
+            {
+                cbStruct = (uint)Marshal.SizeOf<WINTRUST_FILE_INFO>(),
+                pcwszFilePath = filePath,
+                hFile = IntPtr.Zero,
+                pgKnownSubject = IntPtr.Zero
+            };
+
+            var fileInfoPtr = Marshal.AllocHGlobal(Marshal.SizeOf<WINTRUST_FILE_INFO>());
+            try
+            {
+                Marshal.StructureToPtr(fileInfo, fileInfoPtr, false);
+
+                var wtd = new WINTRUST_DATA
+                {
+                    cbStruct = (uint)Marshal.SizeOf<WINTRUST_DATA>(),
+                    dwUIChoice = WTD_UI_NONE,
+                    fdwRevocationChecks = WTD_REVOKE_NONE,
+                    dwUnionChoice = WTD_CHOICE_FILE,
+                    pFile = fileInfoPtr,
+                    dwStateAction = WTD_STATEACTION_VERIFY,
+                    dwProvFlags = WTD_CACHE_ONLY_URL_RETRIEVAL
+                };
+
+                return WinVerifyTrust(IntPtr.Zero, WINTRUST_ACTION_GENERIC_VERIFY_V2, ref wtd);
+            }
+            finally
+            {
+                Marshal.FreeHGlobal(fileInfoPtr);
+            }
+        }
+
+        /// <summary>
+        /// Converts WinVerifyTrust error codes to human-readable messages.
+        /// </summary>
+        private static string GetWinVerifyTrustErrorMessage(int errorCode)
+        {
+            return (uint)errorCode switch
+            {
+                0x800B0100 => "TRUST_E_NOSIGNATURE: File is not signed",
+                0x800B0101 => "CERT_E_EXPIRED: Signing certificate has expired",
+                0x800B0109 => "CERT_E_UNTRUSTEDROOT: Untrusted root certificate",
+                0x800B010C => "CERT_E_REVOKED: Certificate was revoked",
+                0x80096010 => "TRUST_E_BAD_DIGEST: File has been modified after signing",
+                _ => $"Error code: 0x{(uint)errorCode:X8}"
+            };
         }
 
         /// <summary>

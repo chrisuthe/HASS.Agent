@@ -726,7 +726,7 @@ namespace HASS.Agent.MQTT
                 if (!File.Exists(Variables.AppSettings.MqttRootCertificate))
                     Log.Error("[MQTT] Provided root certificate not found: {cert}", Variables.AppSettings.MqttRootCertificate);
                 else
-                    certificates.Add(new X509Certificate2(Variables.AppSettings.MqttRootCertificate));
+                    certificates.Add(X509CertificateLoader.LoadCertificateFromFile(Variables.AppSettings.MqttRootCertificate));
             }
 
             if (!string.IsNullOrEmpty(Variables.AppSettings.MqttClientCertificate))
@@ -734,7 +734,7 @@ namespace HASS.Agent.MQTT
                 if (!File.Exists(Variables.AppSettings.MqttClientCertificate))
                     Log.Error("[MQTT] Provided client certificate not found: {cert}", Variables.AppSettings.MqttClientCertificate);
                 else
-                    certificates.Add(new X509Certificate2(Variables.AppSettings.MqttClientCertificate));
+                    certificates.Add(X509CertificateLoader.LoadCertificateFromFile(Variables.AppSettings.MqttClientCertificate));
             }
 
             var clientTlsOptions = new MqttClientTlsOptions()

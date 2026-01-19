@@ -160,7 +160,7 @@ namespace HASS.Agent.HomeAssistant
                     Log.Information("[HASS_API] Connecting using client certificate: {cert}", certFile);
 
                     handler.ClientCertificateOptions = ClientCertificateOption.Manual;
-                    handler.ClientCertificates.Add(new X509Certificate2(Variables.AppSettings.HassClientCertificate!));
+                    handler.ClientCertificates.Add(X509CertificateLoader.LoadCertificateFromFile(Variables.AppSettings.HassClientCertificate!));
                 }
 
                 if (Variables.AppSettings.HassAllowUntrustedCertificates)
@@ -314,7 +314,7 @@ namespace HASS.Agent.HomeAssistant
                         return (false, Languages.HassApiManager_CheckHassConfig_CertNotFound);
 
                     handler.ClientCertificateOptions = ClientCertificateOption.Manual;
-                    handler.ClientCertificates.Add(new X509Certificate2(clientCertificate));
+                    handler.ClientCertificates.Add(X509CertificateLoader.LoadCertificateFromFile(clientCertificate));
                 }
 
                 if (allowUntrustedCertificates)
