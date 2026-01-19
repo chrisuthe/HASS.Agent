@@ -16,6 +16,8 @@ namespace HASS.Agent.Functions
         internal const int WM_POWERBROADCAST = 0x0218;
         internal const int PBT_POWERSETTINGCHANGE = 0x8013;
         internal const int WM_QUERYENDSESSION = 0x11;
+        internal const int WM_DISPLAYCHANGE = 0x007E;
+        internal const int WM_DPICHANGED = 0x02E0;
         internal const int SM_SHUTTINGDOWN = 0x2000;
 
         [DllImport("user32.dll")]

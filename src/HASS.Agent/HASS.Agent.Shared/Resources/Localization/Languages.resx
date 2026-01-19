@@ -1365,6 +1365,9 @@ This is a costly request, so the recommended interval is 15 minutes (900 seconds
   <data name="CommandType_SleepCommand" xml:space="preserve">
 		<value>Sleep</value>
 	</data>
+  <data name="CommandType_WinformsSleepCommand" xml:space="preserve">
+		<value>WinFormsSleep</value>
+	</data>
   <data name="CommandEntityType_Button" xml:space="preserve">
 		<value>Button</value>
 	</data>
@@ -1442,6 +1445,9 @@ This is a costly request, so the recommended interval is 15 minutes (900 seconds
 	</data>
   <data name="SensorType_NamedWindowSensor" xml:space="preserve">
 		<value>NamedWindow</value>
+	</data>
+  <data name="SensorType_NamedActiveWindowSensor" xml:space="preserve">
+		<value>NamedActiveWindow</value>
 	</data>
   <data name="SensorType_NetworkSensors" xml:space="preserve">
 		<value>Network</value>
@@ -2808,6 +2814,9 @@ Make sure no other instance of HASS.Agent is running and the port is available a
   <data name="CommandType_MonitorSleepCommand" xml:space="preserve">
 		<value>MonitorSleep</value>
 	</data>
+  <data name="CommandType_MonitorSleepPowerPlanCommand" xml:space="preserve">
+		<value>MonitorSleepPowerPlan</value>
+	</data>
   <data name="CommandType_MonitorWakeCommand" xml:space="preserve">
 		<value>MonitorWake</value>
 	</data>
@@ -3211,6 +3220,9 @@ Do you want to download the runtime installer?</value>
   <data name="SensorType_ActiveDesktopSensor" xml:space="preserve">
     <value>ActiveDesktop</value>
   </data>
+  <data name="SensorType_AccentColorSensor" xml:space="preserve">
+    <value>AccentColor</value>
+  </data>
   <data name="CommandType_SwitchDesktopCommand" xml:space="preserve">
     <value>SwitchDesktop</value>
   </data>
@@ -3234,5 +3246,11 @@ Do you want to download the runtime installer?</value>
   </data>
   <data name="HassDomain_Button" xml:space="preserve">
     <value>Button</value>
+  </data>
+  <data name="HassDomain_Fan" xml:space="preserve">
+    <value>Fan</value>
+  </data>
+  <data name="HassDomain_InputButton" xml:space="preserve">
+    <value>Input Button</value>
   </data>
 </root>

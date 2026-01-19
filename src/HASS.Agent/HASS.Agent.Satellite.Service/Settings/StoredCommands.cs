@@ -93,6 +93,9 @@ namespace HASS.Agent.Satellite.Service.Settings
                 case CommandType.SleepCommand:
                     abstractCommand = new SleepCommand(command.EntityName, command.Name, command.EntityType, command.Id.ToString());
                     break;
+                case CommandType.WinformsSleepCommand:
+                    abstractCommand = new WinformsSleepCommand(command.EntityName, command.Name, command.EntityType, command.Id.ToString());
+                    break;
                 case CommandType.LogOffCommand:
                     abstractCommand = new LogOffCommand(command.EntityName, command.Name, command.EntityType, command.Id.ToString());
                     break;
@@ -140,6 +143,9 @@ namespace HASS.Agent.Satellite.Service.Settings
                     break;
                 case CommandType.MonitorSleepCommand:
                     abstractCommand = new MonitorSleepCommand(command.EntityName, command.Name, command.EntityType, command.Id.ToString());
+                    break;
+                case CommandType.MonitorSleepPowerPlanCommand:
+                    abstractCommand = new MonitorSleepPowerPlanCommand(command.EntityName, command.Name, command.EntityType, command.Id.ToString());
                     break;
                 case CommandType.MonitorWakeCommand:
                     abstractCommand = new MonitorWakeCommand(command.EntityName, command.Name, command.EntityType, command.Id.ToString());

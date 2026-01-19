@@ -47,6 +47,7 @@ namespace HASS.Agent.Controls.Configuration
             this.TbMqttUsername = new System.Windows.Forms.TextBox();
             this.TbMqttAddress = new System.Windows.Forms.TextBox();
             this.CbMqttTls = new System.Windows.Forms.CheckBox();
+            this.CbMqttWebSocket = new System.Windows.Forms.CheckBox();
             this.LblBrokerPassword = new System.Windows.Forms.Label();
             this.LblBrokerUsername = new System.Windows.Forms.Label();
             this.LblBrokerPort = new System.Windows.Forms.Label();
@@ -284,7 +285,21 @@ namespace HASS.Agent.Controls.Configuration
             this.CbMqttTls.TabIndex = 2;
             this.CbMqttTls.Text = Languages.ConfigMqtt_CbMqttTls;
             this.CbMqttTls.UseVisualStyleBackColor = true;
-            // 
+            //
+            // CbMqttWebSocket
+            //
+            this.CbMqttWebSocket.AccessibleDescription = "Use WebSocket transport instead of TCP.";
+            this.CbMqttWebSocket.AccessibleName = "WebSocket";
+            this.CbMqttWebSocket.AccessibleRole = System.Windows.Forms.AccessibleRole.CheckButton;
+            this.CbMqttWebSocket.AutoSize = true;
+            this.CbMqttWebSocket.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbMqttWebSocket.Location = new System.Drawing.Point(275, 314);
+            this.CbMqttWebSocket.Name = "CbMqttWebSocket";
+            this.CbMqttWebSocket.Size = new System.Drawing.Size(95, 23);
+            this.CbMqttWebSocket.TabIndex = 67;
+            this.CbMqttWebSocket.Text = "WebSocket";
+            this.CbMqttWebSocket.UseVisualStyleBackColor = true;
+            //
             // LblBrokerPassword
             // 
             this.LblBrokerPassword.AccessibleDescription = "Password textbox description.";
@@ -496,6 +511,7 @@ namespace HASS.Agent.Controls.Configuration
             this.Controls.Add(TbMqttPassword);
             this.Controls.Add(TbMqttUsername);
             this.Controls.Add(TbMqttAddress);
+            this.Controls.Add(CbMqttWebSocket);
             this.Controls.Add(CbMqttTls);
             this.Controls.Add(LblBrokerPassword);
             this.Controls.Add(LblBrokerUsername);
@@ -534,6 +550,7 @@ namespace HASS.Agent.Controls.Configuration
         internal System.Windows.Forms.TextBox TbMqttUsername;
         internal System.Windows.Forms.TextBox TbMqttAddress;
         internal System.Windows.Forms.CheckBox CbMqttTls;
+        internal System.Windows.Forms.CheckBox CbMqttWebSocket;
         private System.Windows.Forms.Label LblTip2;
         internal System.Windows.Forms.TextBox TbMqttClientId;
         private System.Windows.Forms.Label LblClientId;

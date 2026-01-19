@@ -71,6 +71,7 @@ namespace HASS.Agent.Models.Config
         public string MqttAddress { get; set; } = "homeassistant.local";
         public int MqttPort { get; set; } = 1883;
         public bool MqttUseTls { get; set; }
+        public bool MqttUseWebSocket { get; set; } = false;
         public bool MqttAllowUntrustedCertificates { get; set; } = true;
         public string MqttUsername { get; set; } = string.Empty;
         public string MqttPassword { get; set; } = string.Empty;

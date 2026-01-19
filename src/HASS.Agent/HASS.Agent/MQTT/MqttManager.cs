@@ -710,12 +710,24 @@ namespace HASS.Agent.MQTT
 
             var clientOptionsBuilder = new MqttClientOptionsBuilder()
                 .WithClientId(Variables.AppSettings.MqttClientId)
-                .WithTcpServer(Variables.AppSettings.MqttAddress, Variables.AppSettings.MqttPort)
                 .WithCleanSession()
                 .WithWillTopic($"{Variables.AppSettings.MqttDiscoveryPrefix}/sensor/{Variables.DeviceConfig.Name}/availability")
                 .WithWillPayload("offline")
                 .WithWillRetain(Variables.AppSettings.MqttUseRetainFlag)
                 .WithKeepAlivePeriod(TimeSpan.FromSeconds(15));
+
+            // Use WebSocket or TCP connection
+            if (Variables.AppSettings.MqttUseWebSocket)
+            {
+                var protocol = Variables.AppSettings.MqttUseTls ? "wss" : "ws";
+                var wsUri = $"{protocol}://{Variables.AppSettings.MqttAddress}:{Variables.AppSettings.MqttPort}";
+                clientOptionsBuilder.WithWebSocketServer(o => o.WithUri(wsUri));
+                Log.Debug("[MQTT] Using WebSocket connection: {uri}", wsUri);
+            }
+            else
+            {
+                clientOptionsBuilder.WithTcpServer(Variables.AppSettings.MqttAddress, Variables.AppSettings.MqttPort);
+            }
 
             if (!string.IsNullOrEmpty(Variables.AppSettings.MqttUsername))
                 clientOptionsBuilder.WithCredentials(Variables.AppSettings.MqttUsername, Variables.AppSettings.MqttPassword);

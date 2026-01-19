@@ -48,6 +48,8 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.NumLocationY = new System.Windows.Forms.NumericUpDown();
             this.NumSizeWidth = new System.Windows.Forms.NumericUpDown();
             this.NumSizeHeight = new System.Windows.Forms.NumericUpDown();
+            this.LblScreen = new System.Windows.Forms.Label();
+            this.CbScreen = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.NumLocationX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumLocationY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumSizeWidth)).BeginInit();
@@ -178,9 +180,9 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.CbShowTitleBar.Text = global::HASS.Agent.Resources.Localization.Languages.WebViewCommandConfig_CbShowTitleBar;
             this.CbShowTitleBar.UseVisualStyleBackColor = true;
             this.CbShowTitleBar.CheckedChanged += new System.EventHandler(this.CbShowTitleBar_CheckedChanged);
-            // 
+            //
             // CbCenterScreen
-            // 
+            //
             this.CbCenterScreen.AccessibleDescription = "Enable always showing the webview in the center of the screen.";
             this.CbCenterScreen.AccessibleName = "Center screen";
             this.CbCenterScreen.AccessibleRole = System.Windows.Forms.AccessibleRole.CheckButton;
@@ -192,7 +194,36 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.CbCenterScreen.TabIndex = 5;
             this.CbCenterScreen.Text = global::HASS.Agent.Resources.Localization.Languages.WebViewCommandConfig_CbCenterScreen;
             this.CbCenterScreen.UseVisualStyleBackColor = true;
-            // 
+            //
+            // LblScreen
+            //
+            this.LblScreen.AccessibleDescription = "Screen selection label.";
+            this.LblScreen.AccessibleName = "Screen";
+            this.LblScreen.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.LblScreen.AutoSize = true;
+            this.LblScreen.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblScreen.Location = new System.Drawing.Point(284, 162);
+            this.LblScreen.Name = "LblScreen";
+            this.LblScreen.Size = new System.Drawing.Size(51, 19);
+            this.LblScreen.TabIndex = 31;
+            this.LblScreen.Text = "Screen";
+            //
+            // CbScreen
+            //
+            this.CbScreen.AccessibleDescription = "Select which screen to display the webview on.";
+            this.CbScreen.AccessibleName = "Screen selection";
+            this.CbScreen.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
+            this.CbScreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.CbScreen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbScreen.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbScreen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.CbScreen.FormattingEnabled = true;
+            this.CbScreen.Location = new System.Drawing.Point(341, 159);
+            this.CbScreen.Name = "CbScreen";
+            this.CbScreen.Size = new System.Drawing.Size(200, 25);
+            this.CbScreen.TabIndex = 32;
+            //
             // CbTopMost
             // 
             this.CbTopMost.AccessibleDescription = "Enable showing the webview\'s window on top of the rest.";
@@ -315,6 +346,8 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.Controls.Add(this.LblTip1);
             this.Controls.Add(this.CbTopMost);
             this.Controls.Add(this.BtnSave);
+            this.Controls.Add(this.CbScreen);
+            this.Controls.Add(this.LblScreen);
             this.Controls.Add(this.CbCenterScreen);
             this.Controls.Add(this.CbShowTitleBar);
             this.Controls.Add(this.LblBy);
@@ -363,6 +396,8 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
         internal System.Windows.Forms.NumericUpDown NumLocationY;
         internal System.Windows.Forms.NumericUpDown NumSizeWidth;
         internal System.Windows.Forms.NumericUpDown NumSizeHeight;
+        private Label LblScreen;
+        private ComboBox CbScreen;
     }
 }
 

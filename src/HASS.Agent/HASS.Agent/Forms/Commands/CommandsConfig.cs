@@ -58,8 +58,9 @@ namespace HASS.Agent.Forms.Commands
 
             // reload data
             LvCommands.Items.Clear();
-            
-            foreach (var command in _commands)
+
+            // sort alphabetically by entity name
+            foreach (var command in _commands.OrderBy(c => c.EntityName, StringComparer.OrdinalIgnoreCase))
             {
                 var commandCard = CommandsManager.CommandInfoCards[command.Type];
 

@@ -31,12 +31,32 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             // catch all key presses
             KeyPreview = true;
 
+            // populate screen list
+            PopulateScreenList();
+
             // set the size and coords
             if (WebViewInfo == null) SetCurrentVariables();
             else SetStoredVariables();
 
             // show ourselves
             Opacity = 100;
+        }
+
+        private void PopulateScreenList()
+        {
+            CbScreen.Items.Clear();
+            CbScreen.Items.Add("Primary Screen");
+
+            var screens = Screen.AllScreens;
+            for (var i = 0; i < screens.Length; i++)
+            {
+                var screen = screens[i];
+                var isPrimary = screen.Primary ? " (Primary)" : "";
+                CbScreen.Items.Add($"Screen {i + 1}: {screen.Bounds.Width}x{screen.Bounds.Height}{isPrimary}");
+            }
+
+            // default to primary
+            CbScreen.SelectedIndex = 0;
         }
 
         private void SetCurrentVariables()
@@ -60,9 +80,16 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
 
                 NumSizeHeight.Value = WebViewInfo.Height;
                 NumSizeWidth.Value = WebViewInfo.Width;
-                
+
                 NumLocationX.Value = WebViewInfo.X;
                 NumLocationY.Value = WebViewInfo.Y;
+
+                // set screen selection (index 0 is "Primary", so screen index needs +1)
+                var screenIndex = WebViewInfo.ScreenIndex < 0 ? 0 : WebViewInfo.ScreenIndex + 1;
+                if (screenIndex < CbScreen.Items.Count)
+                    CbScreen.SelectedIndex = screenIndex;
+                else
+                    CbScreen.SelectedIndex = 0;
 
                 Height = (int)NumSizeHeight.Value;
                 Width = (int)NumSizeWidth.Value;
@@ -122,6 +149,9 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             WebViewInfo.CenterScreen = CbCenterScreen.Checked;
             WebViewInfo.ShowTitleBar = CbShowTitleBar.Checked;
             WebViewInfo.TopMost = CbTopMost.Checked;
+
+            // save screen selection (index 0 is "Primary" = -1, others are screen index)
+            WebViewInfo.ScreenIndex = CbScreen.SelectedIndex == 0 ? -1 : CbScreen.SelectedIndex - 1;
 
             DialogResult = DialogResult.OK;
         }

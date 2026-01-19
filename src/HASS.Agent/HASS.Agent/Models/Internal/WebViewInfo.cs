@@ -26,5 +26,10 @@ namespace HASS.Agent.Models.Internal
         public int Y { get; set; } = -1;
         public int Width { get; set; } = 1018;
         public int Height { get; set; } = 723;
+
+        /// <summary>
+        /// Index of the screen to display on (-1 = primary screen)
+        /// </summary>
+        public int ScreenIndex { get; set; } = -1;
     }
 }

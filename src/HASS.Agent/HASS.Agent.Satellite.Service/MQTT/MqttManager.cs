@@ -601,12 +601,24 @@ namespace HASS.Agent.Satellite.Service.MQTT
 
             var clientOptionsBuilder = new MqttClientOptionsBuilder()
                 .WithClientId(Variables.ServiceMqttSettings.MqttClientId)
-                .WithTcpServer(Variables.ServiceMqttSettings.MqttAddress, Variables.ServiceMqttSettings.MqttPort)
                 .WithCleanSession()
                 .WithWillTopic($"{Variables.ServiceMqttSettings.MqttDiscoveryPrefix}/sensor/{Variables.DeviceConfig.Name}/availability")
                 .WithWillPayload("offline")
                 .WithWillRetain(Variables.ServiceMqttSettings.MqttUseRetainFlag)
                 .WithKeepAlivePeriod(TimeSpan.FromSeconds(15));
+
+            // Use WebSocket or TCP connection
+            if (Variables.ServiceMqttSettings.MqttUseWebSocket)
+            {
+                var protocol = Variables.ServiceMqttSettings.MqttUseTls ? "wss" : "ws";
+                var wsUri = $"{protocol}://{Variables.ServiceMqttSettings.MqttAddress}:{Variables.ServiceMqttSettings.MqttPort}";
+                clientOptionsBuilder.WithWebSocketServer(o => o.WithUri(wsUri));
+                Log.Debug("[MQTT] Using WebSocket connection: {uri}", wsUri);
+            }
+            else
+            {
+                clientOptionsBuilder.WithTcpServer(Variables.ServiceMqttSettings.MqttAddress, Variables.ServiceMqttSettings.MqttPort);
+            }
 
             if (!string.IsNullOrEmpty(Variables.ServiceMqttSettings.MqttUsername))
                 clientOptionsBuilder.WithCredentials(Variables.ServiceMqttSettings.MqttUsername, Variables.ServiceMqttSettings.MqttPassword);

@@ -199,9 +199,35 @@ namespace HASS.Agent.Forms
                 case NativeMethods.WM_POWERBROADCAST:
                     SystemStateManager.ProcessMonitorPowerChange(m);
                     break;
+
+                case NativeMethods.WM_DISPLAYCHANGE:
+                case NativeMethods.WM_DPICHANGED:
+                    // Reload tray icon when display/DPI changes (fixes RDP blur)
+                    ReloadTrayIcon();
+                    break;
             }
 
             base.WndProc(ref m);
+        }
+
+        /// <summary>
+        /// Reloads the tray icon (used when DPI or display settings change)
+        /// </summary>
+        private void ReloadTrayIcon()
+        {
+            try
+            {
+                if (Variables.AppSettings.TrayIconUseModern)
+                {
+                    var icon = (Icon)new System.Resources.ResourceManager(typeof(Main)).GetObject("ModernNotifyIcon");
+                    if (icon != null)
+                        NotifyIcon.Icon = icon;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Warning("[MAIN] Failed to reload tray icon: {err}", ex.Message);
+            }
         }
 
         /// <summary>

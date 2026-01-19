@@ -54,7 +54,7 @@ namespace HASS.Agent
         /// </summary>
         internal static Main MainForm { get; set; }
         internal static HttpClient HttpClient { get; set; } = new();
-        internal static Hotkey QuickActionsHotKey { get; set; } = new(Keys.Control | Keys.Alt, Keys.Q);
+        internal static Hotkey QuickActionsHotKey { get; set; } = new(Keys.Control | Keys.Shift, Keys.Q);
         internal static HotKeyManager HotKeyManager { get; } = new();
         internal static HotkeyListener HotKeyListener { get; set; }
         internal static Random Rnd { get; } = new();

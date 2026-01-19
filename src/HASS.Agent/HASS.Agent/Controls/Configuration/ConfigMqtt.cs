@@ -39,6 +39,7 @@
             TbMqttAddress.Text = string.Empty;
             NumMqttPort.Value = 1883;
             CbMqttTls.CheckState = CheckState.Unchecked;
+            CbMqttWebSocket.CheckState = CheckState.Unchecked;
             TbMqttUsername.Text = string.Empty;
             TbMqttPassword.Text = string.Empty;
             TbMqttDiscoveryPrefix.Text = "homeassistant";

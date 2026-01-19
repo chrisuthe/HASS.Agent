@@ -395,6 +395,7 @@ namespace HASS.Agent.Forms
             _mqtt.TbMqttAddress.Text = Variables.AppSettings.MqttAddress;
             _mqtt.NumMqttPort.Value = Variables.AppSettings.MqttPort;
             _mqtt.CbMqttTls.CheckState = Variables.AppSettings.MqttUseTls ? CheckState.Checked : CheckState.Unchecked;
+            _mqtt.CbMqttWebSocket.CheckState = Variables.AppSettings.MqttUseWebSocket ? CheckState.Checked : CheckState.Unchecked;
             _mqtt.TbMqttUsername.Text = Variables.AppSettings.MqttUsername;
             _mqtt.TbMqttPassword.Text = Variables.AppSettings.MqttPassword;
             _mqtt.TbMqttDiscoveryPrefix.Text = Variables.AppSettings.MqttDiscoveryPrefix;
@@ -501,6 +502,7 @@ namespace HASS.Agent.Forms
             Variables.AppSettings.MqttAddress = _mqtt.TbMqttAddress.Text;
             Variables.AppSettings.MqttPort = (int)_mqtt.NumMqttPort.Value;
             Variables.AppSettings.MqttUseTls = _mqtt.CbMqttTls.CheckState == CheckState.Checked;
+            Variables.AppSettings.MqttUseWebSocket = _mqtt.CbMqttWebSocket.CheckState == CheckState.Checked;
             Variables.AppSettings.MqttUsername = _mqtt.TbMqttUsername.Text;
             Variables.AppSettings.MqttPassword = _mqtt.TbMqttPassword.Text;
             Variables.AppSettings.MqttDiscoveryPrefix = _mqtt.TbMqttDiscoveryPrefix.Text;

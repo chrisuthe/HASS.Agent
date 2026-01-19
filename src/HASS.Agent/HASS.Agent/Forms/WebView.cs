@@ -180,13 +180,41 @@ namespace HASS.Agent.Forms
                 Height = _webViewInfo.Height;
                 Width = _webViewInfo.Width;
 
+                // determine target screen
+                var targetScreen = GetTargetScreen();
+
                 // optionally set the location
-                if (!_webViewInfo.CenterScreen) Location = new Point(_webViewInfo.X, _webViewInfo.Y);
+                if (!_webViewInfo.CenterScreen)
+                {
+                    Location = new Point(_webViewInfo.X, _webViewInfo.Y);
+                }
+                else if (targetScreen != null)
+                {
+                    // center on the target screen
+                    var screenBounds = targetScreen.WorkingArea;
+                    var x = screenBounds.X + (screenBounds.Width - Width) / 2;
+                    var y = screenBounds.Y + (screenBounds.Height - Height) / 2;
+                    StartPosition = FormStartPosition.Manual;
+                    Location = new Point(x, y);
+                }
             }
             catch (Exception ex)
             {
                 Log.Error("[WEBVIEW] Unable to set stored settings: {err}", ex.Message);
             }
+        }
+
+        private Screen GetTargetScreen()
+        {
+            var screens = Screen.AllScreens;
+
+            // if screen index is -1 or out of range, use primary screen
+            if (_webViewInfo.ScreenIndex < 0 || _webViewInfo.ScreenIndex >= screens.Length)
+            {
+                return Screen.PrimaryScreen;
+            }
+
+            return screens[_webViewInfo.ScreenIndex];
         }
 
         /// <summary>

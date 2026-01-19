@@ -333,6 +333,7 @@ namespace HASS.Agent.Settings
                     MqttAddress = Variables.AppSettings.MqttAddress,
                     MqttPort = Variables.AppSettings.MqttPort,
                     MqttUseTls = Variables.AppSettings.MqttUseTls,
+                    MqttUseWebSocket = Variables.AppSettings.MqttUseWebSocket,
                     MqttUsername = Variables.AppSettings.MqttUsername,
                     MqttPassword = Variables.AppSettings.MqttPassword,
                     MqttDiscoveryPrefix = Variables.AppSettings.MqttDiscoveryPrefix,

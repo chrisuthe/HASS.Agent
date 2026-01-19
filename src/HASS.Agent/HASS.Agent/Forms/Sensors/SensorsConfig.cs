@@ -65,7 +65,8 @@ namespace HASS.Agent.Forms.Sensors
             // reload data
             LvSensors.Items.Clear();
 
-            foreach (var sensor in _sensors)
+            // sort alphabetically by entity name
+            foreach (var sensor in _sensors.OrderBy(s => s.EntityName, StringComparer.OrdinalIgnoreCase))
             {
                 var lviSensor = new ListViewItem(sensor.Id.ToString());
                 lviSensor.SubItems.Add(sensor.EntityName);
