@@ -9,7 +9,7 @@
 
 ; Standard installation constants
 #define MyAppName "HASS.Agent"
-#define MyAppVersion "2.3.0-alpha.1"
+#define MyAppVersion "2.3.0-alpha.2"
 #define MyAppPublisher "HASS.Agent Team"
 #define MyAppURL "https://hass-agent.io"
 #define MyAppExeName "HASS.Agent.exe"
