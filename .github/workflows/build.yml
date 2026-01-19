@@ -1,40 +1,18 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# This workflow will build, test, sign and package a WPF or Windows Forms desktop application
-# built on .NET Core.
-# To learn how to migrate your existing application to .NET Core,
-# refer to https://docs.microsoft.com/en-us/dotnet/desktop-wpf/migration/convert-project-from-net-framework
+# HASS.Agent Release Build Workflow
 #
-# To configure this workflow:
+# This workflow builds, signs, and packages HASS.Agent for release.
 #
-# 1. Configure environment variables
-# GitHub sets default environment variables for every workflow run.
-# Replace the variables relative to your project in the "env" section below.
+# Code Signing: Uses Azure Trusted Signing
+# Required secrets in ReleaseBuildEnv environment:
+#   - AZURE_TENANT_ID
+#   - AZURE_CLIENT_ID
+#   - AZURE_CLIENT_SECRET
+#   - TRUSTED_SIGNING_ENDPOINT
+#   - TRUSTED_SIGNING_ACCOUNT
+#   - TRUSTED_SIGNING_PROFILE
 #
-# 2. Signing
-# Generate a signing certificate in the Windows Application
-# Packaging Project or add an existing signing certificate to the project.
-# Next, use PowerShell to encode the .pfx file using Base64 encoding
-# by running the following Powershell script to generate the output string:
-#
-# $pfx_cert = Get-Content '.\SigningCertificate.pfx' -Encoding Byte
-# [System.Convert]::ToBase64String($pfx_cert) | Out-File 'SigningCertificate_Encoded.txt'
-#
-# Open the output file, SigningCertificate_Encoded.txt, and copy the
-# string inside. Then, add the string to the repo as a GitHub secret
-# and name it "Base64_Encoded_Pfx."
-# For more information on how to configure your signing certificate for
-# this workflow, refer to https://github.com/microsoft/github-actions-for-desktop-apps#signing
-#
-# Finally, add the signing certificate password to the repo as a secret and name it "Pfx_Key".
-# See "Build the Windows Application Packaging project" below to see how the secret is used.
-#
-# For more information on GitHub Actions, refer to https://github.com/features/actions
-# For a complete CI/CD sample to get started with GitHub Action workflows for Desktop Applications,
-# refer to https://github.com/microsoft/github-actions-for-desktop-apps
+# If signing secrets are not configured, the build will still succeed
+# but the installer will be unsigned (users will see SmartScreen warnings).
 
 name: Create Release Draft
 
@@ -130,23 +108,36 @@ jobs:
       run: |
         & "${Env:ProgramFiles(x86)}\\Inno Setup 6\\iscc.exe" InstallerScript.iss
 
-    - name: Decode the pfx
-      working-directory: "D:\\a\\HASS.Agent\\HASS.Agent\\src\\HASS.Agent.Installer"
+    - name: Check if signing secrets are available
+      id: check-signing
+      shell: pwsh
       run: |
-        $pfxBytes = [System.Convert]::FromBase64String("${{ secrets.BASE64_ENCODED_PFX }}")
-        $certificatePath = [IO.Path]::GetFullPath(".\\HASS.Agent.Installer.pfx")
-        [IO.File]::WriteAllBytes($certificatePath, $pfxBytes)
+        $hasEndpoint = '${{ secrets.TRUSTED_SIGNING_ENDPOINT }}' -ne ''
+        $hasAccount = '${{ secrets.TRUSTED_SIGNING_ACCOUNT }}' -ne ''
+        $hasProfile = '${{ secrets.TRUSTED_SIGNING_PROFILE }}' -ne ''
+        $shouldSign = $hasEndpoint -and $hasAccount -and $hasProfile
+        echo "should_sign=$shouldSign" >> $env:GITHUB_OUTPUT
+        if ($shouldSign) {
+          Write-Host "Azure Trusted Signing secrets are configured - installer will be signed"
+        } else {
+          Write-Host "::warning::Azure Trusted Signing secrets not configured - installer will NOT be signed"
+        }
 
-    - name: Sign the installer
-      working-directory: "D:\\a\\HASS.Agent\\HASS.Agent\\src\\HASS.Agent.Installer"
-      run: |
-        $certificatePassword = ConvertTo-SecureString "${{ secrets.BASE64_ENCODED_PFX_PASSWORD }}" -AsPlainText -Force
-        $certificate = Get-PfxCertificate -FilePath ".\\HASS.Agent.Installer.pfx" -Password $certificatePassword
-        Set-AuthenticodeSignature -FilePath ".\\bin\\HASS.Agent.Installer.exe" -Certificate $certificate -HashAlgorithm SHA256 -TimestampServer http://timestamp.digicert.com
-    
-    - name: Remove the pfx
-      working-directory: "D:\\a\\HASS.Agent\\HASS.Agent\\src\\HASS.Agent.Installer"
-      run: Remove-Item -path ".\\HASS.Agent.Installer.pfx"
+    - name: Sign Installer with Azure Trusted Signing
+      if: steps.check-signing.outputs.should_sign == 'True'
+      uses: azure/trusted-signing-action@v0
+      with:
+        azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        azure-client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+        endpoint: ${{ secrets.TRUSTED_SIGNING_ENDPOINT }}
+        trusted-signing-account-name: ${{ secrets.TRUSTED_SIGNING_ACCOUNT }}
+        certificate-profile-name: ${{ secrets.TRUSTED_SIGNING_PROFILE }}
+        files-folder: src/HASS.Agent.Installer/bin
+        files-folder-filter: exe
+        file-digest: SHA256
+        timestamp-rfc3161: http://timestamp.acs.microsoft.com
+        timestamp-digest: SHA256
 
     #Upload project artifacts: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts (HASS Agent)

@@ -479,6 +479,19 @@ begin
   end;
 end;
 
+procedure Dependency_AddDotNet100Desktop;
+begin
+  // https://dotnet.microsoft.com/download/dotnet/10.0
+  // Uses aka.ms redirect URLs which always point to the latest patch version
+  if not Dependency_IsNetCoreInstalled('-n Microsoft.WindowsDesktop.App -v 10.0.0') then begin
+    Dependency_Add('dotnet100desktop' + Dependency_ArchSuffix + '.exe',
+      '/lcid ' + IntToStr(GetUILanguage) + ' /passive /norestart',
+      '.NET Desktop Runtime 10.0' + Dependency_ArchTitle,
+      Dependency_String('https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-x86.exe', 'https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-x64.exe'),
+      '', False, False);
+  end;
+end;
+
 procedure Dependency_AddVC2005;
 begin
   // https://www.microsoft.com/en-us/download/details.aspx?id=26347
