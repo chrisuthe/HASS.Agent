@@ -32,7 +32,6 @@ HASS.Agent is **completely free**, and will always stay that way without restric
  * [What it's not](#what-its-not)
  * [Helping Out](#helping-out)
  * [Credits and Licensing](#credits-and-licensing)
- * [Legacy](#legacy)
 
 ----
 
@@ -209,17 +208,3 @@ And a big thank you to all other packages:
 Please consult their individual licensing if you plan to use any of their code.
 
 Everything on the HASS.Agent platform is released under the [MIT license](https://opensource.org/licenses/MIT).
-
----
-
-### Legacy
-
-HASS.Agent is a .NET 10 application. If for some reason you can't install .NET 10, you can use the last .NET Framework 4.8 version:
-
-[v2022.3.8](https://github.com/LAB02-Research/HASS.Agent/releases/tag/v2022.3.8)
-
-It's pretty feature complete if you just want commands, sensors, quickactions and notifications. 
-
-You'll need to have .NET Framework 4.8 installed on your PC, which you can [download here](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-web-installer).
-
-If you find any bugs, feel free to [create a ticket](https://github.com/LAB02-Research/HASS.Agent/issues) and I'll try to patch it.
