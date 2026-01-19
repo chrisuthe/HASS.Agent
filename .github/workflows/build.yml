@@ -196,16 +196,26 @@ jobs:
         path: HASS.Agent.Installer
 
 
-    - name: Compress HASS Agent directories for manual install
+    - name: Compress and rename artifacts with version tag
       run: |
+        VERSION="${{ github.event.inputs.releasetag }}"
+
+        # Create versioned zip files
         cd HASS.Agent
         ls -la
-        zip -r HASS.Agent.zip ./
+        zip -r "HASS.Agent-${VERSION}.zip" ./
         cd ../
+
         cd HASS.Agent.Satellite.Service
         ls -la
-        zip -r HASS.Agent.Satellite.Service.zip ./
-        
+        zip -r "HASS.Agent.Satellite.Service-${VERSION}.zip" ./
+        cd ../
+
+        # Rename installer with version
+        cd HASS.Agent.Installer
+        mv HASS.Agent.Installer.exe "HASS.Agent.Installer-${VERSION}.exe"
+        ls -la
+
     - name: Create Release and Upload Build Artifacts
       uses: ncipollo/release-action@v1.10.0
       with:
@@ -214,4 +224,4 @@ jobs:
         prerelease: ${{ github.event.inputs.prerelease }}
         tag: ${{ github.event.inputs.releasetag }}
         artifacts:
-          HASS.Agent/HASS.Agent.zip,HASS.Agent.Satellite.Service/HASS.Agent.Satellite.Service.zip,HASS.Agent.Installer/HASS.Agent.Installer.exe
+          HASS.Agent/HASS.Agent-${{ github.event.inputs.releasetag }}.zip,HASS.Agent.Satellite.Service/HASS.Agent.Satellite.Service-${{ github.event.inputs.releasetag }}.zip,HASS.Agent.Installer/HASS.Agent.Installer-${{ github.event.inputs.releasetag }}.exe
