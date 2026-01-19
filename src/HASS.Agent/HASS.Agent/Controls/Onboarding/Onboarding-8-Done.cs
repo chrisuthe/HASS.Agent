@@ -13,7 +13,5 @@ namespace HASS.Agent.Controls.Onboarding
         {
             //
         }
-
-        private void PbBMAC_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://www.buymeacoffee.com/lab02research");
     }
 }

@@ -65,20 +65,12 @@ namespace HASS.Agent.Forms
             }
         }
 
-        private void PbBMAC_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://www.buymeacoffee.com/lab02research");
-
         private void LblCassia_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://www.nuget.org/packages/Cassia.NetStandard/");
 
         private void LblGrpcDotNetNamedPipes_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://github.com/cyanfish/grpc-dotnet-namedpipes");
         private void LblGrpc_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://github.com/grpc/grpc");
 
-        private void PbGithubSponsor_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://github.com/sponsors/LAB02-Admin");
-
         private void LblByteSize_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://github.com/omar/ByteSize");
-
-        private void PbPayPal_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://www.paypal.com/donate/?hosted_button_id=5YL6UP94AQSPC");
-
-        private void PbKoFi_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://ko-fi.com/lab02research");
 
         private void About_KeyUp(object sender, KeyEventArgs e)
         {

@@ -76,15 +76,10 @@ namespace HASS.Agent.Forms
                 toolTip.SetToolTip(BtnCommandsManager, "Manage commands");
                 toolTip.SetToolTip(BtnHelp, "Help and documentation");
                 toolTip.SetToolTip(BtnExit, "Exit, restart, or hide");
-                toolTip.SetToolTip(PbDonate, "Support development");
 
                 // apply visual polish - typography and hover effects
                 ApplyTypographyHierarchy();
                 ApplyHoverEffects();
-
-                // hide donate button?
-                if (SettingsManager.GetHideDonateButton())
-                    PbDonate.Visible = false;
 
                 // set all statuses to loading
                 SetLocalApiStatus(ComponentStatus.Loading);
@@ -404,7 +399,6 @@ namespace HASS.Agent.Forms
                 HelperFunctions.GetForm("ServiceConfig")?.Close();
                 HelperFunctions.GetForm("CommandsConfig")?.Close();
                 HelperFunctions.GetForm("Help")?.Close();
-                HelperFunctions.GetForm("Donate")?.Close();
 
                 new MethodInvoker(Hide).Invoke();
             });
@@ -966,8 +960,6 @@ namespace HASS.Agent.Forms
             form.Show(this);
         }
 
-        private void TsDonate_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://www.buymeacoffee.com/lab02research");
-
         private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
         {
             // we're only interested if the webview's enabled
@@ -1006,30 +998,6 @@ namespace HASS.Agent.Forms
             }
 
             HelperFunctions.LaunchTrayIconWebView();
-        }
-
-        private async void PbDonate_Click(object sender, EventArgs e)
-        {
-            if (await HelperFunctions.TryBringToFront("Donate"))
-                return;
-
-            var form = new Donate();
-            form.FormClosed += delegate
-            {
-                form.Dispose();
-            };
-            form.Show(this);
-        }
-
-        /// <summary>
-        /// Hides the 'Donate' button from the UI
-        /// </summary>
-        internal void HideDonateButton()
-        {
-            Invoke(new MethodInvoker(delegate
-            {
-                PbDonate.Visible = false;
-            }));
         }
 
         /// <summary>

@@ -51,27 +51,18 @@ namespace HASS.Agent.Forms
             LblVersion = new Label();
             LblOctokit = new Label();
             LblCliWrap = new Label();
-            LblInfo6 = new Label();
             PbHassLogo = new PictureBox();
             PbHassAgentLogo = new PictureBox();
             LblCassia = new Label();
             LblGrpcDotNetNamedPipes = new Label();
             LblGrpc = new Label();
             LblByteSize = new Label();
-            PbPayPal = new PictureBox();
-            PbKoFi = new PictureBox();
-            PbGithubSponsor = new PictureBox();
-            PbBMAC = new PictureBox();
             label2 = new Label();
             label1 = new Label();
             label3 = new Label();
             label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)PbHassLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbHassAgentLogo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PbPayPal).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PbKoFi).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PbGithubSponsor).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PbBMAC).BeginInit();
             SuspendLayout();
             // 
             // BtnClose
@@ -346,20 +337,7 @@ namespace HASS.Agent.Forms
             LblCliWrap.TabIndex = 27;
             LblCliWrap.Text = "CliWrap";
             LblCliWrap.Click += LblCliWrap_Click;
-            // 
-            // LblInfo6
-            // 
-            LblInfo6.AccessibleDescription = "Donating for HASS.Agent message.";
-            LblInfo6.AccessibleName = "Donating info";
-            LblInfo6.AccessibleRole = AccessibleRole.StaticText;
-            LblInfo6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            LblInfo6.Location = new Point(173, 580);
-            LblInfo6.Name = "LblInfo6";
-            LblInfo6.Size = new Size(562, 91);
-            LblInfo6.TabIndex = 28;
-            LblInfo6.Text = Resources.Localization.Languages.About_LblInfo6;
-            LblInfo6.TextAlign = ContentAlignment.BottomLeft;
-            // 
+            //
             // PbHassLogo
             // 
             PbHassLogo.AccessibleDescription = "Home Assistant logo.";
@@ -449,67 +427,7 @@ namespace HASS.Agent.Forms
             LblByteSize.TabIndex = 35;
             LblByteSize.Text = "ByteSize";
             LblByteSize.Click += LblByteSize_Click;
-            // 
-            // PbPayPal
-            // 
-            PbPayPal.AccessibleDescription = "Opens the 'paypal' donation website.";
-            PbPayPal.AccessibleName = "PayPal donation";
-            PbPayPal.AccessibleRole = AccessibleRole.PushButton;
-            PbPayPal.Cursor = Cursors.Hand;
-            PbPayPal.Image = (Image)resources.GetObject("PbPayPal.Image");
-            PbPayPal.Location = new Point(359, 684);
-            PbPayPal.Name = "PbPayPal";
-            PbPayPal.Size = new Size(152, 43);
-            PbPayPal.SizeMode = PictureBoxSizeMode.AutoSize;
-            PbPayPal.TabIndex = 43;
-            PbPayPal.TabStop = false;
-            PbPayPal.Click += PbPayPal_Click;
-            // 
-            // PbKoFi
-            // 
-            PbKoFi.AccessibleDescription = "Opens the 'ko-fi' donation website.";
-            PbKoFi.AccessibleName = "Kofi donation";
-            PbKoFi.AccessibleRole = AccessibleRole.PushButton;
-            PbKoFi.Cursor = Cursors.Hand;
-            PbKoFi.Image = (Image)resources.GetObject("PbKoFi.Image");
-            PbKoFi.Location = new Point(541, 684);
-            PbKoFi.Name = "PbKoFi";
-            PbKoFi.Size = new Size(171, 43);
-            PbKoFi.SizeMode = PictureBoxSizeMode.AutoSize;
-            PbKoFi.TabIndex = 42;
-            PbKoFi.TabStop = false;
-            PbKoFi.Click += PbKoFi_Click;
-            // 
-            // PbGithubSponsor
-            // 
-            PbGithubSponsor.AccessibleDescription = "Opens the 'sponsor on gituhb' donation website.";
-            PbGithubSponsor.AccessibleName = "GitHub donation";
-            PbGithubSponsor.AccessibleRole = AccessibleRole.PushButton;
-            PbGithubSponsor.Cursor = Cursors.Hand;
-            PbGithubSponsor.Image = (Image)resources.GetObject("PbGithubSponsor.Image");
-            PbGithubSponsor.Location = new Point(176, 748);
-            PbGithubSponsor.Name = "PbGithubSponsor";
-            PbGithubSponsor.Size = new Size(235, 43);
-            PbGithubSponsor.SizeMode = PictureBoxSizeMode.AutoSize;
-            PbGithubSponsor.TabIndex = 41;
-            PbGithubSponsor.TabStop = false;
-            PbGithubSponsor.Click += PbGithubSponsor_Click;
-            // 
-            // PbBMAC
-            // 
-            PbBMAC.AccessibleDescription = "Opens the 'buy me a coffee' donation website.";
-            PbBMAC.AccessibleName = "BMAC donation";
-            PbBMAC.AccessibleRole = AccessibleRole.PushButton;
-            PbBMAC.Cursor = Cursors.Hand;
-            PbBMAC.Image = (Image)resources.GetObject("PbBMAC.Image");
-            PbBMAC.Location = new Point(176, 684);
-            PbBMAC.Name = "PbBMAC";
-            PbBMAC.Size = new Size(153, 43);
-            PbBMAC.SizeMode = PictureBoxSizeMode.AutoSize;
-            PbBMAC.TabIndex = 40;
-            PbBMAC.TabStop = false;
-            PbBMAC.Click += PbBMAC_Click;
-            // 
+            //
             // label2
             // 
             label2.AccessibleDescription = "Created by link. Opens the unofficial github webpage.";
@@ -578,15 +496,10 @@ namespace HASS.Agent.Forms
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(label2);
-            Controls.Add(PbPayPal);
-            Controls.Add(PbKoFi);
-            Controls.Add(PbGithubSponsor);
-            Controls.Add(PbBMAC);
             Controls.Add(LblByteSize);
             Controls.Add(LblGrpc);
             Controls.Add(LblGrpcDotNetNamedPipes);
             Controls.Add(LblCassia);
-            Controls.Add(LblInfo6);
             Controls.Add(LblCliWrap);
             Controls.Add(LblOctokit);
             Controls.Add(LblVersion);
@@ -621,10 +534,6 @@ namespace HASS.Agent.Forms
             KeyUp += About_KeyUp;
             ((System.ComponentModel.ISupportInitialize)PbHassLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)PbHassAgentLogo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PbPayPal).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PbKoFi).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PbGithubSponsor).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PbBMAC).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -651,15 +560,10 @@ namespace HASS.Agent.Forms
         private System.Windows.Forms.Label LblVersion;
         private System.Windows.Forms.Label LblOctokit;
         private System.Windows.Forms.Label LblCliWrap;
-        private System.Windows.Forms.Label LblInfo6;
         private System.Windows.Forms.Label LblCassia;
         private Label LblGrpcDotNetNamedPipes;
         private Label LblGrpc;
         private Label LblByteSize;
-        private PictureBox PbPayPal;
-        private PictureBox PbKoFi;
-        private PictureBox PbGithubSponsor;
-        private PictureBox PbBMAC;
         private Label label2;
         private Label label1;
         private Label label3;

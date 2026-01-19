@@ -45,7 +45,6 @@ namespace HASS.Agent.Forms
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.TsCheckForUpdates = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.TsDonate = new System.Windows.Forms.ToolStripMenuItem();
             this.TsHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.TsAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -75,11 +74,9 @@ namespace HASS.Agent.Forms
             this.LblLocalApi = new System.Windows.Forms.Label();
             this.BtnCheckForUpdate = new System.Windows.Forms.Button();
             this.BtnHelp = new System.Windows.Forms.Button();
-            this.PbDonate = new System.Windows.Forms.PictureBox();
             this.CmTrayIcon.SuspendLayout();
             this.GpControls.SuspendLayout();
             this.GpStatus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbDonate)).BeginInit();
             this.SuspendLayout();
             // 
             // NotifyIcon
@@ -110,7 +107,6 @@ namespace HASS.Agent.Forms
             this.toolStripSeparator2,
             this.TsCheckForUpdates,
             this.toolStripSeparator3,
-            this.TsDonate,
             this.TsHelp,
             this.TsAbout,
             this.toolStripSeparator4,
@@ -229,18 +225,7 @@ namespace HASS.Agent.Forms
             this.toolStripSeparator3.AccessibleRole = System.Windows.Forms.AccessibleRole.Separator;
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(200, 6);
-            // 
-            // TsDonate
-            // 
-            this.TsDonate.AccessibleDescription = "Opens the \'donate on buymeacoffee\' url.";
-            this.TsDonate.AccessibleName = "Donate";
-            this.TsDonate.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.TsDonate.Image = ((System.Drawing.Image)(resources.GetObject("TsDonate.Image")));
-            this.TsDonate.Name = "TsDonate";
-            this.TsDonate.Size = new System.Drawing.Size(203, 26);
-            this.TsDonate.Text = Languages.Main_TsDonate;
-            this.TsDonate.Click += new System.EventHandler(this.TsDonate_Click);
-            // 
+            //
             // TsHelp
             // 
             this.TsHelp.AccessibleDescription = "Opens the help window.";
@@ -651,19 +636,7 @@ namespace HASS.Agent.Forms
             this.BtnHelp.TabIndex = 7;
             this.BtnHelp.UseVisualStyleBackColor = false;
             this.BtnHelp.Click += new System.EventHandler(this.BtnHelp_Click);
-            // 
-            // PbDonate
-            // 
-            this.PbDonate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PbDonate.Image = ((System.Drawing.Image)(resources.GetObject("PbDonate.Image")));
-            this.PbDonate.Location = new System.Drawing.Point(540, 498);
-            this.PbDonate.Name = "PbDonate";
-            this.PbDonate.Size = new System.Drawing.Size(36, 36);
-            this.PbDonate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PbDonate.TabIndex = 9;
-            this.PbDonate.TabStop = false;
-            this.PbDonate.Click += new System.EventHandler(this.PbDonate_Click);
-            // 
+            //
             // Main
             // 
             this.AccessibleDescription = "Main application window. Contains the status of the internal systems, and buttons" +
@@ -674,7 +647,6 @@ namespace HASS.Agent.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(674, 550);
-            this.Controls.Add(this.PbDonate);
             this.Controls.Add(this.BtnCheckForUpdate);
             this.Controls.Add(this.BtnHelp);
             this.Controls.Add(this.GpControls);
@@ -697,7 +669,6 @@ namespace HASS.Agent.Forms
             this.GpControls.ResumeLayout(false);
             this.GpStatus.ResumeLayout(false);
             this.GpStatus.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PbDonate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -743,12 +714,10 @@ namespace HASS.Agent.Forms
         private System.Windows.Forms.ToolStripMenuItem TsCheckForUpdates;
         private System.Windows.Forms.ToolStripMenuItem TsHelp;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem TsDonate;
         private System.Windows.Forms.Button BtnServiceManager;
         private Label LblStatusService;
         private Label LblService;
         private ToolStripMenuItem TsSatelliteService;
-        private PictureBox PbDonate;
     }
 }
 

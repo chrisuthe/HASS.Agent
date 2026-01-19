@@ -36,12 +36,8 @@ namespace HASS.Agent.Controls.Onboarding
             this.PbUpdate = new System.Windows.Forms.PictureBox();
             this.LblInfo2 = new System.Windows.Forms.Label();
             this.LblInfo1 = new System.Windows.Forms.Label();
-            this.PbBMAC = new System.Windows.Forms.PictureBox();
-            this.LblInfo6 = new System.Windows.Forms.Label();
-            this.LblTip2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PbHassAgentLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbUpdate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbBMAC)).BeginInit();
             this.SuspendLayout();
             // 
             // PbHassAgentLogo
@@ -108,47 +104,7 @@ namespace HASS.Agent.Controls.Onboarding
             this.LblInfo1.Size = new System.Drawing.Size(187, 47);
             this.LblInfo1.TabIndex = 29;
             this.LblInfo1.Text = Languages.OnboardingDone_LblInfo1;
-            // 
-            // PbBMAC
-            // 
-            this.PbBMAC.AccessibleDescription = "Opens the \'buy me a coffee\' donation website.";
-            this.PbBMAC.AccessibleName = "BMAC donation";
-            this.PbBMAC.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.PbBMAC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PbBMAC.Image = ((System.Drawing.Image)(resources.GetObject("PbBMAC.Image")));
-            this.PbBMAC.Location = new System.Drawing.Point(622, 393);
-            this.PbBMAC.Name = "PbBMAC";
-            this.PbBMAC.Size = new System.Drawing.Size(153, 43);
-            this.PbBMAC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.PbBMAC.TabIndex = 31;
-            this.PbBMAC.TabStop = false;
-            this.PbBMAC.Click += new System.EventHandler(this.PbBMAC_Click);
-            // 
-            // LblInfo6
-            // 
-            this.LblInfo6.AccessibleDescription = "Donating for HASS.Agent message.";
-            this.LblInfo6.AccessibleName = "Donating info";
-            this.LblInfo6.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.LblInfo6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblInfo6.Location = new System.Drawing.Point(180, 326);
-            this.LblInfo6.Name = "LblInfo6";
-            this.LblInfo6.Size = new System.Drawing.Size(595, 85);
-            this.LblInfo6.TabIndex = 30;
-            this.LblInfo6.Text = Languages.OnboardingDone_LblInfo6;
-            // 
-            // LblTip2
-            // 
-            this.LblTip2.AccessibleDescription = "Contains a donation tip.";
-            this.LblTip2.AccessibleName = "Donation tip";
-            this.LblTip2.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.LblTip2.AutoSize = true;
-            this.LblTip2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblTip2.Location = new System.Drawing.Point(180, 423);
-            this.LblTip2.Name = "LblTip2";
-            this.LblTip2.Size = new System.Drawing.Size(343, 13);
-            this.LblTip2.TabIndex = 36;
-            this.LblTip2.Text = Languages.OnboardingDone_LblTip2;
-            // 
+            //
             // OnboardingDone
             // 
             this.AccessibleDescription = "Final onboarding panel.";
@@ -157,9 +113,6 @@ namespace HASS.Agent.Controls.Onboarding
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.Controls.Add(this.LblTip2);
-            this.Controls.Add(this.PbBMAC);
-            this.Controls.Add(this.LblInfo6);
             this.Controls.Add(this.LblInfo1);
             this.Controls.Add(this.PbUpdate);
             this.Controls.Add(this.LblInfo3);
@@ -172,7 +125,6 @@ namespace HASS.Agent.Controls.Onboarding
             this.Load += new System.EventHandler(this.OnboardingDone_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PbHassAgentLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbUpdate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbBMAC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,8 +136,5 @@ namespace HASS.Agent.Controls.Onboarding
         private System.Windows.Forms.PictureBox PbUpdate;
         private System.Windows.Forms.Label LblInfo2;
         private Label LblInfo1;
-        private PictureBox PbBMAC;
-        private Label LblInfo6;
-        private Label LblTip2;
     }
 }
