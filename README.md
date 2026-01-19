@@ -1,10 +1,9 @@
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/hass-agent/HASS.Agent)](https://github.com/hass-agent/HASS.Agent/releases/)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/chrisuthe/HASS.Agent)](https://github.com/chrisuthe/HASS.Agent/releases/)
 [![license](https://img.shields.io/badge/license-MIT-blue)](#license)
 [![OS - Windows](https://img.shields.io/badge/OS-Windows-blue?logo=windows&logoColor=white)](https://www.microsoft.com/ "Go to Microsoft homepage")
 [![dotnet](https://img.shields.io/badge/.NET-10.0-blue)](https://img.shields.io/badge/.NET-10.0-blue)
-![GitHub all releases](https://img.shields.io/github/downloads/hass-agent/HASS.Agent/total?color=blue)
-![GitHub latest](https://img.shields.io/github/downloads/hass-agent/HASS.Agent/latest/total?color=blue)
-[![Discord](https://img.shields.io/badge/dynamic/json?color=blue&label=Discord&logo=discord&logoColor=white&query=presence_count&suffix=%20Online&url=https://discord.com/api/guilds/1173033284519862392/widget.json)](https://discord.com/invite/JfZj98xqJr)
+![GitHub all releases](https://img.shields.io/github/downloads/chrisuthe/HASS.Agent/total?color=blue)
+![GitHub latest](https://img.shields.io/github/downloads/chrisuthe/HASS.Agent/latest/total?color=blue)
 
 <a href="https://github.com/LAB02-Research/HASS.Agent/">
     <img src="https://raw.githubusercontent.com/LAB02-Research/HASS.Agent/main/images/logo_128.png" alt="HASS.Agent logo" title="HASS.Agent" align="right" height="128" /></a>
@@ -13,7 +12,7 @@
 
 HASS.Agent is a Windows-based client (*companion*) application for [Home Assistant](https://www.home-assistant.io), developed in .NET 10.
 
-Click [here](https://github.com/hass-agent/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe) to download the latest installer.
+Click [here](https://github.com/chrisuthe/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe) to download the latest installer.
 
 ----
 
@@ -48,9 +47,13 @@ There's no need to explain that we (and the Community overall) like the idea. Th
 
 ### Fork?
 
-The original HASS.Agent has been created by [Sam](https://github.com/LAB02-Admin).
+**This is a fork of a fork.**
 
-Unfortunately due to some time constraints, they're not able to provide the constant support and feature updates. That's where we step in - trying to keep HASS.Agent bug free (dreams need to be big right?) and to introduce new features here and there!
+The original HASS.Agent was created by [Sam](https://github.com/LAB02-Admin) at [LAB02-Research](https://github.com/LAB02-Research/HASS.Agent).
+
+When Sam was unable to continue active development, the [hass-agent team](https://github.com/hass-agent/HASS.Agent) picked up the project and maintained it, adding new features and keeping it compatible with Home Assistant updates.
+
+This fork continues that work independently, focusing on .NET 10 modernization and continued maintenance.
 
 ----
 
@@ -124,13 +127,13 @@ You'll be guided through the configuration options during onboarding:
 
 ### Installation
 
-Installing HASS.Agent is easy; just [download the latest installer](https://github.com/hass-agent/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe), run it and you're done! The installer is signed by us and won't download or do weird stuff - it just places everything where it should, and launches with the right parameter. (optionally installing .NET 10)
+Installing HASS.Agent is easy; just [download the latest installer](https://github.com/chrisuthe/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe), run it and you're done! The installer is signed by us and won't download or do weird stuff - it just places everything where it should, and launches with the right parameter. (optionally installing .NET 10)
 
 After installing, the onboarding process will help you get everything configured, step by step. If you want an introduction into HASS.Agent, be sure to read the [introduction docs](https://www.hass-agent.io/latest/getting-started/).
 
 Original HASS.Agent documentation is available [here](https://hassagent.readthedocs.io/en/latest/introduction/) - please bear in mind however that it may not represent state of things present in this version.
 
-[Click here to download the latest installer](https://github.com/hass-agent/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe)
+[Click here to download the latest installer](https://github.com/chrisuthe/HASS.Agent/releases/latest/download/HASS.Agent.Installer.exe)
 
 If you want to install manually, there are .zip packages available for every release. Read the [manual](https://www.hass-agent.io/latest/getting-started/installation/#manualzip-files) for more info.
 
@@ -140,7 +143,7 @@ If you want to install manually, there are .zip packages available for every rel
 
 Stuck while installing or using HASS.Agent, need some help integrating the sensors/commands or have a great idea for the next version? There are a few channels through which you can reach out:
 
-* [Github Tickets](https://github.com/hass-agent/HASS.Agent/issues): Report bugs, feature requests, ideas, tips, ..
+* [Github Tickets](https://github.com/chrisuthe/HASS.Agent/issues): Report bugs, feature requests, ideas, tips, ..
 
 * [Documentation](https://www.hass-agent.io/latest/): Installation, configuration and usage documentation, as well as examples.
 
@@ -176,7 +179,7 @@ You can use the [official companion app](https://apps.apple.com/us/app/home-assi
 
 ### Helping Out
 
-The best way to help out is to test as much as you can (or even join the beta program), and report any weird or failing behavior by [opening a ticket](https://github.com/hass-agent/HASS.Agent/issues). 
+The best way to help out is to test as much as you can and report any weird or failing behavior by [opening a ticket](https://github.com/chrisuthe/HASS.Agent/issues). 
 
 Same goes for sharing ideas for new (or improved) functionality! If you want, you can [join on Discord](https://discord.com/invite/JfZj98xqJr) to discuss your ideas.
 
@@ -184,15 +187,18 @@ Same goes for sharing ideas for new (or improved) functionality! If you want, yo
 
 ### Credits and Licensing
 
-First and foremost, huge thanks for [Sam](https://github.com/LAB02-Admin) for creating and maintaining the original HASS.Agent in their spare time! We wouldn't be here withot the spark that pushed them to write the first line of code :heart:
+This project stands on the shoulders of giants:
 
-As of now, we do not accept any kind of donation/coffee :)
-<br>If you'd like however, you can support [creator](https://github.com/LAB02-Admin) of original HASS.Agent:
+* **[Sam / LAB02-Research](https://github.com/LAB02-Admin)** - Created the original HASS.Agent. Without that initial spark, none of this would exist.
+
+* **[hass-agent team](https://github.com/hass-agent)** - Maintained and improved HASS.Agent after Sam stepped back, keeping it alive and adding new features for the community.
+
+* **[Home Assistant](https://www.home-assistant.io)** - The amazing platform that makes all of this worthwhile.
+
+If you'd like to support the original creator:
 
 | [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/lab02research) |  [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/lab02research) | [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=5YL6UP94AQSPC) |
 |:---:|---|---|
-
-Thanks to the entire team that's developing [Home Assistant](https://www.home-assistant.io) - such an amazing platform!
 
 The initial development was boosed by sleevezipper's [HASS Workstation Service](https://github.com/sleevezipper/hass-workstation-service). Thank you for sharing your hard work.
 
