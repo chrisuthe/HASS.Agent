@@ -2,7 +2,7 @@
 
 namespace HASS.Agent.Forms
 {
-    public partial class About : Form
+    public partial class About : ThemeAwareForm
     {
         public About()
         {

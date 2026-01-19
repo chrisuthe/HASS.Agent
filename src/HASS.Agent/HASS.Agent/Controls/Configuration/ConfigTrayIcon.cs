@@ -4,7 +4,7 @@ using HASS.Agent.Models.Internal;
 
 namespace HASS.Agent.Controls.Configuration
 {
-    public partial class ConfigTrayIcon : UserControl
+    public partial class ConfigTrayIcon : ThemeAwareUserControl
     {
         public ConfigTrayIcon()
         {

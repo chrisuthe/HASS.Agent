@@ -7,7 +7,7 @@ using Serilog;
 namespace HASS.Agent.Controls.Service
 {
     // ReSharper disable once InconsistentNaming
-    public partial class ServiceMqtt : UserControl
+    public partial class ServiceMqtt : ThemeAwareUserControl
     {
         private bool _statusUpdateActive = true;
 

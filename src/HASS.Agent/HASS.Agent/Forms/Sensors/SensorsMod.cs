@@ -17,7 +17,7 @@ using Newtonsoft.Json;
 
 namespace HASS.Agent.Forms.Sensors
 {
-    public partial class SensorsMod : Form
+    public partial class SensorsMod : ThemeAwareForm
     {
         internal readonly ConfiguredSensor Sensor;
 

@@ -4,7 +4,7 @@ using HASS.Agent.Settings;
 
 namespace HASS.Agent.Forms.QuickActions
 {
-    public partial class QuickActionsConfig : Form
+    public partial class QuickActionsConfig : ThemeAwareForm
     {
         private readonly List<QuickAction> _quickActions = new();
 

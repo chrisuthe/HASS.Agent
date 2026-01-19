@@ -4,7 +4,7 @@ using HASS.Agent.Resources.Localization;
 
 namespace HASS.Agent.Controls.Configuration
 {
-    public partial class ConfigStartup : UserControl
+    public partial class ConfigStartup : ThemeAwareUserControl
     {
         public ConfigStartup()
         {

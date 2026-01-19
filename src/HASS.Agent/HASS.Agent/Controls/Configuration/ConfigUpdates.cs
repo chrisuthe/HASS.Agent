@@ -1,6 +1,6 @@
 ﻿namespace HASS.Agent.Controls.Configuration
 {
-    public partial class ConfigUpdates : UserControl
+    public partial class ConfigUpdates : ThemeAwareUserControl
     {
         public ConfigUpdates()
         {

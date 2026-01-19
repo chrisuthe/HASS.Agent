@@ -8,7 +8,7 @@ using Serilog;
 
 namespace HASS.Agent.Forms.QuickActions
 {
-    public partial class QuickActions : Form
+    public partial class QuickActions : ThemeAwareForm
     {
         public event EventHandler ClearFocus;
 

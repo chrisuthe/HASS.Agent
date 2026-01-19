@@ -31,7 +31,7 @@ using Task = System.Threading.Tasks.Task;
 namespace HASS.Agent.Forms
 {
     [SuppressMessage("ReSharper", "MemberCanBeMadeStatic.Local")]
-    public partial class Main : Form
+    public partial class Main : ThemeAwareForm
     {
         private bool _isClosing = false;
 

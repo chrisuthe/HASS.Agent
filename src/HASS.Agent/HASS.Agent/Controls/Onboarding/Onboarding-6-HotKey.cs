@@ -3,7 +3,7 @@ using WK.Libraries.HotkeyListenerNS;
 
 namespace HASS.Agent.Controls.Onboarding
 {
-    public partial class OnboardingHotKey : UserControl
+    public partial class OnboardingHotKey : ThemeAwareUserControl
     {
         private readonly HotkeySelector _hotkeySelector = new();
 

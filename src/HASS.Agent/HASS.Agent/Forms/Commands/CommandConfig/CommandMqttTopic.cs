@@ -3,7 +3,7 @@ using HASS.Agent.Resources.Localization;
 
 namespace HASS.Agent.Forms.Commands.CommandConfig
 {
-    public partial class CommandMqttTopic : Form
+    public partial class CommandMqttTopic : ThemeAwareForm
     {
         public CommandMqttTopic(string topic)
         {

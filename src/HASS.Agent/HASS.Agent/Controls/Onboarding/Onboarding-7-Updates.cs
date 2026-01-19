@@ -1,6 +1,6 @@
 ﻿namespace HASS.Agent.Controls.Onboarding
 {
-    public partial class OnboardingUpdates : UserControl
+    public partial class OnboardingUpdates : ThemeAwareUserControl
     {
         public OnboardingUpdates()
         {

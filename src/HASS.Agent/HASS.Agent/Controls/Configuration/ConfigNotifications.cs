@@ -7,7 +7,7 @@ using Serilog;
 
 namespace HASS.Agent.Controls.Configuration
 {
-    public partial class ConfigNotifications : UserControl
+    public partial class ConfigNotifications : ThemeAwareUserControl
     {
         public ConfigNotifications()
         {

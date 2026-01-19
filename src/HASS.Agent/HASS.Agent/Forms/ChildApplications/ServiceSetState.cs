@@ -11,7 +11,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace HASS.Agent.Forms.ChildApplications
 {
-    public partial class ServiceSetState : Form
+    public partial class ServiceSetState : ThemeAwareForm
     {
         private readonly ServiceDesiredState _desiredState;
 

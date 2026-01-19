@@ -5,7 +5,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace HASS.Agent.Controls.Onboarding
 {
-    public partial class OnboardingStartup : UserControl
+    public partial class OnboardingStartup : ThemeAwareUserControl
     {
         public OnboardingStartup()
         {

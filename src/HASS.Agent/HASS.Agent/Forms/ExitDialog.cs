@@ -1,6 +1,6 @@
 ﻿namespace HASS.Agent.Forms
 {
-    public partial class ExitDialog : Form
+    public partial class ExitDialog : ThemeAwareForm
     {
         public bool Exit { get; private set; }
         public bool Restart { get; private set; }

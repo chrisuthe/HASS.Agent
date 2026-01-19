@@ -9,7 +9,7 @@ using Serilog;
 
 namespace HASS.Agent.Controls.Service
 {
-    public partial class ServiceGeneral : UserControl
+    public partial class ServiceGeneral : ThemeAwareUserControl
     {
         private enum ConfigSection
         {

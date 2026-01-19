@@ -5,7 +5,7 @@ using Serilog;
 
 namespace HASS.Agent.Forms.Service
 {
-    public partial class ServiceConfig : Form
+    public partial class ServiceConfig : ThemeAwareForm
     {
         private ServiceConnect _connect;
         private readonly ServiceGeneral _general = new();

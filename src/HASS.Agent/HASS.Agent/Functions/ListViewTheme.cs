@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HASS.Agent.Properties;
+using HASS.Agent.Theme;
 using Serilog;
 
 namespace HASS.Agent.Functions
@@ -37,9 +38,12 @@ namespace HASS.Agent.Functions
         [return: System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.Bool)]
         internal static extern bool ShowScrollBar(IntPtr hwnd, int wBar, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.Bool)] bool bShow);
         
-        private static readonly Color BackgroundColor = Color.FromArgb(63, 63, 70);
-        private static readonly Color ForeColor = Color.FromArgb(241, 241, 241);
-        private static readonly Color HeaderColor = Color.FromArgb(45, 45, 48);
+        // Colors now come from ThemeManager for light/dark mode support
+        private static Color BackgroundColor => ThemeManager.ControlBackground;
+        private static Color ForeColor => ThemeManager.ForeColor;
+        private static Color HeaderColor => ThemeManager.FormBackground;
+        private static Color SelectedBackground => ThemeManager.SelectedBackground;
+        private static Color SelectedForeColor => ThemeManager.SelectedForeColor;
 
         internal static void DrawItem(object sender, DrawListViewItemEventArgs e)
         {
@@ -54,14 +58,13 @@ namespace HASS.Agent.Functions
             // check if the item's selected
             if (e.Item.Selected)
             {
-                // yep, set forecolor as background
-                using (var bkgrBrush = new SolidBrush(ForeColor))
+                // use theme-aware selection colors
+                using (var bkgrBrush = new SolidBrush(SelectedBackground))
                 {
                     e.Graphics.FillRectangle(bkgrBrush, e.Bounds);
                 }
 
-                // and background as forecolor
-                itemColor = BackgroundColor;
+                itemColor = SelectedForeColor;
             }
             else e.DrawBackground();
 
@@ -94,14 +97,13 @@ namespace HASS.Agent.Functions
                 // only for full row or first column
                 if (e.ColumnIndex == 0 || listView.FullRowSelect)
                 {
-                    // yep, set forecolor as background
-                    using (var bkgrBrush = new SolidBrush(ForeColor))
+                    // use theme-aware selection colors
+                    using (var bkgrBrush = new SolidBrush(SelectedBackground))
                     {
                         e.Graphics.FillRectangle(bkgrBrush, e.Bounds);
                     }
 
-                    // and background as forecolor
-                    itemColor = BackgroundColor;
+                    itemColor = SelectedForeColor;
                 }
             }
             else e.DrawBackground();

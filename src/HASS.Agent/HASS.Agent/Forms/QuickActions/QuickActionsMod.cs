@@ -9,7 +9,7 @@ using WK.Libraries.HotkeyListenerNS;
 
 namespace HASS.Agent.Forms.QuickActions
 {
-    public partial class QuickActionsMod : Form
+    public partial class QuickActionsMod : ThemeAwareForm
     {
         private readonly HotkeySelector _hotkeySelector = new();
         internal readonly QuickAction QuickAction;

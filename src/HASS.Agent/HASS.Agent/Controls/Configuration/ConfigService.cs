@@ -11,7 +11,7 @@ using Serilog;
 
 namespace HASS.Agent.Controls.Configuration
 {
-    public partial class ConfigService : UserControl
+    public partial class ConfigService : ThemeAwareUserControl
     {
         public ConfigService()
         {

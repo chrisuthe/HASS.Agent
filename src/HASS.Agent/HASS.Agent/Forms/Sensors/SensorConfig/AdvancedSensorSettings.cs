@@ -7,7 +7,7 @@ using Serilog;
 
 namespace HASS.Agent.Forms.Commands.CommandConfig;
 
-public partial class AdvancedSensorSettings : Form
+public partial class AdvancedSensorSettings : ThemeAwareForm
 {
 
     public SensorAdvancedSettings AdvancedSettings { get; private set; } = null;

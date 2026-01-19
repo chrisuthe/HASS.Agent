@@ -11,7 +11,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace HASS.Agent.Forms.ChildApplications
 {
-    public partial class PostUpdate : Form
+    public partial class PostUpdate : ThemeAwareForm
     {
         public PostUpdate()
         {

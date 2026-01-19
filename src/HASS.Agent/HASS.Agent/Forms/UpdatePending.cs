@@ -5,7 +5,7 @@ using HASS.Agent.Resources.Localization;
 
 namespace HASS.Agent.Forms
 {
-    public partial class UpdatePending : Form
+    public partial class UpdatePending : ThemeAwareForm
     {
         private PendingUpdate _pendingUpdate;
 

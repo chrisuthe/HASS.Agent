@@ -3,7 +3,7 @@ using HASS.Agent.Settings;
 
 namespace HASS.Agent.Forms
 {
-    public partial class Donate : Form
+    public partial class Donate : ThemeAwareForm
     {
         public Donate()
         {

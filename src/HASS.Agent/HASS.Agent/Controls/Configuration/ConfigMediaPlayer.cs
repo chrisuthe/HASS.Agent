@@ -7,7 +7,7 @@ using Serilog;
 
 namespace HASS.Agent.Controls.Configuration
 {
-    public partial class ConfigMediaPlayer : UserControl
+    public partial class ConfigMediaPlayer : ThemeAwareUserControl
     {
         public ConfigMediaPlayer()
         {

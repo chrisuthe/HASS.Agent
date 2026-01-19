@@ -14,6 +14,7 @@ using HASS.Agent.Settings;
 using HASS.Agent.Shared.Extensions;
 using HASS.Agent.Shared.Functions;
 using HASS.Agent.Shared.Managers;
+using HASS.Agent.Theme;
 using Microsoft.Windows.AppLifecycle;
 using Serilog;
 using Serilog.Events;
@@ -82,7 +83,10 @@ namespace HASS.Agent
                 }
 
                 LocalizationManager.Initialize();
-                                                                                               
+
+                // Initialize theme manager (follows Windows light/dark theme by default)
+                ThemeManager.Initialize();
+
                 Application.SetDefaultFont(Variables.DefaultFont);
 
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);

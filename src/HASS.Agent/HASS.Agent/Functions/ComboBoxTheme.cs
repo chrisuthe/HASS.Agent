@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HASS.Agent.Theme;
 using static System.Windows.Forms.ComboBox;
 
 namespace HASS.Agent.Functions
@@ -49,11 +50,11 @@ namespace HASS.Agent.Functions
             {
                 // optionally set the item's background color as selected
                 if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(241, 241, 241)), e.Bounds);
+                    e.Graphics.FillRectangle(new SolidBrush(ThemeManager.SelectedBackground), e.Bounds);
 
                 // draw the string
                 var brush = (e.State & DrawItemState.Selected) > 0
-                    ? new SolidBrush(Color.FromArgb(63, 63, 70))
+                    ? new SolidBrush(ThemeManager.SelectedForeColor)
                     : new SolidBrush(comboBox.ForeColor);
                 e.Graphics.DrawString(comboBox.Items[index].ToString(), Variables.DefaultFont, brush, e.Bounds, StringFormat.GenericDefault);
             }
@@ -88,14 +89,14 @@ namespace HASS.Agent.Functions
             {
                 // optionally set the item's background color as selected
                 if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(241, 241, 241)), e.Bounds);
+                    e.Graphics.FillRectangle(new SolidBrush(ThemeManager.SelectedBackground), e.Bounds);
 
                 // get the value
                 var value = (KeyValuePair<int, string>)comboBox.Items[index];
 
                 // draw the string
                 var brush = (e.State & DrawItemState.Selected) > 0
-                    ? new SolidBrush(Color.FromArgb(63, 63, 70))
+                    ? new SolidBrush(ThemeManager.SelectedForeColor)
                     : new SolidBrush(comboBox.ForeColor);
                 e.Graphics.DrawString(value.Value, Variables.DefaultFont, brush, e.Bounds, StringFormat.GenericDefault);
             }
@@ -122,7 +123,7 @@ namespace HASS.Agent.Functions
             // additional check for empty dictionary
             if (comboBox.Items[0] is IDictionary)
                 return;
-            
+
             // fetch the index
             var index = e.Index >= 0 ? e.Index : 0;
 
@@ -134,14 +135,14 @@ namespace HASS.Agent.Functions
             {
                 // optionally set the item's background color as selected
                 if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(241, 241, 241)), e.Bounds);
+                    e.Graphics.FillRectangle(new SolidBrush(ThemeManager.SelectedBackground), e.Bounds);
 
                 // get the value
                 var value = (KeyValuePair<string, string>)comboBox.Items[index];
 
                 // draw the string
                 var brush = (e.State & DrawItemState.Selected) > 0
-                    ? new SolidBrush(Color.FromArgb(63, 63, 70))
+                    ? new SolidBrush(ThemeManager.SelectedForeColor)
                     : new SolidBrush(comboBox.ForeColor);
                 e.Graphics.DrawString(value.Value, Variables.DefaultFont, brush, e.Bounds, StringFormat.GenericDefault);
             }

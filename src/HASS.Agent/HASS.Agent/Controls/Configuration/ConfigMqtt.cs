@@ -1,7 +1,7 @@
 ﻿namespace HASS.Agent.Controls.Configuration
 {
     // ReSharper disable once InconsistentNaming
-    public partial class ConfigMqtt : UserControl
+    public partial class ConfigMqtt : ThemeAwareUserControl
     {
         public ConfigMqtt()
         {

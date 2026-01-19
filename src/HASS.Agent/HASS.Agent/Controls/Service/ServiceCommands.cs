@@ -7,7 +7,7 @@ using Serilog;
 
 namespace HASS.Agent.Controls.Service
 {
-    public partial class ServiceCommands : UserControl
+    public partial class ServiceCommands : ThemeAwareUserControl
     {
         private string _deviceName;
         private readonly List<ConfiguredCommand> _commands = new();

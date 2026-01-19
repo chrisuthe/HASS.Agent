@@ -9,7 +9,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace HASS.Agent.Forms.ChildApplications
 {
-    public partial class PortReservation : Form
+    public partial class PortReservation : ThemeAwareForm
     {
         public PortReservation()
         {

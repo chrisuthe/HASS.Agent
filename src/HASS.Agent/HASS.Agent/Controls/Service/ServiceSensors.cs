@@ -7,7 +7,7 @@ using Serilog;
 
 namespace HASS.Agent.Controls.Service
 {
-    public partial class ServiceSensors : UserControl
+    public partial class ServiceSensors : ThemeAwareUserControl
     {
         private string _deviceName;
         private readonly List<ConfiguredSensor> _sensors = new();

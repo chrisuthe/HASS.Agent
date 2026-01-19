@@ -17,7 +17,7 @@ using static HASS.Agent.Shared.Functions.Inputs;
 
 namespace HASS.Agent.Forms.Commands
 {
-	public partial class CommandsMod : Form
+	public partial class CommandsMod : ThemeAwareForm
 	{
 		internal readonly ConfiguredCommand Command;
 

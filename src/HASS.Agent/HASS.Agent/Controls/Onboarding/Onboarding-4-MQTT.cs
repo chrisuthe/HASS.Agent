@@ -5,7 +5,7 @@ using Serilog;
 namespace HASS.Agent.Controls.Onboarding
 {
     // ReSharper disable once InconsistentNaming
-    public partial class OnboardingMqtt : UserControl
+    public partial class OnboardingMqtt : ThemeAwareUserControl
     {
         private bool _initializing = true;
 

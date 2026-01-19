@@ -3,7 +3,7 @@ using HASS.Agent.Functions;
 
 namespace HASS.Agent.Controls.Configuration
 {
-    public partial class ConfigLogging : UserControl
+    public partial class ConfigLogging : ThemeAwareUserControl
     {
         public ConfigLogging()
         {

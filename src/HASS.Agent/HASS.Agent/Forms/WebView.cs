@@ -10,7 +10,7 @@ using Microsoft.Web.WebView2.Core;
 
 namespace HASS.Agent.Forms
 {
-    public partial class WebView : Form
+    public partial class WebView : ThemeAwareForm
     {
         private readonly WebViewInfo _webViewInfo;
         private bool _forceClose = false;

@@ -8,7 +8,7 @@ using Serilog;
 
 namespace HASS.Agent.Controls.Configuration
 {
-    public partial class ConfigLocalApi : UserControl
+    public partial class ConfigLocalApi : ThemeAwareUserControl
     {
         public ConfigLocalApi()
         {

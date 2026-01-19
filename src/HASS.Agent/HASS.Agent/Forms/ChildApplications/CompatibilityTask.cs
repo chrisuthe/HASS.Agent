@@ -14,7 +14,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace HASS.Agent.Forms.ChildApplications
 {
-    public partial class CompatibilityTask : Form
+    public partial class CompatibilityTask : ThemeAwareForm
     {
         private ICompatibilityTask _comatibilityTask;
 

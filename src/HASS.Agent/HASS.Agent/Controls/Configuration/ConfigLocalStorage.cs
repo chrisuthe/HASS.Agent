@@ -6,7 +6,7 @@ using HASS.Agent.Resources.Localization;
 
 namespace HASS.Agent.Controls.Configuration
 {
-    public partial class ConfigLocalStorage : UserControl
+    public partial class ConfigLocalStorage : ThemeAwareUserControl
     {
         public ConfigLocalStorage()
         {

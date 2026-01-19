@@ -6,7 +6,7 @@ using Serilog;
 
 namespace HASS.Agent.Forms.Commands.CommandConfig
 {
-    public partial class WebViewCommandConfig : Form
+    public partial class WebViewCommandConfig : ThemeAwareForm
     {
         // dragging source: https://stackoverflow.com/a/19357125
         private bool _dragging;

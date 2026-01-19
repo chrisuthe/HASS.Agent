@@ -7,7 +7,7 @@ using HASS.Agent.Shared.Models.Config;
 
 namespace HASS.Agent.Forms.Commands
 {
-    public partial class CommandsConfig : Form
+    public partial class CommandsConfig : ThemeAwareForm
     {
         private List<ConfiguredCommand> _commands = new();
         private readonly List<ConfiguredCommand> _toBeDeletedCommands = new();

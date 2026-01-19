@@ -12,7 +12,7 @@ namespace HASS.Agent.Controls
     /// <summary>
     /// UI Control to let the user execute a QuickAction
     /// </summary>
-    public partial class QuickActionControl : UserControl
+    public partial class QuickActionControl : ThemeAwareUserControl
     {
         private readonly QuickAction _quickAction;
         private readonly QuickActions _quickActionsForm;

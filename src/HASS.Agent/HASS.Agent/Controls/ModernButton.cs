@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Drawing.Drawing2D;
+using HASS.Agent.Theme;
 
 namespace HASS.Agent.Controls
 {
@@ -9,11 +10,12 @@ namespace HASS.Agent.Controls
     public class ModernButton : Button
     {
         private int _borderRadius = 6;
-        private Color _hoverColor = Color.FromArgb(78, 78, 86);
-        private Color _pressedColor = Color.FromArgb(55, 55, 60);
-        private Color _focusBorderColor = Color.FromArgb(0, 122, 204);
+        private Color _hoverColor = Color.Empty;
+        private Color _pressedColor = Color.Empty;
+        private Color _focusBorderColor = Color.Empty;
         private bool _isHovered = false;
         private bool _isPressed = false;
+        private bool _useThemeColors = true;
 
         [Category("Appearance")]
         [Description("The radius of the button corners")]
@@ -33,10 +35,11 @@ namespace HASS.Agent.Controls
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Color HoverColor
         {
-            get => _hoverColor;
+            get => _hoverColor == Color.Empty ? ThemeManager.HoverColor : _hoverColor;
             set
             {
                 _hoverColor = value;
+                _useThemeColors = false;
                 Invalidate();
             }
         }
@@ -46,10 +49,11 @@ namespace HASS.Agent.Controls
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Color PressedColor
         {
-            get => _pressedColor;
+            get => _pressedColor == Color.Empty ? ThemeManager.PressedColor : _pressedColor;
             set
             {
                 _pressedColor = value;
+                _useThemeColors = false;
                 Invalidate();
             }
         }
@@ -59,10 +63,11 @@ namespace HASS.Agent.Controls
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Color FocusBorderColor
         {
-            get => _focusBorderColor;
+            get => _focusBorderColor == Color.Empty ? ThemeManager.FocusBorderColor : _focusBorderColor;
             set
             {
                 _focusBorderColor = value;
+                _useThemeColors = false;
                 Invalidate();
             }
         }
@@ -87,15 +92,15 @@ namespace HASS.Agent.Controls
             Color bgColor;
             if (!Enabled)
             {
-                bgColor = Color.FromArgb(50, 50, 53);
+                bgColor = ThemeManager.DisabledBackColor;
             }
             else if (_isPressed)
             {
-                bgColor = _pressedColor;
+                bgColor = PressedColor;
             }
             else if (_isHovered)
             {
-                bgColor = _hoverColor;
+                bgColor = HoverColor;
             }
             else
             {
@@ -114,7 +119,7 @@ namespace HASS.Agent.Controls
             }
 
             // Draw border
-            var borderColor = Focused ? _focusBorderColor : Color.FromArgb(100, 100, 100);
+            var borderColor = Focused ? FocusBorderColor : ThemeManager.BorderColor;
             var borderWidth = Focused ? 2f : 1f;
             using (var pen = new Pen(borderColor, borderWidth))
             {
@@ -137,7 +142,7 @@ namespace HASS.Agent.Controls
             }
 
             // Draw text
-            var textColor = Enabled ? ForeColor : Color.FromArgb(120, 120, 120);
+            var textColor = Enabled ? ForeColor : ThemeManager.DisabledForeColor;
             var textRect = GetTextRectangle();
             TextRenderer.DrawText(e.Graphics, Text, Font, textRect, textColor,
                 TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.WordBreak);

@@ -7,7 +7,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace HASS.Agent.Forms.ChildApplications
 {
-    public partial class Restart : Form
+    public partial class Restart : ThemeAwareForm
     {
         private const int MAX_WAIT_SECONDS = 20;
 

@@ -5,7 +5,7 @@ using HASS.Agent.Resources.Localization;
 
 namespace HASS.Agent.Controls.Configuration;
 
-public partial class ConfigNFC : UserControl
+public partial class ConfigNFC : ThemeAwareUserControl
 {
     public ConfigNFC()
     {

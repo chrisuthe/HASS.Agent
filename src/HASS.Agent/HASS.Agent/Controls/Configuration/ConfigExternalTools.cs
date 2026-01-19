@@ -5,7 +5,7 @@ using Serilog;
 
 namespace HASS.Agent.Controls.Configuration
 {
-    public partial class ConfigExternalTools : UserControl
+    public partial class ConfigExternalTools : ThemeAwareUserControl
     {
         public ConfigExternalTools()
         {

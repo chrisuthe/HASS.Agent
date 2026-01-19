@@ -13,7 +13,7 @@ using ConfigSatelliteService = HASS.Agent.Controls.Configuration.ConfigService;
 
 namespace HASS.Agent.Forms
 {
-    public partial class Configuration : Form
+    public partial class Configuration : ThemeAwareForm
     {
         private readonly HotkeySelector _hotkeySelector = new();
         private readonly Hotkey _previousHotkey = Variables.QuickActionsHotKey;

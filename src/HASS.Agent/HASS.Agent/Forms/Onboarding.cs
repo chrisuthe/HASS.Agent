@@ -4,7 +4,7 @@ using HASS.Agent.Resources.Localization;
 
 namespace HASS.Agent.Forms
 {
-    public partial class Onboarding : Form
+    public partial class Onboarding : ThemeAwareForm
     {
         private readonly OnboardingManager _onboardingManager;
         private bool _forceClose = false;

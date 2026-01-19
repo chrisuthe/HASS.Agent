@@ -5,7 +5,7 @@ using HASS.Agent.Shared.Functions;
 namespace HASS.Agent.Controls.Onboarding
 {
     // ReSharper disable once InconsistentNaming
-    public partial class OnboardingApi : UserControl
+    public partial class OnboardingApi : ThemeAwareUserControl
     {
         public OnboardingApi()
         {

@@ -9,7 +9,7 @@ using Serilog;
 
 namespace HASS.Agent.Forms.Sensors
 {
-    public partial class SensorsConfig : Form
+    public partial class SensorsConfig : ThemeAwareForm
     {
         private List<ConfiguredSensor> _sensors = new();
         private readonly List<ConfiguredSensor> _toBeDeletedSensors = new();

@@ -4,7 +4,7 @@ using HASS.Agent.Shared.Functions;
 
 namespace HASS.Agent.Controls.Configuration
 {
-    public partial class ConfigHomeAssistantApi : UserControl
+    public partial class ConfigHomeAssistantApi : ThemeAwareUserControl
     {
         public ConfigHomeAssistantApi()
         {

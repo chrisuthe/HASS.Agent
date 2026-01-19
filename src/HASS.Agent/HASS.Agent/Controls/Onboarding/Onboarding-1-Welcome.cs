@@ -10,7 +10,7 @@ using DialogResult = System.Windows.Forms.DialogResult;
 
 namespace HASS.Agent.Controls.Onboarding
 {
-    public partial class OnboardingWelcome : UserControl
+    public partial class OnboardingWelcome : ThemeAwareUserControl
     {
         private ComponentResourceManager _resourceManager;
         private readonly string _previousCulture = Variables.CurrentUICulture.Name;

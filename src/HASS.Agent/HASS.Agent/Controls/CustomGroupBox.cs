@@ -4,17 +4,24 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HASS.Agent.Theme;
 
 namespace HASS.Agent.Controls
 {
     public class CustomGroupBox : GroupBox
     {
+        private Color _borderColor = Color.Empty;
+
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public Color BorderColor { get; set; }
+        public Color BorderColor
+        {
+            get => _borderColor == Color.Empty ? ThemeManager.BorderColor : _borderColor;
+            set => _borderColor = value;
+        }
 
         public CustomGroupBox()
         {
-            BorderColor = Color.FromArgb(70, 70, 70);
+            // BorderColor defaults to ThemeManager.BorderColor via the property getter
         }
 
         protected override void OnPaint(PaintEventArgs e)
