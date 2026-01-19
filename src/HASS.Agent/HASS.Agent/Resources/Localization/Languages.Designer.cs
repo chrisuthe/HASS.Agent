@@ -4511,7 +4511,52 @@ namespace HASS.Agent.Resources.Localization {
                 return ResourceManager.GetString("MqttManager_ToolTip_Disconnected", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter a broker address.
+        /// </summary>
+        internal static string MqttManager_TestConnection_NoAddress {
+            get {
+                return ResourceManager.GetString("MqttManager_TestConnection_NoAddress", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Connection successful!.
+        /// </summary>
+        internal static string MqttManager_TestConnection_Success {
+            get {
+                return ResourceManager.GetString("MqttManager_TestConnection_Success", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Connection failed: {0}.
+        /// </summary>
+        internal static string MqttManager_TestConnection_Failed {
+            get {
+                return ResourceManager.GetString("MqttManager_TestConnection_Failed", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Connection timed out.
+        /// </summary>
+        internal static string MqttManager_TestConnection_Timeout {
+            get {
+                return ResourceManager.GetString("MqttManager_TestConnection_Timeout", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Connection error: {0}.
+        /// </summary>
+        internal static string MqttManager_TestConnection_Error {
+            get {
+                return ResourceManager.GetString("MqttManager_TestConnection_Error", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Dismiss.
         /// </summary>
@@ -5145,7 +5190,25 @@ namespace HASS.Agent.Resources.Localization {
                 return ResourceManager.GetString("OnboardingMqtt_LblUsername", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Test.
+        /// </summary>
+        internal static string OnboardingMqtt_BtnTest {
+            get {
+                return ResourceManager.GetString("OnboardingMqtt_BtnTest", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Testing....
+        /// </summary>
+        internal static string OnboardingMqtt_Testing {
+            get {
+                return ResourceManager.GetString("OnboardingMqtt_Testing", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Yes, accept notifications on port.
         /// </summary>

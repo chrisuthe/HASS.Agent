@@ -450,6 +450,9 @@ namespace HASS.Agent.MQTT
                     if (discoverable.IgnoreAvailability)
                         payload.Availability_topic = null;
 
+                    // Set domain for Default_entity_id (HA 2025.10+ compatibility)
+                    payload.Domain = domain;
+
                     messageBuilder.WithPayload(JsonConvert.SerializeObject(payload, payload.GetType(), JsonSerializerSettings));
                 }
                 await PublishAsync(messageBuilder.Build());
@@ -896,6 +899,111 @@ namespace HASS.Agent.MQTT
                 return;
 
             command.TurnOnWithAction(payload);
+        }
+
+        /// <summary>
+        /// Tests the MQTT connection with the provided parameters
+        /// </summary>
+        /// <param name="address">MQTT broker address</param>
+        /// <param name="port">MQTT broker port</param>
+        /// <param name="username">Username (optional)</param>
+        /// <param name="password">Password (optional)</param>
+        /// <param name="useTls">Use TLS encryption</param>
+        /// <param name="useWebSocket">Use WebSocket transport</param>
+        /// <param name="allowUntrustedCerts">Allow untrusted certificates</param>
+        /// <param name="timeoutSeconds">Connection timeout in seconds</param>
+        /// <returns>Tuple with success status and message</returns>
+        public static async Task<(bool Success, string Message)> TestConnectionAsync(
+            string address,
+            int port,
+            string username,
+            string password,
+            bool useTls,
+            bool useWebSocket,
+            bool allowUntrustedCerts,
+            int timeoutSeconds = 10)
+        {
+            if (string.IsNullOrWhiteSpace(address))
+                return (false, Languages.MqttManager_TestConnection_NoAddress);
+
+            IMqttClient testClient = null;
+            try
+            {
+                var clientOptionsBuilder = new MqttClientOptionsBuilder()
+                    .WithClientId($"hass-agent-test-{Guid.NewGuid().ToString()[..8]}")
+                    .WithCleanSession()
+                    .WithKeepAlivePeriod(TimeSpan.FromSeconds(15));
+
+                // Use WebSocket or TCP connection
+                if (useWebSocket)
+                {
+                    var protocol = useTls ? "wss" : "ws";
+                    var wsUri = $"{protocol}://{address}:{port}";
+                    clientOptionsBuilder.WithWebSocketServer(o => o.WithUri(wsUri));
+                }
+                else
+                {
+                    clientOptionsBuilder.WithTcpServer(address, port);
+                }
+
+                if (!string.IsNullOrEmpty(username))
+                    clientOptionsBuilder.WithCredentials(username, password);
+
+                var clientTlsOptions = new MqttClientTlsOptions
+                {
+                    UseTls = useTls,
+                    AllowUntrustedCertificates = allowUntrustedCerts,
+                    SslProtocol = useTls ? SslProtocols.Tls12 : SslProtocols.None,
+                };
+
+                if (allowUntrustedCerts)
+                {
+                    clientTlsOptions.IgnoreCertificateChainErrors = true;
+                    clientTlsOptions.IgnoreCertificateRevocationErrors = true;
+                    clientTlsOptions.CertificateValidationHandler = _ => true;
+                }
+
+                clientOptionsBuilder.WithTlsOptions(clientTlsOptions);
+                var options = clientOptionsBuilder.Build();
+
+                testClient = new MqttFactory().CreateMqttClient();
+
+                using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(timeoutSeconds));
+                var result = await testClient.ConnectAsync(options, cts.Token);
+
+                if (result.ResultCode == MqttClientConnectResultCode.Success)
+                {
+                    await testClient.DisconnectAsync();
+                    return (true, Languages.MqttManager_TestConnection_Success);
+                }
+
+                return (false, string.Format(Languages.MqttManager_TestConnection_Failed, result.ResultCode));
+            }
+            catch (OperationCanceledException)
+            {
+                return (false, Languages.MqttManager_TestConnection_Timeout);
+            }
+            catch (MqttConnectingFailedException ex)
+            {
+                return (false, string.Format(Languages.MqttManager_TestConnection_Failed, ex.ResultCode));
+            }
+            catch (MqttCommunicationException ex)
+            {
+                return (false, string.Format(Languages.MqttManager_TestConnection_Error, ex.Message));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "[MQTT] Test connection error: {err}", ex.Message);
+                return (false, string.Format(Languages.MqttManager_TestConnection_Error, ex.Message));
+            }
+            finally
+            {
+                if (testClient?.IsConnected == true)
+                {
+                    try { await testClient.DisconnectAsync(); } catch { /* ignore */ }
+                }
+                testClient?.Dispose();
+            }
         }
     }
 }

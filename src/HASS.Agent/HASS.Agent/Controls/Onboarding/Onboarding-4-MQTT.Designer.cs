@@ -48,6 +48,7 @@ namespace HASS.Agent.Controls.Onboarding
             this.NumMqttPort = new System.Windows.Forms.NumericUpDown();
             this.PbShow = new System.Windows.Forms.PictureBox();
             this.CbEnableMqtt = new System.Windows.Forms.CheckBox();
+            this.BtnTestConnection = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PbHassAgentLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumMqttPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbShow)).BeginInit();
@@ -282,9 +283,9 @@ namespace HASS.Agent.Controls.Onboarding
             this.PbShow.TabIndex = 100;
             this.PbShow.TabStop = false;
             this.PbShow.Click += new System.EventHandler(this.PbShow_Click);
-            // 
+            //
             // CbEnableMqtt
-            // 
+            //
             this.CbEnableMqtt.AccessibleDescription = "Enable using the MQTT module.";
             this.CbEnableMqtt.AccessibleName = "Enable MQTT";
             this.CbEnableMqtt.AccessibleRole = System.Windows.Forms.AccessibleRole.CheckButton;
@@ -298,7 +299,23 @@ namespace HASS.Agent.Controls.Onboarding
             this.CbEnableMqtt.TabIndex = 102;
             this.CbEnableMqtt.Text = Languages.OnboardingMqtt_CbEnableMqtt;
             this.CbEnableMqtt.UseVisualStyleBackColor = true;
-            // 
+            //
+            // BtnTestConnection
+            //
+            this.BtnTestConnection.AccessibleDescription = "Tests the MQTT connection with the current settings.";
+            this.BtnTestConnection.AccessibleName = "Test Connection";
+            this.BtnTestConnection.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BtnTestConnection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnTestConnection.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnTestConnection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.BtnTestConnection.Location = new System.Drawing.Point(569, 285);
+            this.BtnTestConnection.Name = "BtnTestConnection";
+            this.BtnTestConnection.Size = new System.Drawing.Size(75, 25);
+            this.BtnTestConnection.TabIndex = 103;
+            this.BtnTestConnection.Text = Languages.OnboardingMqtt_BtnTest;
+            this.BtnTestConnection.UseVisualStyleBackColor = false;
+            this.BtnTestConnection.Click += new System.EventHandler(this.BtnTestConnection_Click);
+            //
             // OnboardingMqtt
             // 
             this.AccessibleDescription = "Panel containing the onboarding MQTT configuration.";
@@ -307,6 +324,7 @@ namespace HASS.Agent.Controls.Onboarding
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.Controls.Add(this.BtnTestConnection);
             this.Controls.Add(this.CbEnableMqtt);
             this.Controls.Add(this.PbShow);
             this.Controls.Add(this.NumMqttPort);
@@ -355,5 +373,6 @@ namespace HASS.Agent.Controls.Onboarding
         internal System.Windows.Forms.NumericUpDown NumMqttPort;
         private PictureBox PbShow;
         internal CheckBox CbEnableMqtt;
+        private Button BtnTestConnection;
     }
 }

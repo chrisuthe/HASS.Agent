@@ -1127,6 +1127,27 @@ The release page will now open instead.</value>
   <data name="MqttManager_ToolTip_Disconnected" xml:space="preserve">
     <value>MQTT: Disconnected</value>
   </data>
+  <data name="MqttManager_TestConnection_NoAddress" xml:space="preserve">
+    <value>Please enter a broker address</value>
+  </data>
+  <data name="MqttManager_TestConnection_Success" xml:space="preserve">
+    <value>Connection successful!</value>
+  </data>
+  <data name="MqttManager_TestConnection_Failed" xml:space="preserve">
+    <value>Connection failed: {0}</value>
+  </data>
+  <data name="MqttManager_TestConnection_Timeout" xml:space="preserve">
+    <value>Connection timed out</value>
+  </data>
+  <data name="MqttManager_TestConnection_Error" xml:space="preserve">
+    <value>Connection error: {0}</value>
+  </data>
+  <data name="OnboardingMqtt_BtnTest" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="OnboardingMqtt_Testing" xml:space="preserve">
+    <value>Testing...</value>
+  </data>
   <data name="LocalApiManager_Initialize_MessageBox1" xml:space="preserve">
     <value>Error trying to bind the API to port {0}.
 

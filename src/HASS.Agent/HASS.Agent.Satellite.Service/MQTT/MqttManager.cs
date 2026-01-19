@@ -402,6 +402,9 @@ namespace HASS.Agent.Satellite.Service.MQTT
                     if (discoverable.IgnoreAvailability)
                         payload.Availability_topic = null;
 
+                    // Set domain for Default_entity_id (HA 2025.10+ compatibility)
+                    payload.Domain = domain;
+
                     messageBuilder.WithPayload(JsonSerializer.Serialize(payload, payload.GetType(), options));
                 }
                 await PublishAsync(messageBuilder.Build());

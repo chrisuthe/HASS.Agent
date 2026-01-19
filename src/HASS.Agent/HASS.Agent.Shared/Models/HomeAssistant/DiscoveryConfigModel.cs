@@ -31,6 +31,12 @@ namespace HASS.Agent.Shared.Models.HomeAssistant
         public string EntityName { get; set; }
 
         /// <summary>
+        /// The domain of this entity (e.g., sensor, switch, binary_sensor). Set before serialization.
+        /// </summary>
+        [JsonIgnore]
+        public string Domain { get; set; }
+
+        /// <summary>
         /// (Optional) The friendly name of the MQTT entity. Defaults to its name.
         /// </summary>
         /// <value></value>
@@ -135,6 +141,13 @@ namespace HASS.Agent.Shared.Models.HomeAssistant
             }
             set { _objectId = value; }
         }
+
+        /// <summary>
+        /// (Optional) The default entity ID that Home Assistant will use for this entity.
+        /// Format: {domain}.{object_id} (e.g., sensor.mypc_cpu_load)
+        /// Added for HA 2025.10+ compatibility (object_id deprecated, removed in HA 2026.4).
+        /// </summary>
+        public string Default_entity_id => !string.IsNullOrEmpty(Domain) ? $"{Domain}.{Object_id}" : null;
 
         /// <summary>
         /// (Optional) Defines the units of measurement of the sensor, if any.
@@ -261,6 +274,13 @@ namespace HASS.Agent.Shared.Models.HomeAssistant
             }
             set { _objectId = value; }
         }
+
+        /// <summary>
+        /// (Optional) The default entity ID that Home Assistant will use for this entity.
+        /// Format: {domain}.{object_id} (e.g., switch.mypc_shutdown)
+        /// Added for HA 2025.10+ compatibility (object_id deprecated, removed in HA 2026.4).
+        /// </summary>
+        public string Default_entity_id => !string.IsNullOrEmpty(Domain) ? $"{Domain}.{Object_id}" : null;
 
         /// <summary>
         /// (Optional) Defines a template to extract the value.

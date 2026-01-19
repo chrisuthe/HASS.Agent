@@ -1,4 +1,6 @@
-﻿using Serilog;
+﻿using HASS.Agent.MQTT;
+using HASS.Agent.Resources.Localization;
+using Serilog;
 
 namespace HASS.Agent.Controls.Onboarding
 {
@@ -65,5 +67,39 @@ namespace HASS.Agent.Controls.Onboarding
         }
 
         private void PbShow_Click(object sender, EventArgs e) => TbMqttPassword.UseSystemPasswordChar = !TbMqttPassword.UseSystemPasswordChar;
+
+        private async void BtnTestConnection_Click(object sender, EventArgs e)
+        {
+            BtnTestConnection.Enabled = false;
+            var originalText = BtnTestConnection.Text;
+            BtnTestConnection.Text = Languages.OnboardingMqtt_Testing;
+
+            try
+            {
+                var (success, message) = await MqttManager.TestConnectionAsync(
+                    TbMqttAddress.Text,
+                    (int)NumMqttPort.Value,
+                    TbMqttUsername.Text,
+                    TbMqttPassword.Text,
+                    CbMqttTls.Checked,
+                    false, // WebSocket not exposed in basic onboarding
+                    true   // Allow untrusted certs by default for testing
+                );
+
+                var icon = success ? MessageBoxIcon.Information : MessageBoxIcon.Warning;
+                MessageBox.Show(this, message, Variables.MessageBoxTitle, MessageBoxButtons.OK, icon);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "[ONBOARDING-MQTT] Test connection error: {err}", ex.Message);
+                MessageBox.Show(this, string.Format(Languages.MqttManager_TestConnection_Error, ex.Message),
+                    Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                BtnTestConnection.Text = originalText;
+                BtnTestConnection.Enabled = true;
+            }
+        }
     }
 }
