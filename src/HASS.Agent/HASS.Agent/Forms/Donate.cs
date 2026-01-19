@@ -1,10 +1,9 @@
-﻿using Syncfusion.Windows.Forms;
-using HASS.Agent.Functions;
+﻿using HASS.Agent.Functions;
 using HASS.Agent.Settings;
 
 namespace HASS.Agent.Forms
 {
-    public partial class Donate : MetroForm
+    public partial class Donate : Form
     {
         public Donate()
         {

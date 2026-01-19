@@ -33,7 +33,7 @@ namespace HASS.Agent.Controls.Configuration
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigMediaPlayer));
             this.LblInfo2 = new System.Windows.Forms.Label();
             this.LblInfo1 = new System.Windows.Forms.Label();
-            this.BtnMediaPlayerReadme = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnMediaPlayerReadme = new System.Windows.Forms.Button();
             this.CbEnableMediaPlayer = new System.Windows.Forms.CheckBox();
             this.LblConnectivityDisabled = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -63,23 +63,17 @@ namespace HASS.Agent.Controls.Configuration
             this.LblInfo1.Text = Languages.ConfigMediaPlayer_LblInfo1;
             // 
             // BtnMediaPlayerReadme
-            // 
+            //
             this.BtnMediaPlayerReadme.AccessibleDescription = "Launches the media player documentation webpage.";
             this.BtnMediaPlayerReadme.AccessibleName = "Open documentation";
             this.BtnMediaPlayerReadme.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnMediaPlayerReadme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnMediaPlayerReadme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMediaPlayerReadme.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnMediaPlayerReadme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnMediaPlayerReadme.Location = new System.Drawing.Point(452, 497);
             this.BtnMediaPlayerReadme.Name = "BtnMediaPlayerReadme";
             this.BtnMediaPlayerReadme.Size = new System.Drawing.Size(228, 31);
-            this.BtnMediaPlayerReadme.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnMediaPlayerReadme.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnMediaPlayerReadme.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnMediaPlayerReadme.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnMediaPlayerReadme.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnMediaPlayerReadme.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnMediaPlayerReadme.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnMediaPlayerReadme.TabIndex = 1;
             this.BtnMediaPlayerReadme.Text = Languages.ConfigMediaPlayer_BtnMediaPlayerReadme;
             this.BtnMediaPlayerReadme.UseVisualStyleBackColor = false;
@@ -141,7 +135,7 @@ namespace HASS.Agent.Controls.Configuration
 
         private System.Windows.Forms.Label LblInfo2;
         private System.Windows.Forms.Label LblInfo1;
-        internal Syncfusion.WinForms.Controls.SfButton BtnMediaPlayerReadme;
+        internal System.Windows.Forms.Button BtnMediaPlayerReadme;
         internal System.Windows.Forms.CheckBox CbEnableMediaPlayer;
         private Label LblConnectivityDisabled;
     }

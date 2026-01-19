@@ -43,9 +43,6 @@ namespace HASS.Agent
 
             try
             {
-
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Variables.SyncfusionLicense);
-
                 LoggingManager.PrepareLogging(args);
 
                 Variables.ExtendedLogging = SettingsManager.GetExtendedLoggingSetting();
@@ -89,8 +86,6 @@ namespace HASS.Agent
                 Application.SetDefaultFont(Variables.DefaultFont);
 
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-
-                HelperFunctions.SetMsgBoxStyle(Variables.DefaultFont);
 
                 if (LaunchedAsChildApplication(args))
                     return;

@@ -469,21 +469,8 @@ namespace HASS.Agent.Sensors
             SensorInfoCards.Add(sensorInfoCard.SensorType, sensorInfoCard);
 
             // =================================
-
-            sensorInfoCard = new SensorInfoCard(SensorType.GpuLoadSensor,
-                Languages.SensorsManager_GpuLoadSensorDescription,
-                30, false, true, true);
-
-            SensorInfoCards.Add(sensorInfoCard.SensorType, sensorInfoCard);
-
-            // =================================
-
-            sensorInfoCard = new SensorInfoCard(SensorType.GpuTemperatureSensor,
-                Languages.SensorsManager_GpuTemperatureSensorDescription,
-                30, false, true, true);
-
-            SensorInfoCards.Add(sensorInfoCard.SensorType, sensorInfoCard);
-
+            // GPU sensors removed due to WinRing0 vulnerability (CVE-2020-14979)
+            // GpuLoadSensor and GpuTemperatureSensor are no longer available
             // =================================
 
             sensorInfoCard = new SensorInfoCard(SensorType.LastActiveSensor,

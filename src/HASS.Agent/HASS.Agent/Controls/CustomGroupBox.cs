@@ -14,7 +14,7 @@ namespace HASS.Agent.Controls
 
         public CustomGroupBox()
         {
-            BorderColor = Color.FromArgb(204, 204, 204);
+            BorderColor = Color.FromArgb(70, 70, 70);
         }
 
         protected override void OnPaint(PaintEventArgs e)

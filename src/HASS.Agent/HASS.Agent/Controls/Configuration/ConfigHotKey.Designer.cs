@@ -30,7 +30,7 @@ namespace HASS.Agent.Controls.Configuration
         /// </summary>
         private void InitializeComponent()
         {
-            BtnClearHotKey = new Syncfusion.WinForms.Controls.SfButton();
+            BtnClearHotKey = new System.Windows.Forms.Button();
             LblInfo1 = new Label();
             TbQuickActionsHotkey = new TextBox();
             CbEnableQuickActionsHotkey = new CheckBox();
@@ -38,23 +38,17 @@ namespace HASS.Agent.Controls.Configuration
             SuspendLayout();
             // 
             // BtnClearHotKey
-            // 
+            //
             BtnClearHotKey.AccessibleDescription = "Clears the hotkey combination.";
             BtnClearHotKey.AccessibleName = "Clear hotkey";
             BtnClearHotKey.AccessibleRole = AccessibleRole.PushButton;
             BtnClearHotKey.BackColor = Color.FromArgb(63, 63, 70);
+            BtnClearHotKey.FlatStyle = FlatStyle.Flat;
             BtnClearHotKey.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             BtnClearHotKey.ForeColor = Color.FromArgb(241, 241, 241);
             BtnClearHotKey.Location = new Point(438, 279);
             BtnClearHotKey.Name = "BtnClearHotKey";
             BtnClearHotKey.Size = new Size(102, 25);
-            BtnClearHotKey.Style.BackColor = Color.FromArgb(63, 63, 70);
-            BtnClearHotKey.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-            BtnClearHotKey.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-            BtnClearHotKey.Style.ForeColor = Color.FromArgb(241, 241, 241);
-            BtnClearHotKey.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-            BtnClearHotKey.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-            BtnClearHotKey.Style.PressedForeColor = Color.Black;
             BtnClearHotKey.TabIndex = 2;
             BtnClearHotKey.Text = Languages.ConfigHotKey_BtnClearHotKey;
             BtnClearHotKey.UseVisualStyleBackColor = false;
@@ -136,7 +130,7 @@ namespace HASS.Agent.Controls.Configuration
         #endregion
         private System.Windows.Forms.Label LblInfo1;
         private System.Windows.Forms.Label LblHotkeyCombo;
-        internal Syncfusion.WinForms.Controls.SfButton BtnClearHotKey;
+        internal System.Windows.Forms.Button BtnClearHotKey;
         internal System.Windows.Forms.TextBox TbQuickActionsHotkey;
         internal System.Windows.Forms.CheckBox CbEnableQuickActionsHotkey;
     }

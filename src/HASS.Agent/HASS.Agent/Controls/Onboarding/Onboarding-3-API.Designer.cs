@@ -37,7 +37,7 @@ namespace HASS.Agent.Controls.Onboarding
             LblApiToken = new Label();
             LblServerUri = new Label();
             LblInfo1 = new Label();
-            BtnTest = new Syncfusion.WinForms.Controls.SfButton();
+            BtnTest = new System.Windows.Forms.Button();
             LblTip1 = new Label();
             ((System.ComponentModel.ISupportInitialize)PbHassAgentLogo).BeginInit();
             SuspendLayout();
@@ -134,13 +134,6 @@ namespace HASS.Agent.Controls.Onboarding
             BtnTest.Location = new Point(392, 362);
             BtnTest.Name = "BtnTest";
             BtnTest.Size = new Size(180, 23);
-            BtnTest.Style.BackColor = Color.FromArgb(63, 63, 70);
-            BtnTest.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-            BtnTest.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-            BtnTest.Style.ForeColor = Color.FromArgb(241, 241, 241);
-            BtnTest.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-            BtnTest.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-            BtnTest.Style.PressedForeColor = Color.Black;
             BtnTest.TabIndex = 2;
             BtnTest.Text = Languages.OnboardingApi_BtnTest;
             BtnTest.UseVisualStyleBackColor = false;
@@ -192,7 +185,7 @@ namespace HASS.Agent.Controls.Onboarding
         private System.Windows.Forms.Label LblApiToken;
         private System.Windows.Forms.Label LblServerUri;
         private System.Windows.Forms.Label LblInfo1;
-        private Syncfusion.WinForms.Controls.SfButton BtnTest;
+        private System.Windows.Forms.Button BtnTest;
         private System.Windows.Forms.Label LblTip1;
     }
 }

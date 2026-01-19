@@ -1,7 +1,6 @@
 ﻿using HASS.Agent.HomeAssistant;
 using HASS.Agent.Resources.Localization;
 using HASS.Agent.Shared.Functions;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Controls.Configuration
 {
@@ -33,21 +32,21 @@ namespace HASS.Agent.Controls.Configuration
 
             if (string.IsNullOrEmpty(apiKey))
             {
-                MessageBoxAdv.Show(this, Languages.ConfigHomeAssistantApi_BtnTestApi_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, Languages.ConfigHomeAssistantApi_BtnTestApi_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 ActiveControl = TbHassApiToken;
                 return;
             }
 
             if (string.IsNullOrEmpty(hassUri))
             {
-                MessageBoxAdv.Show(this, Languages.ConfigHomeAssistantApi_BtnTestApi_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, Languages.ConfigHomeAssistantApi_BtnTestApi_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 ActiveControl = TbHassIp;
                 return;
             }
 
             if (!SharedHelperFunctions.CheckHomeAssistantApiToken(apiKey))
             {
-                var q = MessageBoxAdv.Show(this, Languages.ConfigHomeAssistantApi_BtnTestApi_MessageBox5, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                var q = MessageBox.Show(this, Languages.ConfigHomeAssistantApi_BtnTestApi_MessageBox5, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (q != DialogResult.Yes)
                 {
                     ActiveControl = TbHassApiToken;
@@ -57,7 +56,7 @@ namespace HASS.Agent.Controls.Configuration
 
             if (!SharedHelperFunctions.CheckHomeAssistantUri(hassUri))
             {
-                var q = MessageBoxAdv.Show(this, Languages.ConfigHomeAssistantApi_BtnTestApi_MessageBox6, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                var q = MessageBox.Show(this, Languages.ConfigHomeAssistantApi_BtnTestApi_MessageBox6, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (q != DialogResult.Yes)
                 {
                     ActiveControl = TbHassIp;
@@ -80,8 +79,8 @@ namespace HASS.Agent.Controls.Configuration
 
             // perform test
             var (success, message) = await HassApiManager.CheckHassConfigAsync(hassUri, apiKey, useAutoCert, allowUnsafeCert, clientCert);
-            if (!success) MessageBoxAdv.Show(this, string.Format(Languages.ConfigHomeAssistantApi_BtnTestApi_MessageBox3, message), Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else MessageBoxAdv.Show(this, string.Format(Languages.ConfigHomeAssistantApi_BtnTestApi_MessageBox4, message), Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (!success) MessageBox.Show(this, string.Format(Languages.ConfigHomeAssistantApi_BtnTestApi_MessageBox3, message), Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show(this, string.Format(Languages.ConfigHomeAssistantApi_BtnTestApi_MessageBox4, message), Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // unlock gui
             TbHassIp.Enabled = true;

@@ -33,7 +33,7 @@ namespace HASS.Agent.Forms.Commands
 		{
 			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CommandsMod));
-			BtnStore = new Syncfusion.WinForms.Controls.SfButton();
+			BtnStore = new System.Windows.Forms.Button();
 			TbSetting = new TextBox();
 			TbName = new TextBox();
 			LblSetting = new Label();
@@ -65,7 +65,7 @@ namespace HASS.Agent.Forms.Commands
 			LblMqttTopic = new Label();
 			LblActionInfo = new Label();
 			PbActionInfo = new PictureBox();
-			BtnConfigureCommand = new Syncfusion.WinForms.Controls.SfButton();
+			BtnConfigureCommand = new System.Windows.Forms.Button();
 			TbKeyCode = new TextBox();
 			LblOptional1 = new Label();
 			LblFriendlyName = new Label();
@@ -89,13 +89,6 @@ namespace HASS.Agent.Forms.Commands
 			BtnStore.Location = new Point(0, 450);
 			BtnStore.Name = "BtnStore";
 			BtnStore.Size = new Size(1318, 38);
-			BtnStore.Style.BackColor = Color.FromArgb(63, 63, 70);
-			BtnStore.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-			BtnStore.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-			BtnStore.Style.ForeColor = Color.FromArgb(241, 241, 241);
-			BtnStore.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-			BtnStore.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-			BtnStore.Style.PressedForeColor = Color.Black;
 			BtnStore.TabIndex = 7;
 			BtnStore.Text = Languages.CommandsMod_BtnStore;
 			BtnStore.UseVisualStyleBackColor = false;
@@ -509,13 +502,6 @@ namespace HASS.Agent.Forms.Commands
 			BtnConfigureCommand.Location = new Point(566, 380);
 			BtnConfigureCommand.Name = "BtnConfigureCommand";
 			BtnConfigureCommand.Size = new Size(328, 34);
-			BtnConfigureCommand.Style.BackColor = Color.FromArgb(63, 63, 70);
-			BtnConfigureCommand.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-			BtnConfigureCommand.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-			BtnConfigureCommand.Style.ForeColor = Color.FromArgb(241, 241, 241);
-			BtnConfigureCommand.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-			BtnConfigureCommand.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-			BtnConfigureCommand.Style.PressedForeColor = Color.Black;
 			BtnConfigureCommand.TabIndex = 6;
 			BtnConfigureCommand.Text = Languages.CommandsMod_BtnConfigureCommand;
 			BtnConfigureCommand.UseVisualStyleBackColor = false;
@@ -606,9 +592,6 @@ namespace HASS.Agent.Forms.Commands
 			AutoScaleDimensions = new SizeF(96F, 96F);
 			AutoScaleMode = AutoScaleMode.Dpi;
 			BackColor = Color.FromArgb(45, 45, 48);
-			CaptionBarColor = Color.FromArgb(63, 63, 70);
-			CaptionFont = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-			CaptionForeColor = Color.FromArgb(241, 241, 241);
 			ClientSize = new Size(1318, 488);
 			Controls.Add(CbConfigDropdown);
 			Controls.Add(LblOptional1);
@@ -645,10 +628,7 @@ namespace HASS.Agent.Forms.Commands
 			FormBorderStyle = FormBorderStyle.FixedSingle;
 			Icon = (Icon)resources.GetObject("$this.Icon");
 			MaximizeBox = false;
-			MetroColor = Color.FromArgb(63, 63, 70);
 			Name = "CommandsMod";
-			ShowMaximizeBox = false;
-			ShowMinimizeBox = false;
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Command";
 			Load += CommandsMod_Load;
@@ -665,7 +645,7 @@ namespace HASS.Agent.Forms.Commands
 
 		#endregion
 
-		private Syncfusion.WinForms.Controls.SfButton BtnStore;
+		private System.Windows.Forms.Button BtnStore;
 		private System.Windows.Forms.Label LblSetting;
 		private System.Windows.Forms.Label LblName;
 		private System.Windows.Forms.TextBox TbName;
@@ -697,7 +677,7 @@ namespace HASS.Agent.Forms.Commands
 		private Label LblActionInfo;
 		private PictureBox PbActionInfo;
 		private ColumnHeader ClmSensorId;
-		private Syncfusion.WinForms.Controls.SfButton BtnConfigureCommand;
+		private System.Windows.Forms.Button BtnConfigureCommand;
 		private TextBox TbKeyCode;
 		private Label LblOptional1;
 		private Label LblFriendlyName;

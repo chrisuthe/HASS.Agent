@@ -33,7 +33,7 @@ namespace HASS.Agent.Controls.Configuration
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigLogging));
             this.LblInfo1 = new System.Windows.Forms.Label();
             this.CbExtendedLogging = new System.Windows.Forms.CheckBox();
-            this.BtnShowLogs = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnShowLogs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LblInfo1
@@ -63,23 +63,17 @@ namespace HASS.Agent.Controls.Configuration
             this.CbExtendedLogging.UseVisualStyleBackColor = true;
             // 
             // BtnShowLogs
-            // 
+            //
             this.BtnShowLogs.AccessibleDescription = "Open the logs storage path in Explorer.";
             this.BtnShowLogs.AccessibleName = "Open logs";
             this.BtnShowLogs.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnShowLogs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnShowLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShowLogs.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnShowLogs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnShowLogs.Location = new System.Drawing.Point(70, 461);
             this.BtnShowLogs.Name = "BtnShowLogs";
             this.BtnShowLogs.Size = new System.Drawing.Size(601, 31);
-            this.BtnShowLogs.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnShowLogs.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnShowLogs.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnShowLogs.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnShowLogs.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnShowLogs.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnShowLogs.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnShowLogs.TabIndex = 1;
             this.BtnShowLogs.Text = global::HASS.Agent.Resources.Localization.Languages.ConfigLogging_BtnShowLogs;
             this.BtnShowLogs.UseVisualStyleBackColor = false;
@@ -108,6 +102,6 @@ namespace HASS.Agent.Controls.Configuration
         #endregion
         private System.Windows.Forms.Label LblInfo1;
         internal System.Windows.Forms.CheckBox CbExtendedLogging;
-        internal Syncfusion.WinForms.Controls.SfButton BtnShowLogs;
+        internal System.Windows.Forms.Button BtnShowLogs;
     }
 }

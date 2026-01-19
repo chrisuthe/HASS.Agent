@@ -31,7 +31,7 @@ namespace HASS.Agent.Controls.Onboarding
         private void InitializeComponent()
         {
             this.PbHassAgentLogo = new System.Windows.Forms.PictureBox();
-            this.BtnSetLaunchOnLogin = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnSetLaunchOnLogin = new System.Windows.Forms.Button();
             this.LblInfo1 = new System.Windows.Forms.Label();
             this.LblCreateInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PbHassAgentLogo)).BeginInit();
@@ -63,13 +63,6 @@ namespace HASS.Agent.Controls.Onboarding
             this.BtnSetLaunchOnLogin.Location = new System.Drawing.Point(180, 277);
             this.BtnSetLaunchOnLogin.Name = "BtnSetLaunchOnLogin";
             this.BtnSetLaunchOnLogin.Size = new System.Drawing.Size(402, 31);
-            this.BtnSetLaunchOnLogin.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnSetLaunchOnLogin.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnSetLaunchOnLogin.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnSetLaunchOnLogin.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnSetLaunchOnLogin.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnSetLaunchOnLogin.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnSetLaunchOnLogin.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnSetLaunchOnLogin.TabIndex = 0;
             this.BtnSetLaunchOnLogin.Text = global::HASS.Agent.Resources.Localization.Languages.OnboardingStartup_BtnSetLaunchOnLogin;
             this.BtnSetLaunchOnLogin.UseVisualStyleBackColor = false;
@@ -124,7 +117,7 @@ namespace HASS.Agent.Controls.Onboarding
 
         #endregion
         private System.Windows.Forms.PictureBox PbHassAgentLogo;
-        private Syncfusion.WinForms.Controls.SfButton BtnSetLaunchOnLogin;
+        private System.Windows.Forms.Button BtnSetLaunchOnLogin;
         private System.Windows.Forms.Label LblInfo1;
         private System.Windows.Forms.Label LblCreateInfo;
     }

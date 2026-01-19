@@ -46,7 +46,7 @@ namespace HASS.Agent.Controls.Configuration
             this.LblCustomExecutorName = new System.Windows.Forms.Label();
             this.LblTip1 = new System.Windows.Forms.Label();
             this.LblTip2 = new System.Windows.Forms.Label();
-            this.BtnExternalBrowserIncognitoTest = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnExternalBrowserIncognitoTest = new System.Windows.Forms.Button();
             this.PbLine1 = new System.Windows.Forms.PictureBox();
             this.PbLine2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PbLine1)).BeginInit();
@@ -255,24 +255,17 @@ namespace HASS.Agent.Controls.Configuration
             this.LblTip2.Text = Languages.ConfigExternalTools_LblTip1;
             // 
             // BtnExternalBrowserIncognitoTest
-            // 
+            //
             this.BtnExternalBrowserIncognitoTest.AccessibleDescription = "Tests the provided custom browser incognito arguments.";
             this.BtnExternalBrowserIncognitoTest.AccessibleName = "Custom browser test";
             this.BtnExternalBrowserIncognitoTest.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnExternalBrowserIncognitoTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnExternalBrowserIncognitoTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExternalBrowserIncognitoTest.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnExternalBrowserIncognitoTest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnExternalBrowserIncognitoTest.Location = new System.Drawing.Point(437, 301);
             this.BtnExternalBrowserIncognitoTest.Name = "BtnExternalBrowserIncognitoTest";
             this.BtnExternalBrowserIncognitoTest.Size = new System.Drawing.Size(138, 25);
-            this.BtnExternalBrowserIncognitoTest.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnExternalBrowserIncognitoTest.Style.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnExternalBrowserIncognitoTest.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnExternalBrowserIncognitoTest.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnExternalBrowserIncognitoTest.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnExternalBrowserIncognitoTest.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnExternalBrowserIncognitoTest.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnExternalBrowserIncognitoTest.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnExternalBrowserIncognitoTest.TabIndex = 3;
             this.BtnExternalBrowserIncognitoTest.Text = global::HASS.Agent.Resources.Localization.Languages.ConfigExternalTools_BtnExternalBrowserIncognitoTest;
             this.BtnExternalBrowserIncognitoTest.UseVisualStyleBackColor = false;
@@ -357,7 +350,7 @@ namespace HASS.Agent.Controls.Configuration
         private System.Windows.Forms.Label LblCustomExecutorName;
         private System.Windows.Forms.Label LblTip1;
         private System.Windows.Forms.Label LblTip2;
-        internal Syncfusion.WinForms.Controls.SfButton BtnExternalBrowserIncognitoTest;
+        internal System.Windows.Forms.Button BtnExternalBrowserIncognitoTest;
         private PictureBox PbLine1;
         private PictureBox PbLine2;
     }

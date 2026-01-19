@@ -40,13 +40,13 @@ namespace HASS.Agent.Controls.Service
             this.LblCustomExecBinary = new System.Windows.Forms.Label();
             this.TbExternalExecutorName = new System.Windows.Forms.TextBox();
             this.LblCustomExecName = new System.Windows.Forms.Label();
-            this.NumDisconnectGrace = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+            this.NumDisconnectGrace = new System.Windows.Forms.NumericUpDown();
             this.LblSeconds = new System.Windows.Forms.Label();
             this.LblDisconGrace = new System.Windows.Forms.Label();
-            this.BtnStoreAuthId = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnStoreDeviceName = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnStoreDisconGrace = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnStoreCustomExecutor = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnStoreAuthId = new System.Windows.Forms.Button();
+            this.BtnStoreDeviceName = new System.Windows.Forms.Button();
+            this.BtnStoreDisconGrace = new System.Windows.Forms.Button();
+            this.BtnStoreCustomExecutor = new System.Windows.Forms.Button();
             this.LblVersionInfo = new System.Windows.Forms.Label();
             this.LblVersion = new System.Windows.Forms.Label();
             this.LblTip2 = new System.Windows.Forms.Label();
@@ -198,17 +198,14 @@ namespace HASS.Agent.Controls.Service
             this.LblCustomExecName.TabIndex = 71;
             this.LblCustomExecName.Text = Languages.ServiceGeneral_LblCustomExecName;
             this.LblCustomExecName.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
+            //
             // NumDisconnectGrace
-            // 
+            //
             this.NumDisconnectGrace.AccessibleDescription = "The amount of seconds the service waits before logging a disconnect. Only accepts" +
     " numeric values.";
             this.NumDisconnectGrace.AccessibleName = "Disconnected grace period";
             this.NumDisconnectGrace.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumDisconnectGrace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumDisconnectGrace.BeforeTouchSize = new System.Drawing.Size(92, 25);
-            this.NumDisconnectGrace.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumDisconnectGrace.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumDisconnectGrace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumDisconnectGrace.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumDisconnectGrace.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -218,18 +215,14 @@ namespace HASS.Agent.Controls.Service
             0,
             0,
             0});
-            this.NumDisconnectGrace.MaxLength = 10;
-            this.NumDisconnectGrace.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumDisconnectGrace.Name = "NumDisconnectGrace";
             this.NumDisconnectGrace.Size = new System.Drawing.Size(92, 25);
             this.NumDisconnectGrace.TabIndex = 4;
-            this.NumDisconnectGrace.ThemeName = "Metro";
             this.NumDisconnectGrace.Value = new decimal(new int[] {
             60,
             0,
             0,
             0});
-            this.NumDisconnectGrace.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // LblSeconds
             // 
@@ -257,94 +250,74 @@ namespace HASS.Agent.Controls.Service
             this.LblDisconGrace.TabIndex = 76;
             this.LblDisconGrace.Text = Languages.ServiceGeneral_LblDisconGrace;
             this.LblDisconGrace.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
+            //
             // BtnStoreAuthId
-            // 
+            //
             this.BtnStoreAuthId.AccessibleDescription = "Applies the new auth ID.";
             this.BtnStoreAuthId.AccessibleName = "Apply auth ID";
             this.BtnStoreAuthId.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnStoreAuthId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnStoreAuthId.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnStoreAuthId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnStoreAuthId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnStoreAuthId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnStoreAuthId.Location = new System.Drawing.Point(564, 215);
             this.BtnStoreAuthId.Name = "BtnStoreAuthId";
             this.BtnStoreAuthId.Size = new System.Drawing.Size(147, 25);
-            this.BtnStoreAuthId.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStoreAuthId.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStoreAuthId.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStoreAuthId.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStoreAuthId.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStoreAuthId.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStoreAuthId.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnStoreAuthId.TabIndex = 1;
             this.BtnStoreAuthId.Text = global::HASS.Agent.Resources.Localization.Languages.ServiceGeneral_Apply;
             this.BtnStoreAuthId.UseVisualStyleBackColor = false;
             this.BtnStoreAuthId.Click += new System.EventHandler(this.BtnStoreAuthId_Click);
-            // 
+            //
             // BtnStoreDeviceName
-            // 
+            //
             this.BtnStoreDeviceName.AccessibleDescription = "Applies the new device name.";
             this.BtnStoreDeviceName.AccessibleName = "Apply device name";
             this.BtnStoreDeviceName.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnStoreDeviceName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnStoreDeviceName.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnStoreDeviceName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnStoreDeviceName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnStoreDeviceName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnStoreDeviceName.Location = new System.Drawing.Point(564, 286);
             this.BtnStoreDeviceName.Name = "BtnStoreDeviceName";
             this.BtnStoreDeviceName.Size = new System.Drawing.Size(147, 25);
-            this.BtnStoreDeviceName.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStoreDeviceName.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStoreDeviceName.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStoreDeviceName.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStoreDeviceName.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStoreDeviceName.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStoreDeviceName.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnStoreDeviceName.TabIndex = 3;
             this.BtnStoreDeviceName.Text = global::HASS.Agent.Resources.Localization.Languages.ServiceGeneral_Apply;
             this.BtnStoreDeviceName.UseVisualStyleBackColor = false;
             this.BtnStoreDeviceName.Click += new System.EventHandler(this.BtnStoreDeviceName_Click);
-            // 
+            //
             // BtnStoreDisconGrace
-            // 
+            //
             this.BtnStoreDisconGrace.AccessibleDescription = "Applies the new disconnected grace period.";
             this.BtnStoreDisconGrace.AccessibleName = "Apply grace period";
             this.BtnStoreDisconGrace.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnStoreDisconGrace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnStoreDisconGrace.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnStoreDisconGrace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnStoreDisconGrace.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnStoreDisconGrace.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnStoreDisconGrace.Location = new System.Drawing.Point(564, 364);
             this.BtnStoreDisconGrace.Name = "BtnStoreDisconGrace";
             this.BtnStoreDisconGrace.Size = new System.Drawing.Size(147, 25);
-            this.BtnStoreDisconGrace.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStoreDisconGrace.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStoreDisconGrace.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStoreDisconGrace.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStoreDisconGrace.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStoreDisconGrace.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStoreDisconGrace.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnStoreDisconGrace.TabIndex = 5;
             this.BtnStoreDisconGrace.Text = global::HASS.Agent.Resources.Localization.Languages.ServiceGeneral_Apply;
             this.BtnStoreDisconGrace.UseVisualStyleBackColor = false;
             this.BtnStoreDisconGrace.Click += new System.EventHandler(this.BtnStoreDisconGrace_Click);
-            // 
+            //
             // BtnStoreCustomExecutor
-            // 
+            //
             this.BtnStoreCustomExecutor.AccessibleDescription = "Applies the custom executor configuration.";
             this.BtnStoreCustomExecutor.AccessibleName = "Apply custom executor";
             this.BtnStoreCustomExecutor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnStoreCustomExecutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnStoreCustomExecutor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnStoreCustomExecutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnStoreCustomExecutor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnStoreCustomExecutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnStoreCustomExecutor.Location = new System.Drawing.Point(496, 564);
             this.BtnStoreCustomExecutor.Name = "BtnStoreCustomExecutor";
             this.BtnStoreCustomExecutor.Size = new System.Drawing.Size(147, 25);
-            this.BtnStoreCustomExecutor.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStoreCustomExecutor.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStoreCustomExecutor.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStoreCustomExecutor.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStoreCustomExecutor.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStoreCustomExecutor.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStoreCustomExecutor.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnStoreCustomExecutor.TabIndex = 8;
             this.BtnStoreCustomExecutor.Text = global::HASS.Agent.Resources.Localization.Languages.ServiceGeneral_Apply;
             this.BtnStoreCustomExecutor.UseVisualStyleBackColor = false;
@@ -565,13 +538,13 @@ namespace HASS.Agent.Controls.Service
         private Label LblCustomExecBinary;
         internal TextBox TbExternalExecutorName;
         private Label LblCustomExecName;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumDisconnectGrace;
+        internal System.Windows.Forms.NumericUpDown NumDisconnectGrace;
         private Label LblSeconds;
         private Label LblDisconGrace;
-        internal Syncfusion.WinForms.Controls.SfButton BtnStoreAuthId;
-        internal Syncfusion.WinForms.Controls.SfButton BtnStoreDeviceName;
-        internal Syncfusion.WinForms.Controls.SfButton BtnStoreDisconGrace;
-        internal Syncfusion.WinForms.Controls.SfButton BtnStoreCustomExecutor;
+        internal System.Windows.Forms.Button BtnStoreAuthId;
+        internal System.Windows.Forms.Button BtnStoreDeviceName;
+        internal System.Windows.Forms.Button BtnStoreDisconGrace;
+        internal System.Windows.Forms.Button BtnStoreCustomExecutor;
         private Label LblVersionInfo;
         private Label LblVersion;
         private Label LblTip2;

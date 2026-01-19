@@ -1,5 +1,4 @@
-﻿using HASS.Agent.API;
-using Syncfusion.Windows.Forms;
+using HASS.Agent.API;
 using HASS.Agent.Commands;
 using HASS.Agent.Controls.Configuration;
 using HASS.Agent.Functions;
@@ -14,7 +13,7 @@ using ConfigSatelliteService = HASS.Agent.Controls.Configuration.ConfigService;
 
 namespace HASS.Agent.Forms
 {
-    public partial class Configuration : MetroForm
+    public partial class Configuration : Form
     {
         private readonly HotkeySelector _hotkeySelector = new();
         private readonly Hotkey _previousHotkey = Variables.QuickActionsHotKey;
@@ -40,6 +39,9 @@ namespace HASS.Agent.Forms
 
         private bool _initializing = true;
 
+        // Menu items with their display names and associated controls
+        private readonly List<(string Name, UserControl Control)> _menuItems = new();
+
         public Configuration()
         {
             InitializeComponent();
@@ -53,23 +55,36 @@ namespace HASS.Agent.Forms
             // suspend global hotkeys
             Variables.HotKeyListener.Suspend();
 
-            // load controls
-            TabGeneral.Controls.Add(_general);
-            TabHassApi.Controls.Add(_homeAssistantApi);
-            TabNotifications.Controls.Add(_notifications);
-            TabMQTT.Controls.Add(_mqtt);
-            TabStartup.Controls.Add(_startup);
-            TabHotKey.Controls.Add(_hotKey);
-            TabUpdates.Controls.Add(_updates);
-            TabLocalStorage.Controls.Add(_localStorage);
-            TabLogging.Controls.Add(_logging);
-            TabExternalTools.Controls.Add(_externalTools);
-            TabService.Controls.Add(_service);
-            TablLocalApi.Controls.Add(_localApi);
-            TabMediaPlayer.Controls.Add(_mediaPlayer);
-            TabTrayIcon.Controls.Add(_trayIcon);
-            TabNFC.Controls.Add(_nfc);
+            // Initialize menu items with localized names
+            _menuItems.Add((Languages.Configuration_TabGeneral, _general));
+            _menuItems.Add((Languages.Configuration_TabHassApi, _homeAssistantApi));
+            _menuItems.Add((Languages.Configuration_TabMQTT, _mqtt));
+            _menuItems.Add((Languages.Configuration_TabNotifications, _notifications));
+            _menuItems.Add((Languages.Configuration_TablLocalApi, _localApi));
+            _menuItems.Add((Languages.Configuration_TabStartup, _startup));
+            _menuItems.Add((Languages.Configuration_TabHotKey, _hotKey));
+            _menuItems.Add((Languages.Configuration_TabUpdates, _updates));
+            _menuItems.Add((Languages.Configuration_TabLocalStorage, _localStorage));
+            _menuItems.Add((Languages.Configuration_TabLogging, _logging));
+            _menuItems.Add((Languages.Configuration_TabExternalTools, _externalTools));
+            _menuItems.Add((Languages.Configuration_TabService, _service));
+            _menuItems.Add((Languages.Configuration_TabMediaPlayer, _mediaPlayer));
+            _menuItems.Add((Languages.Configuration_TabTrayIcon, _trayIcon));
+            _menuItems.Add((Languages.Configuration_NFC, _nfc));
 
+            // Add all controls to the content panel (hidden initially)
+            foreach (var item in _menuItems)
+            {
+                item.Control.Dock = DockStyle.Fill;
+                item.Control.Visible = false;
+                ContentPanel.Controls.Add(item.Control);
+            }
+
+            // Populate the menu list
+            foreach (var item in _menuItems)
+            {
+                MenuList.Items.Add(item.Name);
+            }
 
             // bind events
             BindEvents();
@@ -80,6 +95,66 @@ namespace HASS.Agent.Forms
             // config quick actions hotkey selector
             if (Variables.QuickActionsHotKey != null) _hotkeySelector.Enable(_hotKey.TbQuickActionsHotkey, Variables.QuickActionsHotKey);
             else _hotkeySelector.Enable(_hotKey.TbQuickActionsHotkey);
+
+            // Select the first menu item
+            if (MenuList.Items.Count > 0)
+            {
+                MenuList.SelectedIndex = 0;
+            }
+        }
+
+        private void MenuList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MenuList.SelectedIndex < 0 || MenuList.SelectedIndex >= _menuItems.Count)
+                return;
+
+            // Hide all controls
+            foreach (var item in _menuItems)
+            {
+                item.Control.Visible = false;
+            }
+
+            // Show the selected control
+            _menuItems[MenuList.SelectedIndex].Control.Visible = true;
+        }
+
+        private void MenuList_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            // Get the item text
+            var text = MenuList.Items[e.Index].ToString();
+
+            // Determine colors based on selection state
+            Color backgroundColor;
+            Color textColor;
+
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+            {
+                // Selected item - use accent color
+                backgroundColor = Color.FromArgb(0, 122, 204);
+                textColor = Color.White;
+            }
+            else
+            {
+                // Normal item
+                backgroundColor = Color.FromArgb(37, 37, 38);
+                textColor = Color.FromArgb(241, 241, 241);
+            }
+
+            // Draw background
+            using (var brush = new SolidBrush(backgroundColor))
+            {
+                e.Graphics.FillRectangle(brush, e.Bounds);
+            }
+
+            // Draw text with padding
+            var textBounds = new Rectangle(e.Bounds.X + 12, e.Bounds.Y, e.Bounds.Width - 12, e.Bounds.Height);
+            TextRenderer.DrawText(e.Graphics, text, e.Font, textBounds, textColor,
+                TextFormatFlags.Left | TextFormatFlags.VerticalCenter);
+
+            // Draw focus rectangle if needed
+            e.DrawFocusRectangle();
         }
 
         private void Configuration_FormClosing(object sender, FormClosingEventArgs e)
@@ -113,10 +188,10 @@ namespace HASS.Agent.Forms
         {
             // hass
             _homeAssistantApi.CbHassAutoClientCertificate.CheckedChanged += CbHassAutoClientCertificate_CheckedChanged;
-            
+
             // mqtt
             _mqtt.CbMqttTls.CheckedChanged += CbMqttTls_CheckedChanged;
-            
+
             // hotkey
             _hotKey.BtnClearHotKey.Click += BtnClearHotKey_Click;
         }
@@ -138,7 +213,8 @@ namespace HASS.Agent.Forms
             }
 
             // lock ui
-            ConfigTabs.Enabled = false;
+            MenuList.Enabled = false;
+            ContentPanel.Enabled = false;
             BtnAbout.Enabled = false;
             BtnHelp.Enabled = false;
             BtnClose.Enabled = false;
@@ -159,7 +235,7 @@ namespace HASS.Agent.Forms
             if (_general.TbDeviceName.Text != _previousDeviceName)
             {
                 // show the corresponding warning message (either with or without sanitation)
-                MessageBoxAdv.Show(this, _general.CbEnableDeviceNameSanitation.Checked
+                MessageBox.Show(this, _general.CbEnableDeviceNameSanitation.Checked
                         ? Languages.Configuration_ProcessChanges_MessageBox1
                         : Languages.Configuration_ProcessChanges_MessageBox6, Variables.MessageBoxTitle,
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -183,14 +259,14 @@ namespace HASS.Agent.Forms
 
                 // disconnect mqtt so we don't get announced again
                 await Task.Run(Variables.MqttManager.Disconnect);
-                
+
                 forceRestart = true;
             }
 
             // reserve the new local api's port if it's changed
             if (Variables.AppSettings.LocalApiPort != _previousLocalApiPort)
             {
-                MessageBoxAdv.Show(this, Languages.Configuration_ProcessChanges_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, Languages.Configuration_ProcessChanges_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // try to reserve elevated
                 if (!ApiManager.ExecuteElevatedPortReservation())
@@ -199,12 +275,12 @@ namespace HASS.Agent.Forms
                     Clipboard.SetText($"netsh http add urlacl url=http://+:{Variables.AppSettings.LocalApiPort}/ user=\"{SharedHelperFunctions.EveryoneLocalizedAccountName()}\"");
 
                     // notify the user
-                    MessageBoxAdv.Show(this, Languages.Configuration_ProcessChanges_MessageBox3, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, Languages.Configuration_ProcessChanges_MessageBox3, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     // notify the user
-                    MessageBoxAdv.Show(this, Languages.Configuration_ProcessChanges_MessageBox4, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, Languages.Configuration_ProcessChanges_MessageBox4, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // we need to restart, so go ahead, otherwise it's starting to look like popup-spam ..
                     forceRestart = true;
@@ -215,17 +291,17 @@ namespace HASS.Agent.Forms
             {
                 // prepare the restart without asking
                 var restartPrepared = HelperFunctions.Restart();
-                if (!restartPrepared) MessageBoxAdv.Show(this, Languages.Configuration_MessageBox_RestartManually, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!restartPrepared) MessageBox.Show(this, Languages.Configuration_MessageBox_RestartManually, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 // ask the user if they want to restart
-                var question = MessageBoxAdv.Show(this, Languages.Configuration_ProcessChanges_MessageBox5, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var question = MessageBox.Show(this, Languages.Configuration_ProcessChanges_MessageBox5, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (question == DialogResult.Yes)
                 {
                     // prepare the restart
                     var restartPrepared = HelperFunctions.Restart();
-                    if (!restartPrepared) MessageBoxAdv.Show(this, Languages.Configuration_MessageBox_RestartManually, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (!restartPrepared) MessageBox.Show(this, Languages.Configuration_MessageBox_RestartManually, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -245,7 +321,7 @@ namespace HASS.Agent.Forms
             {
                 if (!SharedHelperFunctions.CheckHomeAssistantApiToken(hassApi))
                 {
-                    var q = MessageBoxAdv.Show(this, Languages.Configuration_CheckValues_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    var q = MessageBox.Show(this, Languages.Configuration_CheckValues_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                     if (q != DialogResult.Yes) return false;
                 }
             }
@@ -256,7 +332,7 @@ namespace HASS.Agent.Forms
             {
                 if (!SharedHelperFunctions.CheckHomeAssistantUri(hassUri))
                 {
-                    var q = MessageBoxAdv.Show(this, Languages.Configuration_CheckValues_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    var q = MessageBox.Show(this, Languages.Configuration_CheckValues_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                     if (q != DialogResult.Yes) return false;
                 }
             }
@@ -267,7 +343,7 @@ namespace HASS.Agent.Forms
             {
                 if (!SharedHelperFunctions.CheckMqttBrokerUri(mqttUri))
                 {
-                    var q = MessageBoxAdv.Show(this, Languages.Configuration_CheckValues_MessageBox3, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    var q = MessageBox.Show(this, Languages.Configuration_CheckValues_MessageBox3, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                     if (q != DialogResult.Yes) return false;
                 }
             }
@@ -394,7 +470,7 @@ namespace HASS.Agent.Forms
             // notifications
             Variables.AppSettings.NotificationsEnabled = _notifications.CbAcceptNotifications.CheckState == CheckState.Checked;
             Variables.AppSettings.NotificationsIgnoreImageCertificateErrors = _notifications.CbNotificationsIgnoreImageCertErrors.CheckState == CheckState.Checked;
-            Variables.AppSettings.NotificationsOpenActionUri = _notifications.CbNotificationsOpenActionUri.CheckState == CheckState.Checked;    
+            Variables.AppSettings.NotificationsOpenActionUri = _notifications.CbNotificationsOpenActionUri.CheckState == CheckState.Checked;
 
             // hass settings
             Variables.AppSettings.HassUri = _homeAssistantApi.TbHassIp.Text;

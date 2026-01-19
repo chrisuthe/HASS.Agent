@@ -7,12 +7,11 @@ using HASS.Agent.Resources.Localization;
 using HASS.Agent.Service;
 using HASS.Agent.Settings;
 using Serilog;
-using Syncfusion.Windows.Forms;
 using Task = System.Threading.Tasks.Task;
 
 namespace HASS.Agent.Forms.ChildApplications
 {
-    public partial class ServiceSetState : MetroForm
+    public partial class ServiceSetState : Form
     {
         private readonly ServiceDesiredState _desiredState;
 
@@ -73,7 +72,7 @@ namespace HASS.Agent.Forms.ChildApplications
             PbStep1Configure.Image = stateDone ? Properties.Resources.done_32 : Properties.Resources.failed_32;
             
             // notify the user if something went wrong
-            if (!stateDone) MessageBoxAdv.Show(this, Languages.ServiceSetState_ProcessState_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (!stateDone) MessageBox.Show(this, Languages.ServiceSetState_ProcessState_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 // wait a bit to show the 'completed' checks

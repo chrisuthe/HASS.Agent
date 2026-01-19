@@ -7,7 +7,6 @@ using HASS.Agent.Resources.Localization;
 using HASS.Agent.Settings;
 using Octokit;
 using Serilog;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Managers;
 
@@ -203,7 +202,7 @@ internal static class UpdateManager
         var tempFile = await StorageManager.PrepareTempInstallerFilename();
         if (string.IsNullOrEmpty(tempFile))
         {
-            MessageBoxAdv.Show(owner, Languages.UpdateManager_DownloadAndExecuteUpdate_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show(owner, Languages.UpdateManager_DownloadAndExecuteUpdate_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             LaunchReleaseUrl(pendingUpdate);
             return;
         }
@@ -211,7 +210,7 @@ internal static class UpdateManager
         var downloaded = await StorageManager.DownloadFileAsync(pendingUpdate.InstallerUrl, tempFile);
         if (!downloaded || !File.Exists(tempFile))
         {
-            MessageBoxAdv.Show(owner, Languages.UpdateManager_DownloadAndExecuteUpdate_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show(owner, Languages.UpdateManager_DownloadAndExecuteUpdate_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             LaunchReleaseUrl(pendingUpdate);
             return;
         }
@@ -219,7 +218,7 @@ internal static class UpdateManager
         var certCheck = HelperFunctions.ConfirmCertificate(tempFile);
         if (!certCheck)
         {
-            MessageBoxAdv.Show(owner, Languages.UpdateManager_DownloadAndExecuteUpdate_MessageBox3, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(owner, Languages.UpdateManager_DownloadAndExecuteUpdate_MessageBox3, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             LaunchReleaseUrl(pendingUpdate);
             return;
         }
@@ -231,7 +230,7 @@ internal static class UpdateManager
         catch (Exception ex)
         {
             Log.Fatal(ex, "[UPDATER] Error while launching the installer: {err}", ex.Message);
-            MessageBoxAdv.Show(owner, Languages.UpdateManager_DownloadAndExecuteUpdate_MessageBox4, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show(owner, Languages.UpdateManager_DownloadAndExecuteUpdate_MessageBox4, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             LaunchReleaseUrl(pendingUpdate);
         }
     }

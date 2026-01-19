@@ -32,7 +32,7 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
         private void InitializeComponent()
         {
             var resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvancedSensorSettings));
-            BtnSave = new Syncfusion.WinForms.Controls.SfButton();
+            BtnSave = new System.Windows.Forms.Button();
             LblInfo1 = new Label();
             LblDeviceClass = new Label();
             TbDeviceClass = new TextBox();
@@ -54,13 +54,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             BtnSave.Location = new Point(0, 299);
             BtnSave.Name = "BtnSave";
             BtnSave.Size = new Size(349, 37);
-            BtnSave.Style.BackColor = Color.FromArgb(63, 63, 70);
-            BtnSave.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-            BtnSave.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-            BtnSave.Style.ForeColor = Color.FromArgb(241, 241, 241);
-            BtnSave.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-            BtnSave.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-            BtnSave.Style.PressedForeColor = Color.Black;
             BtnSave.TabIndex = 8;
             BtnSave.Text = Languages.WebViewCommandConfig_BtnSave;
             BtnSave.UseVisualStyleBackColor = false;
@@ -168,9 +161,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(45, 45, 48);
-            CaptionBarColor = Color.FromArgb(63, 63, 70);
-            CaptionFont = new Font("Segoe UI", 10F);
-            CaptionForeColor = Color.FromArgb(241, 241, 241);
             ClientSize = new Size(349, 336);
             Controls.Add(LblStateClass);
             Controls.Add(TbStateClass);
@@ -184,10 +174,7 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             ForeColor = Color.FromArgb(241, 241, 241);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MetroColor = Color.FromArgb(63, 63, 70);
             Name = "AdvancedSensorConfig";
-            ShowMaximizeBox = false;
-            ShowMinimizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = Languages.AdvancedSensorConfig_Title;
             Load += AdvancedSensorConfig_Load;
@@ -196,7 +183,7 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
         }
 
         #endregion
-        private Syncfusion.WinForms.Controls.SfButton BtnSave;
+        private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Label LblInfo1;
         private Label LblDeviceClass;
         private TextBox TbDeviceClass;

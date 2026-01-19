@@ -33,8 +33,8 @@ namespace HASS.Agent.Controls.Configuration
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigLocalApi));
             this.LblInfo1 = new System.Windows.Forms.Label();
             this.LblPort = new System.Windows.Forms.Label();
-            this.NumLocalApiPort = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
-            this.BtnExecutePortReservation = new Syncfusion.WinForms.Controls.SfButton();
+            this.NumLocalApiPort = new System.Windows.Forms.NumericUpDown();
+            this.BtnExecutePortReservation = new System.Windows.Forms.Button();
             this.CbLocalApiActive = new System.Windows.Forms.CheckBox();
             this.LblInfo2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NumLocalApiPort)).BeginInit();
@@ -66,14 +66,11 @@ namespace HASS.Agent.Controls.Configuration
             this.LblPort.Text = Languages.ConfigLocalApi_LblPort;
             // 
             // NumLocalApiPort
-            // 
+            //
             this.NumLocalApiPort.AccessibleDescription = "The port the local API will bind to. Only accepts numeric values.";
             this.NumLocalApiPort.AccessibleName = "Local API port";
             this.NumLocalApiPort.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumLocalApiPort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumLocalApiPort.BeforeTouchSize = new System.Drawing.Size(83, 25);
-            this.NumLocalApiPort.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumLocalApiPort.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumLocalApiPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumLocalApiPort.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumLocalApiPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -83,38 +80,28 @@ namespace HASS.Agent.Controls.Configuration
             0,
             0,
             0});
-            this.NumLocalApiPort.MaxLength = 10;
-            this.NumLocalApiPort.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumLocalApiPort.Name = "NumLocalApiPort";
             this.NumLocalApiPort.Size = new System.Drawing.Size(83, 25);
             this.NumLocalApiPort.TabIndex = 1;
-            this.NumLocalApiPort.ThemeName = "Metro";
             this.NumLocalApiPort.Value = new decimal(new int[] {
             5115,
             0,
             0,
             0});
-            this.NumLocalApiPort.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // BtnExecutePortReservation
-            // 
+            //
             this.BtnExecutePortReservation.AccessibleDescription = "Executes a port reservation, and opens the port in the firewall. This will show a" +
     "n UAC prompt, asking for elevation.";
             this.BtnExecutePortReservation.AccessibleName = "Port reservation";
             this.BtnExecutePortReservation.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnExecutePortReservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnExecutePortReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExecutePortReservation.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnExecutePortReservation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnExecutePortReservation.Location = new System.Drawing.Point(200, 454);
             this.BtnExecutePortReservation.Name = "BtnExecutePortReservation";
             this.BtnExecutePortReservation.Size = new System.Drawing.Size(301, 31);
-            this.BtnExecutePortReservation.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnExecutePortReservation.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnExecutePortReservation.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnExecutePortReservation.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnExecutePortReservation.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnExecutePortReservation.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnExecutePortReservation.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnExecutePortReservation.TabIndex = 2;
             this.BtnExecutePortReservation.Text = Languages.ConfigLocalApi_BtnExecutePortReservation;
             this.BtnExecutePortReservation.UseVisualStyleBackColor = false;
@@ -174,8 +161,8 @@ namespace HASS.Agent.Controls.Configuration
         #endregion
         private System.Windows.Forms.Label LblInfo1;
         private System.Windows.Forms.Label LblPort;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumLocalApiPort;
-        internal Syncfusion.WinForms.Controls.SfButton BtnExecutePortReservation;
+        internal System.Windows.Forms.NumericUpDown NumLocalApiPort;
+        internal System.Windows.Forms.Button BtnExecutePortReservation;
         internal CheckBox CbLocalApiActive;
         private Label LblInfo2;
     }

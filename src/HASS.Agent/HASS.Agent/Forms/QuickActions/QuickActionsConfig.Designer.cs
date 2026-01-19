@@ -34,11 +34,11 @@ namespace HASS.Agent.Forms.QuickActions
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuickActionsConfig));
-            this.BtnStore = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnAdd = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnModify = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnRemove = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnPreview = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnStore = new System.Windows.Forms.Button();
+            this.BtnAdd = new System.Windows.Forms.Button();
+            this.BtnModify = new System.Windows.Forms.Button();
+            this.BtnRemove = new System.Windows.Forms.Button();
+            this.BtnPreview = new System.Windows.Forms.Button();
             this.LvQuickActions = new System.Windows.Forms.ListView();
             this.ClmId = new System.Windows.Forms.ColumnHeader();
             this.ClmDomain = new System.Windows.Forms.ColumnHeader("(none)");
@@ -66,13 +66,6 @@ namespace HASS.Agent.Forms.QuickActions
             this.BtnStore.Location = new System.Drawing.Point(0, 521);
             this.BtnStore.Name = "BtnStore";
             this.BtnStore.Size = new System.Drawing.Size(933, 47);
-            this.BtnStore.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStore.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStore.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStore.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnStore.TabIndex = 4;
             this.BtnStore.Text = global::HASS.Agent.Resources.Localization.Languages.QuickActionsConfig_BtnStore;
             this.BtnStore.UseVisualStyleBackColor = false;
@@ -90,13 +83,6 @@ namespace HASS.Agent.Forms.QuickActions
             this.BtnAdd.Location = new System.Drawing.Point(736, 473);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(197, 35);
-            this.BtnAdd.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnAdd.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnAdd.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnAdd.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnAdd.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnAdd.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnAdd.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnAdd.TabIndex = 0;
             this.BtnAdd.Text = global::HASS.Agent.Resources.Localization.Languages.QuickActionsConfig_BtnAdd;
             this.BtnAdd.UseVisualStyleBackColor = false;
@@ -114,13 +100,6 @@ namespace HASS.Agent.Forms.QuickActions
             this.BtnModify.Location = new System.Drawing.Point(533, 473);
             this.BtnModify.Name = "BtnModify";
             this.BtnModify.Size = new System.Drawing.Size(197, 35);
-            this.BtnModify.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnModify.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnModify.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnModify.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnModify.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnModify.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnModify.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnModify.TabIndex = 1;
             this.BtnModify.Text = global::HASS.Agent.Resources.Localization.Languages.QuickActionsConfig_BtnModify;
             this.BtnModify.UseVisualStyleBackColor = false;
@@ -138,13 +117,6 @@ namespace HASS.Agent.Forms.QuickActions
             this.BtnRemove.Location = new System.Drawing.Point(330, 473);
             this.BtnRemove.Name = "BtnRemove";
             this.BtnRemove.Size = new System.Drawing.Size(197, 35);
-            this.BtnRemove.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnRemove.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnRemove.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRemove.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRemove.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnRemove.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRemove.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnRemove.TabIndex = 2;
             this.BtnRemove.Text = global::HASS.Agent.Resources.Localization.Languages.QuickActionsConfig_BtnRemove;
             this.BtnRemove.UseVisualStyleBackColor = false;
@@ -162,13 +134,6 @@ namespace HASS.Agent.Forms.QuickActions
             this.BtnPreview.Location = new System.Drawing.Point(0, 473);
             this.BtnPreview.Name = "BtnPreview";
             this.BtnPreview.Size = new System.Drawing.Size(197, 35);
-            this.BtnPreview.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnPreview.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnPreview.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnPreview.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnPreview.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnPreview.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnPreview.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnPreview.TabIndex = 3;
             this.BtnPreview.Text = global::HASS.Agent.Resources.Localization.Languages.QuickActionsConfig_BtnPreview;
             this.BtnPreview.UseVisualStyleBackColor = false;
@@ -293,9 +258,6 @@ namespace HASS.Agent.Forms.QuickActions
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.CaptionFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(933, 568);
             this.Controls.Add(this.LblHotkey);
             this.Controls.Add(this.PbHotKey);
@@ -309,11 +271,8 @@ namespace HASS.Agent.Forms.QuickActions
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.MinimumSize = new System.Drawing.Size(945, 604);
             this.Name = "QuickActionsConfig";
-            this.ShowMaximizeBox = false;
-            this.ShowMinimizeBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = Languages.QuickActionsConfig_Title;
             this.Load += new System.EventHandler(this.QuickActionsConfig_Load);
@@ -328,11 +287,11 @@ namespace HASS.Agent.Forms.QuickActions
         }
 
         #endregion
-        private Syncfusion.WinForms.Controls.SfButton BtnStore;
-        private Syncfusion.WinForms.Controls.SfButton BtnAdd;
-        private Syncfusion.WinForms.Controls.SfButton BtnModify;
-        private Syncfusion.WinForms.Controls.SfButton BtnRemove;
-        private Syncfusion.WinForms.Controls.SfButton BtnPreview;
+        private System.Windows.Forms.Button BtnStore;
+        private System.Windows.Forms.Button BtnAdd;
+        private System.Windows.Forms.Button BtnModify;
+        private System.Windows.Forms.Button BtnRemove;
+        private System.Windows.Forms.Button BtnPreview;
         private ListView LvQuickActions;
         private ColumnHeader ClmId;
         private ColumnHeader ClmDomain;

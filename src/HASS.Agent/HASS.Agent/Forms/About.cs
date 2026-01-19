@@ -1,9 +1,8 @@
-﻿using Syncfusion.Windows.Forms;
-using HASS.Agent.Functions;
+﻿using HASS.Agent.Functions;
 
 namespace HASS.Agent.Forms
 {
-    public partial class About : MetroForm
+    public partial class About : Form
     {
         public About()
         {
@@ -28,8 +27,6 @@ namespace HASS.Agent.Forms
 
         private void LblHotkeyListener_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://github.com/Willy-Kimura/HotkeyListener");
 
-        private void LblLibreHardwareMonitor_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://github.com/LibreHardwareMonitor/LibreHardwareMonitor");
-
         private void LblMicrosoftAppSDK_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://github.com/microsoft/windowsappsdk");
 
         private void LblMQTTnet_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://github.com/chkr1011/MQTTnet");
@@ -37,8 +34,6 @@ namespace HASS.Agent.Forms
         private void LblNewtonsoftJson_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://www.newtonsoft.com/json");
 
         private void LblSerilog_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://github.com/serilog/serilog");
-
-        private void LblSyncfusion_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://www.syncfusion.com/");
 
         private void LblHassAgentProject_Click(object sender, EventArgs e) => HelperFunctions.LaunchUrl("https://github.com/hass-agent/HASS.Agent");
 

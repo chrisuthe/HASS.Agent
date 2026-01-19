@@ -1,11 +1,10 @@
 ﻿using HASS.Agent.Functions;
 using HASS.Agent.Managers;
 using HASS.Agent.Resources.Localization;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Forms
 {
-    public partial class Onboarding : MetroForm
+    public partial class Onboarding : Form
     {
         private readonly OnboardingManager _onboardingManager;
         private bool _forceClose = false;

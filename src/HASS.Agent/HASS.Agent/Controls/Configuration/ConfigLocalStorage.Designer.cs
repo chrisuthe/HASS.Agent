@@ -31,30 +31,30 @@ namespace HASS.Agent.Controls.Configuration
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigLocalStorage));
-            this.BtnClearImageCache = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnOpenImageCache = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnClearImageCache = new System.Windows.Forms.Button();
+            this.BtnOpenImageCache = new System.Windows.Forms.Button();
             this.TbImageCacheLocation = new System.Windows.Forms.TextBox();
             this.LblImageCacheLocation = new System.Windows.Forms.Label();
             this.LblImageCacheDays = new System.Windows.Forms.Label();
             this.LblInfo1 = new System.Windows.Forms.Label();
-            this.NumImageRetention = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+            this.NumImageRetention = new System.Windows.Forms.NumericUpDown();
             this.LblKeepImages = new System.Windows.Forms.Label();
             this.LblKeepAudio = new System.Windows.Forms.Label();
-            this.NumAudioRetention = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
-            this.BtnClearAudioCache = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnOpenAudioCache = new Syncfusion.WinForms.Controls.SfButton();
+            this.NumAudioRetention = new System.Windows.Forms.NumericUpDown();
+            this.BtnClearAudioCache = new System.Windows.Forms.Button();
+            this.BtnOpenAudioCache = new System.Windows.Forms.Button();
             this.TbAudioCacheLocation = new System.Windows.Forms.TextBox();
             this.LblAudioCacheLocation = new System.Windows.Forms.Label();
             this.LblAudioCacheDays = new System.Windows.Forms.Label();
             this.PbLine1 = new System.Windows.Forms.PictureBox();
             this.PbLine2 = new System.Windows.Forms.PictureBox();
             this.PbLine3 = new System.Windows.Forms.PictureBox();
-            this.BtnClearWebViewCache = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnOpenWebViewCache = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnClearWebViewCache = new System.Windows.Forms.Button();
+            this.BtnOpenWebViewCache = new System.Windows.Forms.Button();
             this.TbWebViewCacheLocation = new System.Windows.Forms.TextBox();
             this.LblWebViewCacheLocation = new System.Windows.Forms.Label();
             this.LblKeepWebView = new System.Windows.Forms.Label();
-            this.NumWebViewRetention = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+            this.NumWebViewRetention = new System.Windows.Forms.NumericUpDown();
             this.LblWebViewCacheDays = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NumImageRetention)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumAudioRetention)).BeginInit();
@@ -65,46 +65,34 @@ namespace HASS.Agent.Controls.Configuration
             this.SuspendLayout();
             // 
             // BtnClearImageCache
-            // 
+            //
             this.BtnClearImageCache.AccessibleDescription = "Completely clears the image cache.";
             this.BtnClearImageCache.AccessibleName = "Clear image cache";
             this.BtnClearImageCache.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnClearImageCache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnClearImageCache.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClearImageCache.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnClearImageCache.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnClearImageCache.Location = new System.Drawing.Point(443, 154);
             this.BtnClearImageCache.Name = "BtnClearImageCache";
             this.BtnClearImageCache.Size = new System.Drawing.Size(197, 25);
-            this.BtnClearImageCache.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClearImageCache.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClearImageCache.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClearImageCache.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClearImageCache.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClearImageCache.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClearImageCache.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnClearImageCache.TabIndex = 1;
             this.BtnClearImageCache.Text = global::HASS.Agent.Resources.Localization.Languages.ConfigLocalStorage_BtnClearImageCache;
             this.BtnClearImageCache.UseVisualStyleBackColor = false;
             this.BtnClearImageCache.Click += new System.EventHandler(this.BtnClearImageCache_Click);
             // 
             // BtnOpenImageCache
-            // 
+            //
             this.BtnOpenImageCache.AccessibleDescription = "Open the image cache storage path in Explorer.";
             this.BtnOpenImageCache.AccessibleName = "Open image cache";
             this.BtnOpenImageCache.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnOpenImageCache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnOpenImageCache.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnOpenImageCache.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnOpenImageCache.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnOpenImageCache.Location = new System.Drawing.Point(515, 265);
             this.BtnOpenImageCache.Name = "BtnOpenImageCache";
             this.BtnOpenImageCache.Size = new System.Drawing.Size(125, 25);
-            this.BtnOpenImageCache.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnOpenImageCache.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnOpenImageCache.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnOpenImageCache.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnOpenImageCache.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnOpenImageCache.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnOpenImageCache.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnOpenImageCache.TabIndex = 3;
             this.BtnOpenImageCache.Text = global::HASS.Agent.Resources.Localization.Languages.ConfigLocalStorage_BtnOpenImageCache;
             this.BtnOpenImageCache.UseVisualStyleBackColor = false;
@@ -164,15 +152,12 @@ namespace HASS.Agent.Controls.Configuration
             this.LblInfo1.Text = Languages.ConfigLocalStorage_LblInfo1;
             // 
             // NumImageRetention
-            // 
+            //
             this.NumImageRetention.AccessibleDescription = "The amount of days images will be stored before being deleted. Only accepts numer" +
     "ic values.";
             this.NumImageRetention.AccessibleName = "Image cache";
             this.NumImageRetention.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumImageRetention.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumImageRetention.BeforeTouchSize = new System.Drawing.Size(83, 25);
-            this.NumImageRetention.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumImageRetention.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumImageRetention.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumImageRetention.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumImageRetention.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -182,18 +167,14 @@ namespace HASS.Agent.Controls.Configuration
             0,
             0,
             0});
-            this.NumImageRetention.MaxLength = 10;
-            this.NumImageRetention.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumImageRetention.Name = "NumImageRetention";
             this.NumImageRetention.Size = new System.Drawing.Size(83, 25);
             this.NumImageRetention.TabIndex = 0;
-            this.NumImageRetention.ThemeName = "Metro";
             this.NumImageRetention.Value = new decimal(new int[] {
             7,
             0,
             0,
             0});
-            this.NumImageRetention.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // LblKeepImages
             // 
@@ -222,15 +203,12 @@ namespace HASS.Agent.Controls.Configuration
             this.LblKeepAudio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // NumAudioRetention
-            // 
+            //
             this.NumAudioRetention.AccessibleDescription = "The amount of days audio will be stored before being deleted. Only accepts numeri" +
     "c values.";
             this.NumAudioRetention.AccessibleName = "Audio cache";
             this.NumAudioRetention.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumAudioRetention.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumAudioRetention.BeforeTouchSize = new System.Drawing.Size(83, 25);
-            this.NumAudioRetention.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumAudioRetention.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumAudioRetention.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumAudioRetention.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumAudioRetention.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -240,60 +218,44 @@ namespace HASS.Agent.Controls.Configuration
             0,
             0,
             0});
-            this.NumAudioRetention.MaxLength = 10;
-            this.NumAudioRetention.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumAudioRetention.Name = "NumAudioRetention";
             this.NumAudioRetention.Size = new System.Drawing.Size(83, 25);
             this.NumAudioRetention.TabIndex = 4;
-            this.NumAudioRetention.ThemeName = "Metro";
             this.NumAudioRetention.Value = new decimal(new int[] {
             7,
             0,
             0,
             0});
-            this.NumAudioRetention.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // BtnClearAudioCache
-            // 
+            //
             this.BtnClearAudioCache.AccessibleDescription = "Completely clears the audio cache.";
             this.BtnClearAudioCache.AccessibleName = "Clear audio cache";
             this.BtnClearAudioCache.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnClearAudioCache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnClearAudioCache.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClearAudioCache.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnClearAudioCache.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnClearAudioCache.Location = new System.Drawing.Point(443, 361);
             this.BtnClearAudioCache.Name = "BtnClearAudioCache";
             this.BtnClearAudioCache.Size = new System.Drawing.Size(197, 25);
-            this.BtnClearAudioCache.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClearAudioCache.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClearAudioCache.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClearAudioCache.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClearAudioCache.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClearAudioCache.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClearAudioCache.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnClearAudioCache.TabIndex = 5;
             this.BtnClearAudioCache.Text = global::HASS.Agent.Resources.Localization.Languages.ConfigLocalStorage_BtnClearAudioCache;
             this.BtnClearAudioCache.UseVisualStyleBackColor = false;
             this.BtnClearAudioCache.Click += new System.EventHandler(this.BtnClearAudioCache_Click);
             // 
             // BtnOpenAudioCache
-            // 
+            //
             this.BtnOpenAudioCache.AccessibleDescription = "Open the audio cache storage path in Explorer.";
             this.BtnOpenAudioCache.AccessibleName = "Open audio cache";
             this.BtnOpenAudioCache.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnOpenAudioCache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnOpenAudioCache.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnOpenAudioCache.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnOpenAudioCache.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnOpenAudioCache.Location = new System.Drawing.Point(515, 472);
             this.BtnOpenAudioCache.Name = "BtnOpenAudioCache";
             this.BtnOpenAudioCache.Size = new System.Drawing.Size(125, 25);
-            this.BtnOpenAudioCache.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnOpenAudioCache.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnOpenAudioCache.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnOpenAudioCache.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnOpenAudioCache.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnOpenAudioCache.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnOpenAudioCache.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnOpenAudioCache.TabIndex = 7;
             this.BtnOpenAudioCache.Text = global::HASS.Agent.Resources.Localization.Languages.ConfigLocalStorage_BtnOpenImageCache;
             this.BtnOpenAudioCache.UseVisualStyleBackColor = false;
@@ -380,46 +342,34 @@ namespace HASS.Agent.Controls.Configuration
             this.PbLine3.TabStop = false;
             // 
             // BtnClearWebViewCache
-            // 
+            //
             this.BtnClearWebViewCache.AccessibleDescription = "Completely clears the WebView cache.";
             this.BtnClearWebViewCache.AccessibleName = "Clear webview cache";
             this.BtnClearWebViewCache.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnClearWebViewCache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnClearWebViewCache.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClearWebViewCache.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnClearWebViewCache.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnClearWebViewCache.Location = new System.Drawing.Point(441, 566);
             this.BtnClearWebViewCache.Name = "BtnClearWebViewCache";
             this.BtnClearWebViewCache.Size = new System.Drawing.Size(197, 25);
-            this.BtnClearWebViewCache.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClearWebViewCache.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClearWebViewCache.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClearWebViewCache.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClearWebViewCache.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClearWebViewCache.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClearWebViewCache.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnClearWebViewCache.TabIndex = 9;
             this.BtnClearWebViewCache.Text = global::HASS.Agent.Resources.Localization.Languages.ConfigLocalStorage_BtnClearWebViewCache;
             this.BtnClearWebViewCache.UseVisualStyleBackColor = false;
             this.BtnClearWebViewCache.Click += new System.EventHandler(this.BtnClearWebViewCache_Click);
             // 
             // BtnOpenWebViewCache
-            // 
+            //
             this.BtnOpenWebViewCache.AccessibleDescription = "Open the WebView cache storage path in Explorer.";
             this.BtnOpenWebViewCache.AccessibleName = "Open WebView cache";
             this.BtnOpenWebViewCache.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnOpenWebViewCache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnOpenWebViewCache.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnOpenWebViewCache.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnOpenWebViewCache.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnOpenWebViewCache.Location = new System.Drawing.Point(513, 677);
             this.BtnOpenWebViewCache.Name = "BtnOpenWebViewCache";
             this.BtnOpenWebViewCache.Size = new System.Drawing.Size(125, 25);
-            this.BtnOpenWebViewCache.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnOpenWebViewCache.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnOpenWebViewCache.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnOpenWebViewCache.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnOpenWebViewCache.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnOpenWebViewCache.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnOpenWebViewCache.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnOpenWebViewCache.TabIndex = 11;
             this.BtnOpenWebViewCache.Text = global::HASS.Agent.Resources.Localization.Languages.ConfigLocalStorage_BtnOpenImageCache;
             this.BtnOpenWebViewCache.UseVisualStyleBackColor = false;
@@ -467,15 +417,12 @@ namespace HASS.Agent.Controls.Configuration
             this.LblKeepWebView.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // NumWebViewRetention
-            // 
+            //
             this.NumWebViewRetention.AccessibleDescription = "The WebView cache will be cleared every x days, where x stands for this value. On" +
     "ly accepts numeric values.";
             this.NumWebViewRetention.AccessibleName = "WebView cache";
             this.NumWebViewRetention.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumWebViewRetention.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumWebViewRetention.BeforeTouchSize = new System.Drawing.Size(83, 25);
-            this.NumWebViewRetention.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumWebViewRetention.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumWebViewRetention.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumWebViewRetention.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumWebViewRetention.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -485,13 +432,9 @@ namespace HASS.Agent.Controls.Configuration
             0,
             0,
             0});
-            this.NumWebViewRetention.MaxLength = 10;
-            this.NumWebViewRetention.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumWebViewRetention.Name = "NumWebViewRetention";
             this.NumWebViewRetention.Size = new System.Drawing.Size(83, 25);
             this.NumWebViewRetention.TabIndex = 8;
-            this.NumWebViewRetention.ThemeName = "Metro";
-            this.NumWebViewRetention.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // LblWebViewCacheDays
             // 
@@ -559,27 +502,27 @@ namespace HASS.Agent.Controls.Configuration
         private System.Windows.Forms.Label LblImageCacheLocation;
         private System.Windows.Forms.Label LblImageCacheDays;
         private System.Windows.Forms.Label LblInfo1;
-        internal Syncfusion.WinForms.Controls.SfButton BtnClearImageCache;
-        internal Syncfusion.WinForms.Controls.SfButton BtnOpenImageCache;
+        internal System.Windows.Forms.Button BtnClearImageCache;
+        internal System.Windows.Forms.Button BtnOpenImageCache;
         internal System.Windows.Forms.TextBox TbImageCacheLocation;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumImageRetention;
+        internal System.Windows.Forms.NumericUpDown NumImageRetention;
         private Label LblKeepImages;
         private Label LblKeepAudio;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumAudioRetention;
-        internal Syncfusion.WinForms.Controls.SfButton BtnClearAudioCache;
-        internal Syncfusion.WinForms.Controls.SfButton BtnOpenAudioCache;
+        internal System.Windows.Forms.NumericUpDown NumAudioRetention;
+        internal System.Windows.Forms.Button BtnClearAudioCache;
+        internal System.Windows.Forms.Button BtnOpenAudioCache;
         internal TextBox TbAudioCacheLocation;
         private Label LblAudioCacheLocation;
         private Label LblAudioCacheDays;
         private PictureBox PbLine1;
         private PictureBox PbLine2;
         private PictureBox PbLine3;
-        internal Syncfusion.WinForms.Controls.SfButton BtnClearWebViewCache;
-        internal Syncfusion.WinForms.Controls.SfButton BtnOpenWebViewCache;
+        internal System.Windows.Forms.Button BtnClearWebViewCache;
+        internal System.Windows.Forms.Button BtnOpenWebViewCache;
         internal TextBox TbWebViewCacheLocation;
         private Label LblWebViewCacheLocation;
         private Label LblKeepWebView;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumWebViewRetention;
+        internal System.Windows.Forms.NumericUpDown NumWebViewRetention;
         private Label LblWebViewCacheDays;
     }
 }

@@ -5,11 +5,10 @@ using HASS.Agent.HomeAssistant;
 using HASS.Agent.Models.Internal;
 using HASS.Agent.Resources.Localization;
 using Serilog;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Forms.QuickActions
 {
-    public partial class QuickActions : MetroForm
+    public partial class QuickActions : Form
     {
         public event EventHandler ClearFocus;
 
@@ -192,11 +191,11 @@ namespace HASS.Agent.Forms.QuickActions
                     return true;
 
                 case HassManagerStatus.ConfigMissing:
-                    MessageBoxAdv.Show(this, Languages.QuickActions_CheckHassManager_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(this, Languages.QuickActions_CheckHassManager_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return false;
 
                 case HassManagerStatus.Failed:
-                    MessageBoxAdv.Show(this, Languages.QuickActions_MessageBox_EntityFailed, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(this, Languages.QuickActions_MessageBox_EntityFailed, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return false;
 
                 case HassManagerStatus.Initialising:
@@ -207,7 +206,7 @@ namespace HASS.Agent.Forms.QuickActions
                         await Task.Delay(150);
                         if (HassApiManager.ManagerStatus != HassManagerStatus.Failed) continue;
 
-                        MessageBoxAdv.Show(this, Languages.QuickActions_MessageBox_EntityFailed, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show(this, Languages.QuickActions_MessageBox_EntityFailed, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return false;
                     }
                     SetGuiLoading(false);

@@ -4,7 +4,6 @@ using HASS.Agent.Managers;
 using HASS.Agent.Models.HomeAssistant;
 using HASS.Agent.Resources.Localization;
 using Serilog;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Controls.Configuration
 {

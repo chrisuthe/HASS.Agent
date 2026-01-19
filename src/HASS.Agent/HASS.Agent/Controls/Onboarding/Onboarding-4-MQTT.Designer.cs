@@ -45,7 +45,7 @@ namespace HASS.Agent.Controls.Onboarding
             this.LblDiscoveryPrefix = new System.Windows.Forms.Label();
             this.LblTip1 = new System.Windows.Forms.Label();
             this.LblTip2 = new System.Windows.Forms.Label();
-            this.NumMqttPort = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+            this.NumMqttPort = new System.Windows.Forms.NumericUpDown();
             this.PbShow = new System.Windows.Forms.PictureBox();
             this.CbEnableMqtt = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PbHassAgentLogo)).BeginInit();
@@ -250,9 +250,6 @@ namespace HASS.Agent.Controls.Onboarding
             this.NumMqttPort.AccessibleName = "Port";
             this.NumMqttPort.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumMqttPort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumMqttPort.BeforeTouchSize = new System.Drawing.Size(83, 25);
-            this.NumMqttPort.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumMqttPort.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumMqttPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumMqttPort.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumMqttPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -262,18 +259,14 @@ namespace HASS.Agent.Controls.Onboarding
             0,
             0,
             0});
-            this.NumMqttPort.MaxLength = 10;
-            this.NumMqttPort.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumMqttPort.Name = "NumMqttPort";
             this.NumMqttPort.Size = new System.Drawing.Size(83, 25);
             this.NumMqttPort.TabIndex = 1;
-            this.NumMqttPort.ThemeName = "Metro";
             this.NumMqttPort.Value = new decimal(new int[] {
             1883,
             0,
             0,
             0});
-            this.NumMqttPort.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // PbShow
             // 
@@ -359,7 +352,7 @@ namespace HASS.Agent.Controls.Onboarding
         private System.Windows.Forms.Label LblDiscoveryPrefix;
         private System.Windows.Forms.Label LblTip1;
         private System.Windows.Forms.Label LblTip2;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumMqttPort;
+        internal System.Windows.Forms.NumericUpDown NumMqttPort;
         private PictureBox PbShow;
         internal CheckBox CbEnableMqtt;
     }

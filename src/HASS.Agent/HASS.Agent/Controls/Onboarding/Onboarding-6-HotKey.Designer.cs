@@ -34,7 +34,7 @@ namespace HASS.Agent.Controls.Onboarding
             this.TbQuickActionsHotkey = new System.Windows.Forms.TextBox();
             this.LblHotkeyCombo = new System.Windows.Forms.Label();
             this.LblInfo1 = new System.Windows.Forms.Label();
-            this.BtnClear = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnClear = new System.Windows.Forms.Button();
             this.LblLanguageWarning = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PbHassAgentLogo)).BeginInit();
             this.SuspendLayout();
@@ -103,13 +103,6 @@ namespace HASS.Agent.Controls.Onboarding
             this.BtnClear.Location = new System.Drawing.Point(434, 197);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(102, 25);
-            this.BtnClear.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClear.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClear.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClear.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClear.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClear.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClear.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnClear.TabIndex = 1;
             this.BtnClear.Text = global::HASS.Agent.Resources.Localization.Languages.OnboardingHotKey_BtnClear;
             this.BtnClear.UseVisualStyleBackColor = false;
@@ -157,7 +150,7 @@ namespace HASS.Agent.Controls.Onboarding
         private System.Windows.Forms.TextBox TbQuickActionsHotkey;
         private System.Windows.Forms.Label LblHotkeyCombo;
         private System.Windows.Forms.Label LblInfo1;
-        private Syncfusion.WinForms.Controls.SfButton BtnClear;
+        private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.Label LblLanguageWarning;
     }
 }

@@ -5,12 +5,11 @@ using HASS.Agent.Models.Internal;
 using HASS.Agent.Resources.Localization;
 using HASS.Agent.Shared.Enums;
 using HASS.Agent.Shared.Functions;
-using Syncfusion.Windows.Forms;
 using WK.Libraries.HotkeyListenerNS;
 
 namespace HASS.Agent.Forms.QuickActions
 {
-    public partial class QuickActionsMod : MetroForm
+    public partial class QuickActionsMod : Form
     {
         private readonly HotkeySelector _hotkeySelector = new();
         internal readonly QuickAction QuickAction;
@@ -123,11 +122,11 @@ namespace HASS.Agent.Forms.QuickActions
                     return true;
 
                 case HassManagerStatus.ConfigMissing:
-                    MessageBoxAdv.Show(this, Languages.QuickActionsMod_CheckHassManager_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(this, Languages.QuickActionsMod_CheckHassManager_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return false;
 
                 case HassManagerStatus.Failed:
-                    MessageBoxAdv.Show(this, Languages.QuickActionsMod_MessageBox_Entities, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(this, Languages.QuickActionsMod_MessageBox_Entities, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return false;
 
                 case HassManagerStatus.Initialising:
@@ -142,7 +141,7 @@ namespace HASS.Agent.Forms.QuickActions
                         if (HassApiManager.ManagerStatus != HassManagerStatus.Failed) continue;
 
                         // manager failed, abort
-                        MessageBoxAdv.Show(this, Languages.QuickActionsMod_MessageBox_Entities, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show(this, Languages.QuickActionsMod_MessageBox_Entities, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return false;
                     }
 
@@ -230,14 +229,14 @@ namespace HASS.Agent.Forms.QuickActions
             var entity = CbEntity.SelectedItem.ToString();
             if (string.IsNullOrEmpty(entity))
             {
-                MessageBoxAdv.Show(this, Languages.QuickActionsMod_BtnStore_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, Languages.QuickActionsMod_BtnStore_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ActiveControl = CbEntity;
                 return;
             }
 
             if (LvDomain.SelectedItems.Count == 0)
             {
-                MessageBoxAdv.Show(this, Languages.QuickActionsMod_BtnStore_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, Languages.QuickActionsMod_BtnStore_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ActiveControl = LvDomain;
                 return;
             }

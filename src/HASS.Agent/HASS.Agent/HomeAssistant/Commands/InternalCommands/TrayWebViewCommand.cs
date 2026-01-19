@@ -5,7 +5,6 @@ using HASS.Agent.Shared.Enums;
 using HASS.Agent.Shared.HomeAssistant.Commands;
 using Newtonsoft.Json;
 using Serilog;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.HomeAssistant.Commands.InternalCommands
 {

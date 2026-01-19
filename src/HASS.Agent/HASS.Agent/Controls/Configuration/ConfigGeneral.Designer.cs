@@ -39,7 +39,7 @@ namespace HASS.Agent.Controls.Configuration
             this.LblInfo1 = new System.Windows.Forms.Label();
             this.TbDeviceName = new System.Windows.Forms.TextBox();
             this.LblDeviceName = new System.Windows.Forms.Label();
-            this.NumDisconnectGrace = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+            this.NumDisconnectGrace = new System.Windows.Forms.NumericUpDown();
             this.LblInterfaceLangauge = new System.Windows.Forms.Label();
             this.CbLanguage = new System.Windows.Forms.ComboBox();
             this.PbLine1 = new System.Windows.Forms.PictureBox();
@@ -159,15 +159,12 @@ namespace HASS.Agent.Controls.Configuration
             this.LblDeviceName.Text = Languages.ConfigGeneral_LblDeviceName;
             // 
             // NumDisconnectGrace
-            // 
+            //
             this.NumDisconnectGrace.AccessibleDescription = "The amount of seconds HASS.Agent will wait before notifying about disconnects. On" +
     "ly accepts numeric values.";
             this.NumDisconnectGrace.AccessibleName = "Disconnected grace period numeric";
             this.NumDisconnectGrace.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumDisconnectGrace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumDisconnectGrace.BeforeTouchSize = new System.Drawing.Size(92, 25);
-            this.NumDisconnectGrace.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumDisconnectGrace.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumDisconnectGrace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumDisconnectGrace.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumDisconnectGrace.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -177,18 +174,14 @@ namespace HASS.Agent.Controls.Configuration
             0,
             0,
             0});
-            this.NumDisconnectGrace.MaxLength = 10;
-            this.NumDisconnectGrace.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumDisconnectGrace.Name = "NumDisconnectGrace";
             this.NumDisconnectGrace.Size = new System.Drawing.Size(92, 25);
             this.NumDisconnectGrace.TabIndex = 2;
-            this.NumDisconnectGrace.ThemeName = "Metro";
             this.NumDisconnectGrace.Value = new decimal(new int[] {
             60,
             0,
             0,
             0});
-            this.NumDisconnectGrace.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // LblInterfaceLangauge
             // 
@@ -369,7 +362,7 @@ namespace HASS.Agent.Controls.Configuration
         private System.Windows.Forms.Label LblInfo1;
         private System.Windows.Forms.Label LblDeviceName;
         internal System.Windows.Forms.TextBox TbDeviceName;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumDisconnectGrace;
+        internal System.Windows.Forms.NumericUpDown NumDisconnectGrace;
         private Label LblInterfaceLangauge;
         internal ComboBox CbLanguage;
         private PictureBox PbLine1;

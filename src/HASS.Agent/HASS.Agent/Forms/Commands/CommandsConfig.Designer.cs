@@ -33,10 +33,10 @@ namespace HASS.Agent.Forms.Commands
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CommandsConfig));
-            this.BtnRemove = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnModify = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnAdd = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnStore = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnRemove = new System.Windows.Forms.Button();
+            this.BtnModify = new System.Windows.Forms.Button();
+            this.BtnAdd = new System.Windows.Forms.Button();
+            this.BtnStore = new System.Windows.Forms.Button();
             this.LvCommands = new System.Windows.Forms.ListView();
             this.ClmId = new System.Windows.Forms.ColumnHeader();
             this.ClmName = new System.Windows.Forms.ColumnHeader("(none)");
@@ -65,13 +65,6 @@ namespace HASS.Agent.Forms.Commands
             this.BtnRemove.Location = new System.Drawing.Point(253, 516);
             this.BtnRemove.Name = "BtnRemove";
             this.BtnRemove.Size = new System.Drawing.Size(197, 35);
-            this.BtnRemove.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnRemove.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnRemove.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRemove.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRemove.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnRemove.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRemove.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnRemove.TabIndex = 2;
             this.BtnRemove.Text = global::HASS.Agent.Resources.Localization.Languages.CommandsConfig_BtnRemove;
             this.BtnRemove.UseVisualStyleBackColor = false;
@@ -89,13 +82,6 @@ namespace HASS.Agent.Forms.Commands
             this.BtnModify.Location = new System.Drawing.Point(456, 516);
             this.BtnModify.Name = "BtnModify";
             this.BtnModify.Size = new System.Drawing.Size(197, 35);
-            this.BtnModify.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnModify.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnModify.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnModify.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnModify.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnModify.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnModify.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnModify.TabIndex = 1;
             this.BtnModify.Text = global::HASS.Agent.Resources.Localization.Languages.CommandsConfig_BtnModify;
             this.BtnModify.UseVisualStyleBackColor = false;
@@ -113,13 +99,6 @@ namespace HASS.Agent.Forms.Commands
             this.BtnAdd.Location = new System.Drawing.Point(659, 516);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(197, 35);
-            this.BtnAdd.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnAdd.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnAdd.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnAdd.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnAdd.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnAdd.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnAdd.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnAdd.TabIndex = 0;
             this.BtnAdd.Text = global::HASS.Agent.Resources.Localization.Languages.CommandsConfig_BtnAdd;
             this.BtnAdd.UseVisualStyleBackColor = false;
@@ -137,14 +116,6 @@ namespace HASS.Agent.Forms.Commands
             this.BtnStore.Location = new System.Drawing.Point(0, 557);
             this.BtnStore.Name = "BtnStore";
             this.BtnStore.Size = new System.Drawing.Size(856, 47);
-            this.BtnStore.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStore.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStore.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStore.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnStore.TabIndex = 3;
             this.BtnStore.Text = global::HASS.Agent.Resources.Localization.Languages.CommandsConfig_BtnStore;
             this.BtnStore.UseVisualStyleBackColor = false;
@@ -289,9 +260,6 @@ namespace HASS.Agent.Forms.Commands
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.CaptionFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(856, 604);
             this.Controls.Add(this.LblActionInfo);
             this.Controls.Add(this.PbActionInfo);
@@ -306,11 +274,8 @@ namespace HASS.Agent.Forms.Commands
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.MinimumSize = new System.Drawing.Size(657, 598);
             this.Name = "CommandsConfig";
-            this.ShowMaximizeBox = false;
-            this.ShowMinimizeBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = Languages.CommandsConfig_Title;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CommandsConfig_FormClosing);
@@ -328,10 +293,10 @@ namespace HASS.Agent.Forms.Commands
 
         #endregion
 
-        private Syncfusion.WinForms.Controls.SfButton BtnRemove;
-        private Syncfusion.WinForms.Controls.SfButton BtnModify;
-        private Syncfusion.WinForms.Controls.SfButton BtnAdd;
-        private Syncfusion.WinForms.Controls.SfButton BtnStore;
+        private System.Windows.Forms.Button BtnRemove;
+        private System.Windows.Forms.Button BtnModify;
+        private System.Windows.Forms.Button BtnAdd;
+        private System.Windows.Forms.Button BtnStore;
         private ListView LvCommands;
         private ColumnHeader ClmId;
         private ColumnHeader ClmName;

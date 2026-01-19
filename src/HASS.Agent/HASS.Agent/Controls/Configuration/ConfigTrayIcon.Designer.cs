@@ -38,10 +38,10 @@ namespace HASS.Agent.Controls.Configuration
             LblWebViewUrl = new Label();
             LblX = new Label();
             LblWebViewSize = new Label();
-            BtnShowWebViewPreview = new Syncfusion.WinForms.Controls.SfButton();
-            NumWebViewWidth = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
-            NumWebViewHeight = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
-            BtnWebViewReset = new Syncfusion.WinForms.Controls.SfButton();
+            BtnShowWebViewPreview = new System.Windows.Forms.Button();
+            NumWebViewWidth = new System.Windows.Forms.NumericUpDown();
+            NumWebViewHeight = new System.Windows.Forms.NumericUpDown();
+            BtnWebViewReset = new System.Windows.Forms.Button();
             CbWebViewKeepLoaded = new CheckBox();
             LblInfo2 = new Label();
             CbWebViewShowMenuOnLeftClick = new CheckBox();
@@ -162,98 +162,71 @@ namespace HASS.Agent.Controls.Configuration
             LblWebViewSize.Text = "Size (px)";
             // 
             // BtnShowWebViewPreview
-            // 
+            //
             BtnShowWebViewPreview.AccessibleDescription = "Shows the webview, using the currently configured values.";
             BtnShowWebViewPreview.AccessibleName = "Webview preview";
             BtnShowWebViewPreview.AccessibleRole = AccessibleRole.PushButton;
             BtnShowWebViewPreview.BackColor = Color.FromArgb(63, 63, 70);
             BtnShowWebViewPreview.Enabled = false;
+            BtnShowWebViewPreview.FlatStyle = FlatStyle.Flat;
             BtnShowWebViewPreview.Font = new Font("Segoe UI", 10F);
             BtnShowWebViewPreview.ForeColor = Color.FromArgb(241, 241, 241);
             BtnShowWebViewPreview.Location = new Point(405, 348);
             BtnShowWebViewPreview.Name = "BtnShowWebViewPreview";
             BtnShowWebViewPreview.Size = new Size(206, 26);
-            BtnShowWebViewPreview.Style.BackColor = Color.FromArgb(63, 63, 70);
-            BtnShowWebViewPreview.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-            BtnShowWebViewPreview.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-            BtnShowWebViewPreview.Style.ForeColor = Color.FromArgb(241, 241, 241);
-            BtnShowWebViewPreview.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-            BtnShowWebViewPreview.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-            BtnShowWebViewPreview.Style.PressedForeColor = Color.Black;
             BtnShowWebViewPreview.TabIndex = 6;
             BtnShowWebViewPreview.Text = Languages.ConfigTrayIcon_BtnShowWebViewPreview;
             BtnShowWebViewPreview.UseVisualStyleBackColor = false;
             BtnShowWebViewPreview.Click += BtnShowWebViewPreview_Click;
             // 
             // NumWebViewWidth
-            // 
+            //
             NumWebViewWidth.AccessibleDescription = "The width of the webview. Only accepts numeric values.";
             NumWebViewWidth.AccessibleName = "Width";
             NumWebViewWidth.AccessibleRole = AccessibleRole.Text;
             NumWebViewWidth.BackColor = Color.FromArgb(63, 63, 70);
-            NumWebViewWidth.BeforeTouchSize = new Size(83, 25);
-            NumWebViewWidth.Border3DStyle = Border3DStyle.Flat;
-            NumWebViewWidth.BorderColor = SystemColors.WindowFrame;
             NumWebViewWidth.BorderStyle = BorderStyle.FixedSingle;
             NumWebViewWidth.Enabled = false;
             NumWebViewWidth.Font = new Font("Segoe UI", 10F);
             NumWebViewWidth.ForeColor = Color.FromArgb(241, 241, 241);
             NumWebViewWidth.Location = new Point(87, 348);
             NumWebViewWidth.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
-            NumWebViewWidth.MaxLength = 10;
-            NumWebViewWidth.MetroColor = SystemColors.WindowFrame;
             NumWebViewWidth.Name = "NumWebViewWidth";
             NumWebViewWidth.Size = new Size(83, 25);
             NumWebViewWidth.TabIndex = 3;
-            NumWebViewWidth.ThemeName = "Metro";
             NumWebViewWidth.Value = new decimal(new int[] { 700, 0, 0, 0 });
-            NumWebViewWidth.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // NumWebViewHeight
-            // 
+            //
             NumWebViewHeight.AccessibleDescription = "The height of the webview. Only accepts numeric values.";
             NumWebViewHeight.AccessibleName = "Height";
             NumWebViewHeight.AccessibleRole = AccessibleRole.Text;
             NumWebViewHeight.BackColor = Color.FromArgb(63, 63, 70);
-            NumWebViewHeight.BeforeTouchSize = new Size(83, 25);
-            NumWebViewHeight.Border3DStyle = Border3DStyle.Flat;
-            NumWebViewHeight.BorderColor = SystemColors.WindowFrame;
             NumWebViewHeight.BorderStyle = BorderStyle.FixedSingle;
             NumWebViewHeight.Enabled = false;
             NumWebViewHeight.Font = new Font("Segoe UI", 10F);
             NumWebViewHeight.ForeColor = Color.FromArgb(241, 241, 241);
             NumWebViewHeight.Location = new Point(218, 348);
             NumWebViewHeight.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
-            NumWebViewHeight.MaxLength = 10;
-            NumWebViewHeight.MetroColor = SystemColors.WindowFrame;
             NumWebViewHeight.Name = "NumWebViewHeight";
             NumWebViewHeight.Size = new Size(83, 25);
             NumWebViewHeight.TabIndex = 4;
-            NumWebViewHeight.ThemeName = "Metro";
             NumWebViewHeight.Value = new decimal(new int[] { 560, 0, 0, 0 });
-            NumWebViewHeight.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // BtnWebViewReset
-            // 
+            //
             BtnWebViewReset.AccessibleDescription = "Resets the width and height values to their defaults.";
             BtnWebViewReset.AccessibleName = "Reset webview";
             BtnWebViewReset.AccessibleRole = AccessibleRole.PushButton;
             BtnWebViewReset.BackColor = Color.FromArgb(63, 63, 70);
             BtnWebViewReset.Enabled = false;
+            BtnWebViewReset.FlatStyle = FlatStyle.Flat;
             BtnWebViewReset.Font = new Font("Segoe UI", 10F);
             BtnWebViewReset.ForeColor = Color.FromArgb(241, 241, 241);
-            BtnWebViewReset.ImageSize = new Size(24, 24);
+            BtnWebViewReset.Image = Properties.Resources.reset_24;
             BtnWebViewReset.Location = new Point(317, 348);
             BtnWebViewReset.Name = "BtnWebViewReset";
             BtnWebViewReset.Size = new Size(51, 26);
-            BtnWebViewReset.Style.BackColor = Color.FromArgb(63, 63, 70);
-            BtnWebViewReset.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-            BtnWebViewReset.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-            BtnWebViewReset.Style.ForeColor = Color.FromArgb(241, 241, 241);
-            BtnWebViewReset.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-            BtnWebViewReset.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-            BtnWebViewReset.Style.Image = Properties.Resources.reset_24;
-            BtnWebViewReset.Style.PressedForeColor = Color.Black;
             BtnWebViewReset.TabIndex = 5;
             BtnWebViewReset.TextImageRelation = TextImageRelation.Overlay;
             BtnWebViewReset.UseVisualStyleBackColor = false;
@@ -345,13 +318,13 @@ namespace HASS.Agent.Controls.Configuration
         internal System.Windows.Forms.CheckBox CbDefaultMenu;
         internal CheckBox CbShowWebView;
         internal TextBox TbWebViewUrl;
-        internal Syncfusion.WinForms.Controls.SfButton BtnShowWebViewPreview;
+        internal System.Windows.Forms.Button BtnShowWebViewPreview;
         internal Label LblWebViewUrl;
         internal Label LblX;
         internal Label LblWebViewSize;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumWebViewWidth;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumWebViewHeight;
-        internal Syncfusion.WinForms.Controls.SfButton BtnWebViewReset;
+        internal System.Windows.Forms.NumericUpDown NumWebViewWidth;
+        internal System.Windows.Forms.NumericUpDown NumWebViewHeight;
+        internal System.Windows.Forms.Button BtnWebViewReset;
         internal CheckBox CbWebViewKeepLoaded;
         internal Label LblInfo2;
         internal CheckBox CbWebViewShowMenuOnLeftClick;

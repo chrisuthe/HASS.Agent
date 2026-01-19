@@ -1,6 +1,5 @@
 ﻿using System.Globalization;
 using HASS.Agent.Functions;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Controls.Configuration
 {

@@ -1,17 +1,15 @@
 ﻿using HASS.Agent.Extensions;
 using HASS.Agent.Functions;
 using HASS.Agent.Resources.Localization;
-using Syncfusion.Windows.Forms;
 using HASS.Agent.Sensors;
 using HASS.Agent.Settings;
 using HASS.Agent.Shared.Enums;
 using HASS.Agent.Shared.Models.Config;
 using Serilog;
-using Syncfusion.Windows.Forms.Grid;
 
 namespace HASS.Agent.Forms.Sensors
 {
-    public partial class SensorsConfig : MetroForm
+    public partial class SensorsConfig : Form
     {
         private List<ConfiguredSensor> _sensors = new();
         private readonly List<ConfiguredSensor> _toBeDeletedSensors = new();
@@ -237,7 +235,7 @@ namespace HASS.Agent.Forms.Sensors
 
             // store
             var stored = await Task.Run(async () => await SensorsManager.StoreAsync(_sensors, _toBeDeletedSensors));
-            if (!stored) MessageBoxAdv.Show(this, Languages.SensorsConfig_BtnStore_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (!stored) MessageBox.Show(this, Languages.SensorsConfig_BtnStore_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             // done
             Close();

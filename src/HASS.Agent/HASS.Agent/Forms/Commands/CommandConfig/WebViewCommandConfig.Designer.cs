@@ -32,7 +32,7 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WebViewCommandConfig));
-            this.BtnSave = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnSave = new System.Windows.Forms.Button();
             this.LblInfo1 = new System.Windows.Forms.Label();
             this.TbUrl = new System.Windows.Forms.TextBox();
             this.LblUrl = new System.Windows.Forms.Label();
@@ -44,10 +44,10 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.CbCenterScreen = new System.Windows.Forms.CheckBox();
             this.CbTopMost = new System.Windows.Forms.CheckBox();
             this.LblTip1 = new System.Windows.Forms.Label();
-            this.NumLocationX = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
-            this.NumLocationY = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
-            this.NumSizeWidth = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
-            this.NumSizeHeight = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+            this.NumLocationX = new System.Windows.Forms.NumericUpDown();
+            this.NumLocationY = new System.Windows.Forms.NumericUpDown();
+            this.NumSizeWidth = new System.Windows.Forms.NumericUpDown();
+            this.NumSizeHeight = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.NumLocationX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumLocationY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumSizeWidth)).BeginInit();
@@ -66,13 +66,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.BtnSave.Location = new System.Drawing.Point(0, 303);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(588, 37);
-            this.BtnSave.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnSave.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnSave.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnSave.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnSave.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnSave.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnSave.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnSave.TabIndex = 8;
             this.BtnSave.Text = global::HASS.Agent.Resources.Localization.Languages.WebViewCommandConfig_BtnSave;
             this.BtnSave.UseVisualStyleBackColor = false;
@@ -236,9 +229,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.NumLocationX.AccessibleName = "Location X";
             this.NumLocationX.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumLocationX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumLocationX.BeforeTouchSize = new System.Drawing.Size(91, 25);
-            this.NumLocationX.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumLocationX.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumLocationX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumLocationX.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumLocationX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -248,13 +238,9 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             0,
             0,
             0});
-            this.NumLocationX.MaxLength = 10;
-            this.NumLocationX.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumLocationX.Name = "NumLocationX";
             this.NumLocationX.Size = new System.Drawing.Size(91, 25);
             this.NumLocationX.TabIndex = 1;
-            this.NumLocationX.ThemeName = "Metro";
-            this.NumLocationX.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // NumLocationY
             // 
@@ -262,9 +248,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.NumLocationY.AccessibleName = "Location Y";
             this.NumLocationY.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumLocationY.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumLocationY.BeforeTouchSize = new System.Drawing.Size(91, 25);
-            this.NumLocationY.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumLocationY.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumLocationY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumLocationY.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumLocationY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -274,13 +257,9 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             0,
             0,
             0});
-            this.NumLocationY.MaxLength = 10;
-            this.NumLocationY.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumLocationY.Name = "NumLocationY";
             this.NumLocationY.Size = new System.Drawing.Size(91, 25);
             this.NumLocationY.TabIndex = 2;
-            this.NumLocationY.ThemeName = "Metro";
-            this.NumLocationY.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // NumSizeWidth
             // 
@@ -288,9 +267,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.NumSizeWidth.AccessibleName = "Width";
             this.NumSizeWidth.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumSizeWidth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumSizeWidth.BeforeTouchSize = new System.Drawing.Size(91, 25);
-            this.NumSizeWidth.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumSizeWidth.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumSizeWidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumSizeWidth.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumSizeWidth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -300,13 +276,9 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             0,
             0,
             0});
-            this.NumSizeWidth.MaxLength = 10;
-            this.NumSizeWidth.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumSizeWidth.Name = "NumSizeWidth";
             this.NumSizeWidth.Size = new System.Drawing.Size(91, 25);
             this.NumSizeWidth.TabIndex = 3;
-            this.NumSizeWidth.ThemeName = "Metro";
-            this.NumSizeWidth.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // NumSizeHeight
             // 
@@ -314,9 +286,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.NumSizeHeight.AccessibleName = "Height";
             this.NumSizeHeight.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumSizeHeight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumSizeHeight.BeforeTouchSize = new System.Drawing.Size(91, 25);
-            this.NumSizeHeight.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumSizeHeight.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumSizeHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumSizeHeight.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumSizeHeight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -326,13 +295,9 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             0,
             0,
             0});
-            this.NumSizeHeight.MaxLength = 10;
-            this.NumSizeHeight.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumSizeHeight.Name = "NumSizeHeight";
             this.NumSizeHeight.Size = new System.Drawing.Size(91, 25);
             this.NumSizeHeight.TabIndex = 4;
-            this.NumSizeHeight.ThemeName = "Metro";
-            this.NumSizeHeight.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // WebViewCommandConfig
             // 
@@ -342,9 +307,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.CaptionFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(588, 340);
             this.Controls.Add(this.NumSizeHeight);
             this.Controls.Add(this.NumSizeWidth);
@@ -366,10 +328,7 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.Name = "WebViewCommandConfig";
-            this.ShowMaximizeBox = false;
-            this.ShowMinimizeBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = Languages.WebViewCommandConfig_Title;
             this.Load += new System.EventHandler(this.WebViewCommandConfig_Load);
@@ -388,7 +347,7 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
         }
 
         #endregion
-        private Syncfusion.WinForms.Controls.SfButton BtnSave;
+        private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Label LblInfo1;
         private TextBox TbUrl;
         private Label LblUrl;
@@ -400,10 +359,10 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
         private CheckBox CbCenterScreen;
         private CheckBox CbTopMost;
         private Label LblTip1;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumLocationX;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumLocationY;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumSizeWidth;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumSizeHeight;
+        internal System.Windows.Forms.NumericUpDown NumLocationX;
+        internal System.Windows.Forms.NumericUpDown NumLocationY;
+        internal System.Windows.Forms.NumericUpDown NumSizeWidth;
+        internal System.Windows.Forms.NumericUpDown NumSizeHeight;
     }
 }
 

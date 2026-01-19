@@ -4,12 +4,10 @@ using HASS.Agent.Resources.Localization;
 using HASS.Agent.Shared.Models.Internal;
 using Newtonsoft.Json;
 using Serilog;
-using Syncfusion.Windows.Forms;
-using Syncfusion.WinForms.Controls.Styles;
 
 namespace HASS.Agent.Forms.Commands.CommandConfig;
 
-public partial class AdvancedSensorSettings : MetroForm
+public partial class AdvancedSensorSettings : Form
 {
 
     public SensorAdvancedSettings AdvancedSettings { get; private set; } = null;
@@ -30,8 +28,6 @@ public partial class AdvancedSensorSettings : MetroForm
 
     private void AdvancedSensorConfig_Load(object sender, EventArgs e)
     {
-        CaptionBarHeight = 26;
-
         if (AdvancedSettings != null)
             SetStoredVariables();
 

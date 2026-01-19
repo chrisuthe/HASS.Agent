@@ -21,7 +21,6 @@ using HASS.Agent.Sensors;
 using HASS.Agent.Shared;
 using HASS.Agent.Shared.Functions;
 using Serilog;
-using Syncfusion.Windows.Forms;
 using Task = System.Threading.Tasks.Task;
 using MediaManager = HASS.Agent.Media.MediaManager;
 using HASS.Agent.Shared.Managers;
@@ -33,32 +32,6 @@ namespace HASS.Agent.Functions
     internal static class HelperFunctions
     {
         private static bool _shutdownCalled = false;
-
-        /// <summary>
-        /// Initializes Syncfusion's messagebox style
-        /// Todo: incomplete, button color etc need to be done
-        /// </summary>
-        /// <param name="font"></param>
-        internal static void SetMsgBoxStyle(Font font)
-        {
-            var style = new MetroStyleColorTable
-            {
-                BackColor = Color.FromArgb(45, 45, 48),
-                BorderColor = Color.FromArgb(115, 115, 115),
-                CaptionBarColor = Color.FromArgb(63, 63, 70),
-                CaptionForeColor = Color.FromArgb(241, 241, 241),
-                ForeColor = Color.FromArgb(241, 241, 241)
-            };
-
-            MessageBoxAdv.ApplyAeroTheme = false;
-            MessageBoxAdv.MetroColorTable = style;
-            MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro;
-
-            MessageBoxAdv.CaptionFont = font;
-            MessageBoxAdv.ButtonFont = font;
-            MessageBoxAdv.DetailsFont = font;
-            MessageBoxAdv.MessageFont = font;
-        }
 
         /// <summary>
         /// Returns the scaling and dpi scaling factors

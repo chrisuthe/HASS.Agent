@@ -1,7 +1,6 @@
 ﻿using HASS.Agent.Functions;
 using HASS.Agent.Managers;
 using HASS.Agent.Resources.Localization;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Controls.Configuration
 {
@@ -25,7 +24,7 @@ namespace HASS.Agent.Controls.Configuration
                 var disabled = LaunchManager.DisableLaunchOnUserLogin();
                 if (!disabled)
                 {
-                    MessageBoxAdv.Show(this, Languages.ConfigStartup_BtnSetStartOnLogin_MessageBox1,
+                    MessageBox.Show(this, Languages.ConfigStartup_BtnSetStartOnLogin_MessageBox1,
                         Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -35,7 +34,7 @@ namespace HASS.Agent.Controls.Configuration
                 var enabled = LaunchManager.EnableLaunchOnUserLogin();
                 if (!enabled)
                 {
-                    MessageBoxAdv.Show(this, Languages.ConfigStartup_BtnSetStartOnLogin_MessageBox2,
+                    MessageBox.Show(this, Languages.ConfigStartup_BtnSetStartOnLogin_MessageBox2,
                         Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

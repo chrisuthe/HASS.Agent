@@ -1,26 +1,26 @@
-﻿using System.Globalization;
-using System.Linq;
-using HASS.Agent.Shared.Managers;
 using HASS.Agent.Shared.Models.HomeAssistant;
-using LibreHardwareMonitor.Hardware;
+using Serilog;
 
 namespace HASS.Agent.Shared.HomeAssistant.Sensors.GeneralSensors.SingleValue;
 
 /// <summary>
-/// Sensor indicating the current GPU load
+/// Sensor indicating the current GPU load.
+/// DISABLED: GPU monitoring removed due to WinRing0 vulnerability (CVE-2020-14979).
 /// </summary>
 public class GpuLoadSensor : AbstractSingleValueSensor
 {
 	private const string DefaultName = "gpuload";
-	private readonly IHardware _gpu;
+	private static bool _warningLogged = false;
 
 	public GpuLoadSensor(int? updateInterval = null, string entityName = DefaultName, string name = DefaultName, string id = default, string advancedSettings = default) : base(entityName ?? DefaultName, name ?? null, updateInterval ?? 30, id, advancedSettings: advancedSettings)
 	{
-		_gpu = HardwareManager.Hardware.FirstOrDefault(
-			h => h.HardwareType == HardwareType.GpuAmd ||
-			h.HardwareType == HardwareType.GpuNvidia ||
-            h.HardwareType == HardwareType.GpuIntel
-		);
+		if (!_warningLogged)
+		{
+			Log.Warning("[GPU_LOAD_SENSOR] GPU load monitoring is no longer available. " +
+				"LibreHardwareMonitorLib was removed due to WinRing0 vulnerability (CVE-2020-14979). " +
+				"See: https://nvd.nist.gov/vuln/detail/CVE-2020-14979");
+			_warningLogged = true;
+		}
 	}
 
 	public override DiscoveryConfigModel GetAutoDiscoveryConfig()
@@ -40,25 +40,12 @@ public class GpuLoadSensor : AbstractSingleValueSensor
 			Device = deviceConfig,
 			State_topic = $"{Variables.MqttManager.MqttDiscoveryPrefix()}/{Domain}/{deviceConfig.Name}/{ObjectId}/state",
 			Unit_of_measurement = "%",
-            State_class = "measurement",
-            Availability_topic = $"{Variables.MqttManager.MqttDiscoveryPrefix()}/{Domain}/{deviceConfig.Name}/availability"
+			State_class = "measurement",
+			Availability_topic = $"{Variables.MqttManager.MqttDiscoveryPrefix()}/{Domain}/{deviceConfig.Name}/availability"
 		});
 	}
 
-	public override string GetState()
-	{
-		if (_gpu == null)
-			return null;
-
-		_gpu.Update();
-
-		var sensor = _gpu.Sensors.FirstOrDefault(s => s.SensorType == SensorType.Load);
-
-		if (sensor?.Value == null)
-			return null;
-
-		return sensor.Value.HasValue ? sensor.Value.Value.ToString("#.##", CultureInfo.InvariantCulture) : null;
-	}
+	public override string GetState() => null;
 
 	public override string GetAttributes() => string.Empty;
 }

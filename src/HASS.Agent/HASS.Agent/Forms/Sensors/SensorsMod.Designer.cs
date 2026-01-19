@@ -33,7 +33,7 @@ namespace HASS.Agent.Forms.Sensors
 		{
 			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SensorsMod));
-			BtnStore = new Syncfusion.WinForms.Controls.SfButton();
+			BtnStore = new System.Windows.Forms.Button();
 			LblSetting1 = new Label();
 			TbSetting1 = new TextBox();
 			LblType = new Label();
@@ -48,7 +48,7 @@ namespace HASS.Agent.Forms.Sensors
 			TbSetting2 = new TextBox();
 			LblSetting3 = new Label();
 			TbSetting3 = new TextBox();
-			NumInterval = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+			NumInterval = new System.Windows.Forms.NumericUpDown();
 			LvSensors = new ListView();
 			ClmId = new ColumnHeader();
 			ClmSensorName = new ColumnHeader();
@@ -65,10 +65,10 @@ namespace HASS.Agent.Forms.Sensors
 			LblService = new Label();
 			PbService = new PictureBox();
 			LblSpecificClient = new Label();
-			BtnTest = new Syncfusion.WinForms.Controls.SfButton();
-            BtnAdvSettings = new Syncfusion.WinForms.Controls.SfButton();
+			BtnTest = new System.Windows.Forms.Button();
+            BtnAdvSettings = new System.Windows.Forms.Button();
             CbNetworkCard = new ComboBox();
-			NumRound = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+			NumRound = new System.Windows.Forms.NumericUpDown();
 			LblDigits = new Label();
 			CbApplyRounding = new CheckBox();
 			LblFriendlyName = new Label();
@@ -95,13 +95,6 @@ namespace HASS.Agent.Forms.Sensors
 			BtnStore.Location = new Point(0, 484);
 			BtnStore.Name = "BtnStore";
 			BtnStore.Size = new Size(1318, 38);
-			BtnStore.Style.BackColor = Color.FromArgb(63, 63, 70);
-			BtnStore.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-			BtnStore.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-			BtnStore.Style.ForeColor = Color.FromArgb(241, 241, 241);
-			BtnStore.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-			BtnStore.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-			BtnStore.Style.PressedForeColor = Color.Black;
 			BtnStore.TabIndex = 7;
 			BtnStore.Text = Languages.SensorsMod_BtnStore;
 			BtnStore.UseVisualStyleBackColor = false;
@@ -310,22 +303,15 @@ namespace HASS.Agent.Forms.Sensors
 			NumInterval.AccessibleName = "Update interval";
 			NumInterval.AccessibleRole = AccessibleRole.Text;
 			NumInterval.BackColor = Color.FromArgb(63, 63, 70);
-			NumInterval.BeforeTouchSize = new Size(83, 25);
-			NumInterval.Border3DStyle = Border3DStyle.Flat;
-			NumInterval.BorderColor = SystemColors.WindowFrame;
 			NumInterval.BorderStyle = BorderStyle.FixedSingle;
 			NumInterval.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
 			NumInterval.ForeColor = Color.FromArgb(241, 241, 241);
 			NumInterval.Location = new Point(673, 192);
 			NumInterval.Maximum = new decimal(new int[] { 86400, 0, 0, 0 });
-			NumInterval.MaxLength = 10;
-			NumInterval.MetroColor = SystemColors.WindowFrame;
 			NumInterval.Name = "NumInterval";
 			NumInterval.Size = new Size(83, 25);
 			NumInterval.TabIndex = 2;
-			NumInterval.ThemeName = "Metro";
 			NumInterval.Value = new decimal(new int[] { 10, 0, 0, 0 });
-			NumInterval.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
 			// 
 			// LvSensors
 			// 
@@ -510,13 +496,6 @@ namespace HASS.Agent.Forms.Sensors
 			BtnTest.Location = new Point(955, 416);
 			BtnTest.Name = "BtnTest";
 			BtnTest.Size = new Size(354, 25);
-			BtnTest.Style.BackColor = Color.FromArgb(63, 63, 70);
-			BtnTest.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-			BtnTest.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-			BtnTest.Style.ForeColor = Color.FromArgb(241, 241, 241);
-			BtnTest.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-			BtnTest.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-			BtnTest.Style.PressedForeColor = Color.Black;
 			BtnTest.TabIndex = 8;
 			BtnTest.Text = Languages.SensorsMod_BtnTest;
 			BtnTest.UseVisualStyleBackColor = false;
@@ -534,13 +513,6 @@ namespace HASS.Agent.Forms.Sensors
             BtnAdvSettings.Location = new Point(955, 446);
             BtnAdvSettings.Name = "BtnTest";
             BtnAdvSettings.Size = new Size(354, 25);
-            BtnAdvSettings.Style.BackColor = Color.FromArgb(63, 63, 70);
-            BtnAdvSettings.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-            BtnAdvSettings.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-            BtnAdvSettings.Style.ForeColor = Color.FromArgb(241, 241, 241);
-            BtnAdvSettings.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-            BtnAdvSettings.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-            BtnAdvSettings.Style.PressedForeColor = Color.Black;
             BtnAdvSettings.TabIndex = 48;
             BtnAdvSettings.Text = Languages.SensorsMod_BtnAdvancedSettings;
             BtnAdvSettings.UseVisualStyleBackColor = false;
@@ -572,24 +544,17 @@ namespace HASS.Agent.Forms.Sensors
 			NumRound.AccessibleName = "Round digits";
 			NumRound.AccessibleRole = AccessibleRole.Text;
 			NumRound.BackColor = Color.FromArgb(63, 63, 70);
-			NumRound.BeforeTouchSize = new Size(83, 25);
-			NumRound.Border3DStyle = Border3DStyle.Flat;
-			NumRound.BorderColor = SystemColors.WindowFrame;
 			NumRound.BorderStyle = BorderStyle.FixedSingle;
 			NumRound.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
 			NumRound.ForeColor = Color.FromArgb(241, 241, 241);
 			NumRound.Location = new Point(673, 266);
 			NumRound.Maximum = new decimal(new int[] { 86400, 0, 0, 0 });
-			NumRound.MaxLength = 10;
-			NumRound.MetroColor = SystemColors.WindowFrame;
 			NumRound.Name = "NumRound";
 			NumRound.Size = new Size(83, 25);
 			NumRound.TabIndex = 3;
 			NumRound.Tag = "";
-			NumRound.ThemeName = "Metro";
 			NumRound.Value = new decimal(new int[] { 2, 0, 0, 0 });
 			NumRound.Visible = false;
-			NumRound.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
 			// 
 			// LblDigits
 			// 
@@ -683,9 +648,6 @@ namespace HASS.Agent.Forms.Sensors
 			AutoScaleDimensions = new SizeF(96F, 96F);
 			AutoScaleMode = AutoScaleMode.Dpi;
 			BackColor = Color.FromArgb(45, 45, 48);
-			CaptionBarColor = Color.FromArgb(63, 63, 70);
-			CaptionFont = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-			CaptionForeColor = Color.FromArgb(241, 241, 241);
 			ClientSize = new Size(1318, 522);
 			Controls.Add(CbIgnoreAvailability);
 			Controls.Add(LblOptional1);
@@ -726,10 +688,7 @@ namespace HASS.Agent.Forms.Sensors
 			FormBorderStyle = FormBorderStyle.FixedSingle;
 			Icon = (Icon)resources.GetObject("$this.Icon");
 			MaximizeBox = false;
-			MetroColor = Color.FromArgb(63, 63, 70);
 			Name = "SensorsMod";
-			ShowMaximizeBox = false;
-			ShowMinimizeBox = false;
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Sensor";
 			Load += SensorMod_Load;
@@ -748,7 +707,7 @@ namespace HASS.Agent.Forms.Sensors
 
 		#endregion
 
-		private Syncfusion.WinForms.Controls.SfButton BtnStore;
+		private System.Windows.Forms.Button BtnStore;
 		private System.Windows.Forms.Label LblSetting1;
 		private System.Windows.Forms.TextBox TbSetting1;
 		private System.Windows.Forms.Label LblType;
@@ -763,7 +722,7 @@ namespace HASS.Agent.Forms.Sensors
 		private System.Windows.Forms.TextBox TbSetting2;
 		private System.Windows.Forms.Label LblSetting3;
 		private System.Windows.Forms.TextBox TbSetting3;
-		private Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumInterval;
+		private System.Windows.Forms.NumericUpDown NumInterval;
 		private ListView LvSensors;
 		private ColumnHeader ClmSensorName;
 		private ColumnHeader ClmMultiValue;
@@ -780,10 +739,10 @@ namespace HASS.Agent.Forms.Sensors
 		private PictureBox PbService;
 		private Label LblSpecificClient;
 		private ColumnHeader ClmId;
-		private Syncfusion.WinForms.Controls.SfButton BtnTest;
-        private Syncfusion.WinForms.Controls.SfButton BtnAdvSettings;
+		private System.Windows.Forms.Button BtnTest;
+        private System.Windows.Forms.Button BtnAdvSettings;
         private ComboBox CbNetworkCard;
-		private Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumRound;
+		private System.Windows.Forms.NumericUpDown NumRound;
 		private Label LblDigits;
 		internal CheckBox CbApplyRounding;
 		private Label LblFriendlyName;

@@ -4,12 +4,10 @@ using HASS.Agent.Resources.Localization;
 using HASS.Agent.Settings;
 using HASS.Agent.Shared.Extensions;
 using HASS.Agent.Shared.Models.Config;
-using Syncfusion.Windows.Forms;
-using Syncfusion.Windows.Forms.Grid;
 
 namespace HASS.Agent.Forms.Commands
 {
-    public partial class CommandsConfig : MetroForm
+    public partial class CommandsConfig : Form
     {
         private List<ConfiguredCommand> _commands = new();
         private readonly List<ConfiguredCommand> _toBeDeletedCommands = new();
@@ -168,7 +166,7 @@ namespace HASS.Agent.Forms.Commands
 
             // store
             var stored = await Task.Run(async () => await CommandsManager.StoreAsync(_commands, _toBeDeletedCommands));
-            if (!stored) MessageBoxAdv.Show(this, Languages.CommandsConfig_BtnStore_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (!stored) MessageBox.Show(this, Languages.CommandsConfig_BtnStore_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             // done
             Close();

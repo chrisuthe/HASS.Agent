@@ -84,9 +84,6 @@ namespace HASS.Agent.Forms.ChildApplications
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(45, 45, 48);
-            CaptionBarColor = Color.FromArgb(63, 63, 70);
-            CaptionFont = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            CaptionForeColor = Color.FromArgb(241, 241, 241);
             ClientSize = new Size(619, 284);
             Controls.Add(LblTask1);
             Controls.Add(PbStep1CompatTask);
@@ -96,10 +93,7 @@ namespace HASS.Agent.Forms.ChildApplications
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MetroColor = Color.FromArgb(63, 63, 70);
             Name = "CompatibilityTask";
-            ShowMaximizeBox = false;
-            ShowMinimizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HASS.Agent Compatibility Task";
             Load += CompatibilityTask_Load;

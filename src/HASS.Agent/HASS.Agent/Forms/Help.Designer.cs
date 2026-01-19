@@ -32,7 +32,7 @@ namespace HASS.Agent.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
-            this.BtnClose = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnClose = new System.Windows.Forms.Button();
             this.LblInfo1 = new System.Windows.Forms.Label();
             this.LblAbout = new System.Windows.Forms.Label();
             this.LblVersion = new System.Windows.Forms.Label();
@@ -55,26 +55,20 @@ namespace HASS.Agent.Forms
             ((System.ComponentModel.ISupportInitialize)(this.PbHassAgentLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbDocumentation)).BeginInit();
             this.SuspendLayout();
-            // 
+            //
             // BtnClose
-            // 
+            //
             this.BtnClose.AccessibleDescription = "Closes the window.";
             this.BtnClose.AccessibleName = "Close";
             this.BtnClose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.BtnClose.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnClose.Location = new System.Drawing.Point(0, 569);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(626, 37);
-            this.BtnClose.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClose.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClose.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClose.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClose.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClose.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClose.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnClose.TabIndex = 0;
             this.BtnClose.Text = global::HASS.Agent.Resources.Localization.Languages.Help_BtnClose;
             this.BtnClose.UseVisualStyleBackColor = false;
@@ -319,9 +313,6 @@ namespace HASS.Agent.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.CaptionFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(626, 606);
             this.Controls.Add(this.LblDocumentationInfo);
             this.Controls.Add(this.LblDocumentation);
@@ -345,10 +336,7 @@ namespace HASS.Agent.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.Name = "Help";
-            this.ShowMaximizeBox = false;
-            this.ShowMinimizeBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = Languages.Help_Title;
             this.Load += new System.EventHandler(this.Help_Load);
@@ -365,7 +353,7 @@ namespace HASS.Agent.Forms
         }
 
         #endregion
-        private Syncfusion.WinForms.Controls.SfButton BtnClose;
+        private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.PictureBox PbHassAgentLogo;
         private System.Windows.Forms.Label LblInfo1;
         private System.Windows.Forms.Label LblAbout;

@@ -13,7 +13,6 @@ using HASS.Agent.Shared.Models.HomeAssistant;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using Serilog;
-using Syncfusion.Windows.Forms;
 using WK.Libraries.HotkeyListenerNS;
 
 namespace HASS.Agent.Settings

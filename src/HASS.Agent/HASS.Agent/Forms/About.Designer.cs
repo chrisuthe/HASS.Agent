@@ -32,7 +32,7 @@ namespace HASS.Agent.Forms
         private void InitializeComponent()
         {
             var resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
-            BtnClose = new Syncfusion.WinForms.Controls.SfButton();
+            BtnClose = new System.Windows.Forms.Button();
             LblHassAgentProject = new Label();
             LblInfo1 = new Label();
             LblInfo3 = new Label();
@@ -40,12 +40,10 @@ namespace HASS.Agent.Forms
             LblGrapevine = new Label();
             LblHADotNet = new Label();
             LblMicrosoftAppSDK = new Label();
-            LblLibreHardwareMonitor = new Label();
             LblHotkeyListener = new Label();
             LblSerilog = new Label();
             LblNewtonsoftJson = new Label();
             LblMQTTnet = new Label();
-            LblSyncfusion = new Label();
             LblInfo4 = new Label();
             LblInfo5 = new Label();
             LblInfo2 = new Label();
@@ -77,24 +75,18 @@ namespace HASS.Agent.Forms
             SuspendLayout();
             // 
             // BtnClose
-            // 
+            //
             BtnClose.AccessibleDescription = "Closes the window.";
             BtnClose.AccessibleName = "Close";
             BtnClose.AccessibleRole = AccessibleRole.PushButton;
             BtnClose.BackColor = Color.FromArgb(63, 63, 70);
             BtnClose.Dock = DockStyle.Bottom;
+            BtnClose.FlatStyle = FlatStyle.Flat;
             BtnClose.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             BtnClose.ForeColor = Color.FromArgb(241, 241, 241);
             BtnClose.Location = new Point(0, 808);
             BtnClose.Name = "BtnClose";
             BtnClose.Size = new Size(747, 37);
-            BtnClose.Style.BackColor = Color.FromArgb(63, 63, 70);
-            BtnClose.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-            BtnClose.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-            BtnClose.Style.ForeColor = Color.FromArgb(241, 241, 241);
-            BtnClose.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-            BtnClose.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-            BtnClose.Style.PressedForeColor = Color.Black;
             BtnClose.TabIndex = 0;
             BtnClose.Text = Languages.About_BtnClose;
             BtnClose.UseVisualStyleBackColor = false;
@@ -199,22 +191,7 @@ namespace HASS.Agent.Forms
             LblMicrosoftAppSDK.TabIndex = 10;
             LblMicrosoftAppSDK.Text = "Microsoft.WindowsAppSDK";
             LblMicrosoftAppSDK.Click += LblMicrosoftAppSDK_Click;
-            // 
-            // LblLibreHardwareMonitor
-            // 
-            LblLibreHardwareMonitor.AccessibleDescription = "Opens the 'LibreHardwareMonitor' website.";
-            LblLibreHardwareMonitor.AccessibleName = "LibreHardwareMonitor";
-            LblLibreHardwareMonitor.AccessibleRole = AccessibleRole.Link;
-            LblLibreHardwareMonitor.AutoSize = true;
-            LblLibreHardwareMonitor.Cursor = Cursors.Hand;
-            LblLibreHardwareMonitor.Font = new Font("Segoe UI", 10F, FontStyle.Underline, GraphicsUnit.Point);
-            LblLibreHardwareMonitor.Location = new Point(294, 257);
-            LblLibreHardwareMonitor.Name = "LblLibreHardwareMonitor";
-            LblLibreHardwareMonitor.Size = new Size(148, 19);
-            LblLibreHardwareMonitor.TabIndex = 9;
-            LblLibreHardwareMonitor.Text = "LibreHardwareMonitor";
-            LblLibreHardwareMonitor.Click += LblLibreHardwareMonitor_Click;
-            // 
+            //
             // LblHotkeyListener
             // 
             LblHotkeyListener.AccessibleDescription = "Opens the 'HotkeyListener' website.";
@@ -274,22 +251,7 @@ namespace HASS.Agent.Forms
             LblMQTTnet.TabIndex = 11;
             LblMQTTnet.Text = "MQTTnet";
             LblMQTTnet.Click += LblMQTTnet_Click;
-            // 
-            // LblSyncfusion
-            // 
-            LblSyncfusion.AccessibleDescription = "Opens the 'Syncfusion' website.";
-            LblSyncfusion.AccessibleName = "Syncfusion";
-            LblSyncfusion.AccessibleRole = AccessibleRole.Link;
-            LblSyncfusion.AutoSize = true;
-            LblSyncfusion.Cursor = Cursors.Hand;
-            LblSyncfusion.Font = new Font("Segoe UI", 10F, FontStyle.Underline, GraphicsUnit.Point);
-            LblSyncfusion.Location = new Point(176, 317);
-            LblSyncfusion.Name = "LblSyncfusion";
-            LblSyncfusion.Size = new Size(74, 19);
-            LblSyncfusion.TabIndex = 14;
-            LblSyncfusion.Text = "Syncfusion";
-            LblSyncfusion.Click += LblSyncfusion_Click;
-            // 
+            //
             // LblInfo4
             // 
             LblInfo4.AccessibleDescription = "Components thanks message.";
@@ -611,9 +573,6 @@ namespace HASS.Agent.Forms
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(45, 45, 48);
-            CaptionBarColor = Color.FromArgb(63, 63, 70);
-            CaptionFont = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            CaptionForeColor = Color.FromArgb(241, 241, 241);
             ClientSize = new Size(747, 845);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -636,12 +595,10 @@ namespace HASS.Agent.Forms
             Controls.Add(LblInfo5);
             Controls.Add(PbHassLogo);
             Controls.Add(LblInfo4);
-            Controls.Add(LblSyncfusion);
             Controls.Add(LblSerilog);
             Controls.Add(LblNewtonsoftJson);
             Controls.Add(LblMQTTnet);
             Controls.Add(LblMicrosoftAppSDK);
-            Controls.Add(LblLibreHardwareMonitor);
             Controls.Add(LblHotkeyListener);
             Controls.Add(LblHADotNet);
             Controls.Add(LblGrapevine);
@@ -656,10 +613,7 @@ namespace HASS.Agent.Forms
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MetroColor = Color.FromArgb(63, 63, 70);
             Name = "About";
-            ShowMaximizeBox = false;
-            ShowMinimizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "About";
             Load += About_Load;
@@ -676,7 +630,7 @@ namespace HASS.Agent.Forms
         }
 
         #endregion
-        private Syncfusion.WinForms.Controls.SfButton BtnClose;
+        private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.PictureBox PbHassAgentLogo;
         private System.Windows.Forms.Label LblHassAgentProject;
         private System.Windows.Forms.Label LblInfo1;
@@ -685,12 +639,10 @@ namespace HASS.Agent.Forms
         private System.Windows.Forms.Label LblGrapevine;
         private System.Windows.Forms.Label LblHADotNet;
         private System.Windows.Forms.Label LblMicrosoftAppSDK;
-        private System.Windows.Forms.Label LblLibreHardwareMonitor;
         private System.Windows.Forms.Label LblHotkeyListener;
         private System.Windows.Forms.Label LblSerilog;
         private System.Windows.Forms.Label LblNewtonsoftJson;
         private System.Windows.Forms.Label LblMQTTnet;
-        private System.Windows.Forms.Label LblSyncfusion;
         private System.Windows.Forms.Label LblInfo4;
         private System.Windows.Forms.PictureBox PbHassLogo;
         private System.Windows.Forms.Label LblInfo5;

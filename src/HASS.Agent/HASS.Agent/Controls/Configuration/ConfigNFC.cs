@@ -2,7 +2,6 @@
 using HASS.Agent.Functions;
 using HASS.Agent.Managers;
 using HASS.Agent.Resources.Localization;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Controls.Configuration;
 

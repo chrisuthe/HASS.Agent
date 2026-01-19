@@ -1,9 +1,8 @@
-﻿using Syncfusion.Windows.Forms;
-using HASS.Agent.Functions;
+﻿using HASS.Agent.Functions;
 
 namespace HASS.Agent.Forms
 {
-    public partial class Help : MetroForm
+    public partial class Help : Form
     {
         public Help()
         {

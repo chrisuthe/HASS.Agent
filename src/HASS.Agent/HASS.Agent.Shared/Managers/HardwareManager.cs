@@ -1,32 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LibreHardwareMonitor.Hardware;
-
 namespace HASS.Agent.Shared.Managers;
+
+/// <summary>
+/// Hardware monitoring has been disabled due to WinRing0 vulnerability (CVE-2020-14979).
+/// GPU sensors are no longer available.
+/// See: https://nvd.nist.gov/vuln/detail/CVE-2020-14979
+/// </summary>
 public static class HardwareManager
 {
-	private static Computer s_computer;
-	public static void Initialize()
-	{
-		//Note(Amadeo): for "performance" reasons only GPU is selected below, enable additional ones if required by new sensors/commands
-		s_computer = new Computer()
-		{
-			IsCpuEnabled = false,
-			IsGpuEnabled = true,
-			IsMemoryEnabled = false,
-			IsMotherboardEnabled = false,
-			IsControllerEnabled = false,
-			IsNetworkEnabled = false,
-			IsStorageEnabled = false,
-		};
-
-		s_computer.Open();
-	}
-
-	public static IList<IHardware> Hardware => s_computer.Hardware;
-
-	public static void Shutdown() => s_computer?.Close();
+	public static void Initialize() { }
+	public static void Shutdown() { }
 }

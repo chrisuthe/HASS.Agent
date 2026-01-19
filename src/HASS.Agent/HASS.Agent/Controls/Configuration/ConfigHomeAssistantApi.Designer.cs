@@ -35,7 +35,7 @@ namespace HASS.Agent.Controls.Configuration
             this.TbHassClientCertificate = new System.Windows.Forms.TextBox();
             this.LblClientCertificate = new System.Windows.Forms.Label();
             this.CbHassAutoClientCertificate = new System.Windows.Forms.CheckBox();
-            this.BtnTestApi = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnTestApi = new System.Windows.Forms.Button();
             this.LblInfo1 = new System.Windows.Forms.Label();
             this.TbHassApiToken = new System.Windows.Forms.TextBox();
             this.TbHassIp = new System.Windows.Forms.TextBox();
@@ -100,23 +100,17 @@ namespace HASS.Agent.Controls.Configuration
             this.CbHassAutoClientCertificate.UseVisualStyleBackColor = true;
             // 
             // BtnTestApi
-            // 
+            //
             this.BtnTestApi.AccessibleDescription = "Performs a connection test, using the provided configuration.";
             this.BtnTestApi.AccessibleName = "Test connection";
             this.BtnTestApi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnTestApi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnTestApi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnTestApi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnTestApi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnTestApi.Location = new System.Drawing.Point(481, 468);
             this.BtnTestApi.Name = "BtnTestApi";
             this.BtnTestApi.Size = new System.Drawing.Size(180, 29);
-            this.BtnTestApi.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnTestApi.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnTestApi.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnTestApi.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnTestApi.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnTestApi.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnTestApi.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnTestApi.TabIndex = 4;
             this.BtnTestApi.Text = global::HASS.Agent.Resources.Localization.Languages.ConfigHomeAssistantApi_BtnTestApi;
             this.BtnTestApi.UseVisualStyleBackColor = false;
@@ -240,7 +234,7 @@ namespace HASS.Agent.Controls.Configuration
         private System.Windows.Forms.Label LblServerUri;
         internal System.Windows.Forms.TextBox TbHassClientCertificate;
         internal System.Windows.Forms.CheckBox CbHassAutoClientCertificate;
-        internal Syncfusion.WinForms.Controls.SfButton BtnTestApi;
+        internal System.Windows.Forms.Button BtnTestApi;
         internal System.Windows.Forms.TextBox TbHassApiToken;
         internal System.Windows.Forms.TextBox TbHassIp;
         internal CheckBox CbHassAllowUntrustedCertificates;

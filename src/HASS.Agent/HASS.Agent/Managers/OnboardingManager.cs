@@ -7,7 +7,6 @@ using HASS.Agent.Models.Config;
 using HASS.Agent.Resources.Localization;
 using HASS.Agent.Settings;
 using Serilog;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Managers
 {
@@ -428,7 +427,7 @@ namespace HASS.Agent.Managers
             if (Variables.AppSettings.OnboardingStatus == OnboardingStatus.Aborted) return true;
 
             // ask the user
-            var q = MessageBoxAdv.Show(_onboarding, Languages.OnboardingManager_ConfirmBeforeClose_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var q = MessageBox.Show(_onboarding, Languages.OnboardingManager_ConfirmBeforeClose_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (q != DialogResult.Yes) return false;
 
             // abort, we're done - load blanco settings and store

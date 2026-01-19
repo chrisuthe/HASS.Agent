@@ -32,7 +32,7 @@ namespace HASS.Agent.Controls.Configuration
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigStartup));
             this.LblInfo1 = new System.Windows.Forms.Label();
-            this.BtnSetStartOnLogin = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnSetStartOnLogin = new System.Windows.Forms.Button();
             this.LblStartOnLoginStatus = new System.Windows.Forms.Label();
             this.LblStartOnLoginStatusInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -50,23 +50,17 @@ namespace HASS.Agent.Controls.Configuration
             this.LblInfo1.Text = Languages.ConfigStartup_LblInfo1;
             // 
             // BtnSetStartOnLogin
-            // 
+            //
             this.BtnSetStartOnLogin.AccessibleDescription = "Toggle starting HASS.Agent when logging in to your Windows account.";
             this.BtnSetStartOnLogin.AccessibleName = "Toggle status";
             this.BtnSetStartOnLogin.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnSetStartOnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnSetStartOnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSetStartOnLogin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnSetStartOnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnSetStartOnLogin.Location = new System.Drawing.Point(222, 294);
             this.BtnSetStartOnLogin.Name = "BtnSetStartOnLogin";
             this.BtnSetStartOnLogin.Size = new System.Drawing.Size(295, 31);
-            this.BtnSetStartOnLogin.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnSetStartOnLogin.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnSetStartOnLogin.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnSetStartOnLogin.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnSetStartOnLogin.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnSetStartOnLogin.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnSetStartOnLogin.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnSetStartOnLogin.TabIndex = 0;
             this.BtnSetStartOnLogin.Text = global::HASS.Agent.Resources.Localization.Languages.ConfigStartup_BtnSetStartOnLogin;
             this.BtnSetStartOnLogin.UseVisualStyleBackColor = false;
@@ -124,7 +118,7 @@ namespace HASS.Agent.Controls.Configuration
 
         private System.Windows.Forms.Label LblInfo1;
         private System.Windows.Forms.Label LblStartOnLoginStatusInfo;
-        internal Syncfusion.WinForms.Controls.SfButton BtnSetStartOnLogin;
+        internal System.Windows.Forms.Button BtnSetStartOnLogin;
         internal System.Windows.Forms.Label LblStartOnLoginStatus;
     }
 }

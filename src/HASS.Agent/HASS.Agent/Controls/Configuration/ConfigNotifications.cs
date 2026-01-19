@@ -4,7 +4,6 @@ using HASS.Agent.Managers;
 using HASS.Agent.Models.HomeAssistant;
 using HASS.Agent.Resources.Localization;
 using Serilog;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Controls.Configuration
 {
@@ -21,7 +20,7 @@ namespace HASS.Agent.Controls.Configuration
         {
             if (!Variables.AppSettings.NotificationsEnabled)
             {
-                MessageBoxAdv.Show(this, Languages.ConfigNotifications_BtnSendTestNotification_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, Languages.ConfigNotifications_BtnSendTestNotification_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -52,7 +51,7 @@ namespace HASS.Agent.Controls.Configuration
 
             Log.Information("[NOTIFIER] Test notification attempt completed");
 
-            MessageBoxAdv.Show(this, Languages.ConfigNotifications_BtnSendTestNotification_MessageBox2,
+            MessageBox.Show(this, Languages.ConfigNotifications_BtnSendTestNotification_MessageBox2,
                 Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

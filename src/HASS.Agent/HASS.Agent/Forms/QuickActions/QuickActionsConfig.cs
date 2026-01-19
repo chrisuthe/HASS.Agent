@@ -1,12 +1,10 @@
 ﻿using HASS.Agent.Functions;
 using HASS.Agent.Models.Internal;
 using HASS.Agent.Settings;
-using Syncfusion.Windows.Forms;
-using Syncfusion.Windows.Forms.Grid;
 
 namespace HASS.Agent.Forms.QuickActions
 {
-    public partial class QuickActionsConfig : MetroForm
+    public partial class QuickActionsConfig : Form
     {
         private readonly List<QuickAction> _quickActions = new();
 

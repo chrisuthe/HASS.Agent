@@ -31,7 +31,7 @@ namespace HASS.Agent.Forms.QuickActions
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuickActionsMod));
-            this.BtnStore = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnStore = new System.Windows.Forms.Button();
             this.TbDescription = new System.Windows.Forms.TextBox();
             this.LblEntityInfo = new System.Windows.Forms.Label();
             this.LblAction = new System.Windows.Forms.Label();
@@ -62,14 +62,6 @@ namespace HASS.Agent.Forms.QuickActions
             this.BtnStore.Location = new System.Drawing.Point(0, 365);
             this.BtnStore.Name = "BtnStore";
             this.BtnStore.Size = new System.Drawing.Size(1075, 38);
-            this.BtnStore.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStore.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStore.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStore.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnStore.TabIndex = 4;
             this.BtnStore.Text = global::HASS.Agent.Resources.Localization.Languages.QuickActionsMod_BtnStore;
             this.BtnStore.UseVisualStyleBackColor = false;
@@ -286,9 +278,6 @@ namespace HASS.Agent.Forms.QuickActions
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.CaptionFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1075, 403);
             this.Controls.Add(this.LvDomain);
             this.Controls.Add(this.LblTip1);
@@ -308,10 +297,7 @@ namespace HASS.Agent.Forms.QuickActions
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.Name = "QuickActionsMod";
-            this.ShowMaximizeBox = false;
-            this.ShowMinimizeBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = Languages.QuickActionsMod_Title;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QuickActionsMod_FormClosing);
@@ -325,7 +311,7 @@ namespace HASS.Agent.Forms.QuickActions
         }
 
         #endregion
-        private Syncfusion.WinForms.Controls.SfButton BtnStore;
+        private System.Windows.Forms.Button BtnStore;
         private System.Windows.Forms.Label LblEntityInfo;
         private System.Windows.Forms.Label LblAction;
         private System.Windows.Forms.Label LblDescription;

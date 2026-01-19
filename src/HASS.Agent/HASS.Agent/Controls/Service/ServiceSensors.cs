@@ -4,7 +4,6 @@ using HASS.Agent.Resources.Localization;
 using HASS.Agent.Sensors;
 using HASS.Agent.Shared.Models.Config;
 using Serilog;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Controls.Service
 {
@@ -171,7 +170,7 @@ namespace HASS.Agent.Controls.Service
 
             // store
             var (storedOk, _) = await Task.Run(async () => await Variables.RpcClient.SetConfiguredSensorsAsync(_sensors).WaitAsync(Variables.RpcConnectionTimeout));
-            if (!storedOk) MessageBoxAdv.Show(this, Languages.ServiceSensors_BtnStore_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (!storedOk) MessageBox.Show(this, Languages.ServiceSensors_BtnStore_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             else await ShowStored();
 
             // done, unlock ui

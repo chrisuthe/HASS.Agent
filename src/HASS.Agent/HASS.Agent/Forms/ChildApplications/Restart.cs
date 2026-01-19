@@ -2,13 +2,12 @@
 using HASS.Agent.Properties;
 using HASS.Agent.Resources.Localization;
 using HASS.Agent.Shared.Managers;
-using Syncfusion.Windows.Forms;
 using HelperFunctions = HASS.Agent.Functions.HelperFunctions;
 using Task = System.Threading.Tasks.Task;
 
 namespace HASS.Agent.Forms.ChildApplications
 {
-    public partial class Restart : MetroForm
+    public partial class Restart : Form
     {
         private const int MAX_WAIT_SECONDS = 20;
 
@@ -35,7 +34,7 @@ namespace HASS.Agent.Forms.ChildApplications
             if (!closed)
             {
                 PbStep1WaitForInstances.Image = Properties.Resources.failed_32;
-                MessageBoxAdv.Show(this, string.Format(Languages.Restart_ProcessRestart_MessageBox1, MAX_WAIT_SECONDS), Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, string.Format(Languages.Restart_ProcessRestart_MessageBox1, MAX_WAIT_SECONDS), Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 // close up
                 _ = HelperFunctions.ShutdownAsync();

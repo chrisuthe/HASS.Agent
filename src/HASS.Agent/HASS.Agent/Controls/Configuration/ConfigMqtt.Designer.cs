@@ -38,7 +38,7 @@ namespace HASS.Agent.Controls.Configuration
             this.LblRootCert = new System.Windows.Forms.Label();
             this.CbUseRetainFlag = new System.Windows.Forms.CheckBox();
             this.CbAllowUntrustedCertificates = new System.Windows.Forms.CheckBox();
-            this.BtnMqttClearConfig = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnMqttClearConfig = new System.Windows.Forms.Button();
             this.LblTip1 = new System.Windows.Forms.Label();
             this.LblInfo1 = new System.Windows.Forms.Label();
             this.TbMqttDiscoveryPrefix = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@ namespace HASS.Agent.Controls.Configuration
             this.LblTip2 = new System.Windows.Forms.Label();
             this.TbMqttClientId = new System.Windows.Forms.TextBox();
             this.LblClientId = new System.Windows.Forms.Label();
-            this.NumMqttPort = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+            this.NumMqttPort = new System.Windows.Forms.NumericUpDown();
             this.PbShow = new System.Windows.Forms.PictureBox();
             this.CbIgnoreGracePeriod = new System.Windows.Forms.CheckBox();
             this.CbEnableMqtt = new System.Windows.Forms.CheckBox();
@@ -160,23 +160,17 @@ namespace HASS.Agent.Controls.Configuration
             this.CbAllowUntrustedCertificates.UseVisualStyleBackColor = true;
             // 
             // BtnMqttClearConfig
-            // 
+            //
             this.BtnMqttClearConfig.AccessibleDescription = "Clears the MQTT configuration and resets it to the defaults.";
             this.BtnMqttClearConfig.AccessibleName = "Clear configuration";
             this.BtnMqttClearConfig.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnMqttClearConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnMqttClearConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMqttClearConfig.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnMqttClearConfig.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnMqttClearConfig.Location = new System.Drawing.Point(455, 560);
             this.BtnMqttClearConfig.Name = "BtnMqttClearConfig";
             this.BtnMqttClearConfig.Size = new System.Drawing.Size(228, 31);
-            this.BtnMqttClearConfig.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnMqttClearConfig.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnMqttClearConfig.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnMqttClearConfig.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnMqttClearConfig.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnMqttClearConfig.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnMqttClearConfig.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnMqttClearConfig.TabIndex = 11;
             this.BtnMqttClearConfig.Text = Languages.ConfigMqtt_BtnMqttClearConfig;
             this.BtnMqttClearConfig.UseVisualStyleBackColor = false;
@@ -385,14 +379,11 @@ namespace HASS.Agent.Controls.Configuration
             this.LblClientId.Text = Languages.ConfigMqtt_LblClientId;
             // 
             // NumMqttPort
-            // 
+            //
             this.NumMqttPort.AccessibleDescription = "The broker\'s port. Only accepts numeric values.";
             this.NumMqttPort.AccessibleName = "Port";
             this.NumMqttPort.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumMqttPort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumMqttPort.BeforeTouchSize = new System.Drawing.Size(83, 25);
-            this.NumMqttPort.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumMqttPort.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumMqttPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumMqttPort.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumMqttPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -402,18 +393,14 @@ namespace HASS.Agent.Controls.Configuration
             0,
             0,
             0});
-            this.NumMqttPort.MaxLength = 10;
-            this.NumMqttPort.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumMqttPort.Name = "NumMqttPort";
             this.NumMqttPort.Size = new System.Drawing.Size(83, 25);
             this.NumMqttPort.TabIndex = 1;
-            this.NumMqttPort.ThemeName = "Metro";
             this.NumMqttPort.Value = new decimal(new int[] {
             1883,
             0,
             0,
             0});
-            this.NumMqttPort.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // PbShow
             // 
@@ -541,7 +528,7 @@ namespace HASS.Agent.Controls.Configuration
         internal System.Windows.Forms.TextBox TbMqttRootCertificate;
         internal System.Windows.Forms.CheckBox CbUseRetainFlag;
         internal System.Windows.Forms.CheckBox CbAllowUntrustedCertificates;
-        internal Syncfusion.WinForms.Controls.SfButton BtnMqttClearConfig;
+        internal System.Windows.Forms.Button BtnMqttClearConfig;
         internal System.Windows.Forms.TextBox TbMqttDiscoveryPrefix;
         internal System.Windows.Forms.TextBox TbMqttPassword;
         internal System.Windows.Forms.TextBox TbMqttUsername;
@@ -550,7 +537,7 @@ namespace HASS.Agent.Controls.Configuration
         private System.Windows.Forms.Label LblTip2;
         internal System.Windows.Forms.TextBox TbMqttClientId;
         private System.Windows.Forms.Label LblClientId;
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumMqttPort;
+        internal System.Windows.Forms.NumericUpDown NumMqttPort;
         private PictureBox PbShow;
         internal CheckBox CbEnableMqtt;
         private Label LblMqttDisabledWarning;

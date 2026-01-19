@@ -5,7 +5,6 @@ using HASS.Agent.Models.HomeAssistant;
 using HASS.Agent.Resources.Localization;
 using HASS.Agent.Shared.Functions;
 using Serilog;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Controls.Configuration
 {
@@ -29,7 +28,7 @@ namespace HASS.Agent.Controls.Configuration
                 Clipboard.SetText($"netsh http add urlacl url=http://+:{Variables.AppSettings.LocalApiPort}/ user=\"{SharedHelperFunctions.EveryoneLocalizedAccountName()}\"");
 
                 // notify the user
-                MessageBoxAdv.Show(this, Languages.ConfigNotifications_BtnExecutePortReservation_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, Languages.ConfigNotifications_BtnExecutePortReservation_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             BtnExecutePortReservation.Text = Languages.ConfigNotifications_BtnExecutePortReservation;

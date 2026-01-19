@@ -33,9 +33,9 @@ namespace HASS.Agent.Controls.Configuration
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigNotifications));
             LblInfo2 = new Label();
             LblInfo1 = new Label();
-            BtnNotificationsReadme = new Syncfusion.WinForms.Controls.SfButton();
+            BtnNotificationsReadme = new System.Windows.Forms.Button();
             CbAcceptNotifications = new CheckBox();
-            BtnSendTestNotification = new Syncfusion.WinForms.Controls.SfButton();
+            BtnSendTestNotification = new System.Windows.Forms.Button();
             CbNotificationsIgnoreImageCertErrors = new CheckBox();
             LblConnectivityDisabled = new Label();
             CbNotificationsOpenActionUri = new CheckBox();
@@ -66,23 +66,17 @@ namespace HASS.Agent.Controls.Configuration
             LblInfo1.Text = resources.GetString("LblInfo1.Text");
             // 
             // BtnNotificationsReadme
-            // 
+            //
             BtnNotificationsReadme.AccessibleDescription = "Launches the notifications documentation webpage.";
             BtnNotificationsReadme.AccessibleName = "Open documentation";
             BtnNotificationsReadme.AccessibleRole = AccessibleRole.PushButton;
             BtnNotificationsReadme.BackColor = Color.FromArgb(63, 63, 70);
+            BtnNotificationsReadme.FlatStyle = FlatStyle.Flat;
             BtnNotificationsReadme.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             BtnNotificationsReadme.ForeColor = Color.FromArgb(241, 241, 241);
             BtnNotificationsReadme.Location = new Point(452, 497);
             BtnNotificationsReadme.Name = "BtnNotificationsReadme";
             BtnNotificationsReadme.Size = new Size(228, 31);
-            BtnNotificationsReadme.Style.BackColor = Color.FromArgb(63, 63, 70);
-            BtnNotificationsReadme.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-            BtnNotificationsReadme.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-            BtnNotificationsReadme.Style.ForeColor = Color.FromArgb(241, 241, 241);
-            BtnNotificationsReadme.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-            BtnNotificationsReadme.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-            BtnNotificationsReadme.Style.PressedForeColor = Color.Black;
             BtnNotificationsReadme.TabIndex = 3;
             BtnNotificationsReadme.Text = Languages.ConfigNotifications_BtnNotificationsReadme;
             BtnNotificationsReadme.UseVisualStyleBackColor = false;
@@ -103,23 +97,17 @@ namespace HASS.Agent.Controls.Configuration
             CbAcceptNotifications.UseVisualStyleBackColor = true;
             // 
             // BtnSendTestNotification
-            // 
+            //
             BtnSendTestNotification.AccessibleDescription = "Show a test notification.";
             BtnSendTestNotification.AccessibleName = "Test notification";
             BtnSendTestNotification.AccessibleRole = AccessibleRole.PushButton;
             BtnSendTestNotification.BackColor = Color.FromArgb(63, 63, 70);
+            BtnSendTestNotification.FlatStyle = FlatStyle.Flat;
             BtnSendTestNotification.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             BtnSendTestNotification.ForeColor = Color.FromArgb(241, 241, 241);
             BtnSendTestNotification.Location = new Point(220, 230);
             BtnSendTestNotification.Name = "BtnSendTestNotification";
             BtnSendTestNotification.Size = new Size(301, 31);
-            BtnSendTestNotification.Style.BackColor = Color.FromArgb(63, 63, 70);
-            BtnSendTestNotification.Style.FocusedBackColor = Color.FromArgb(63, 63, 70);
-            BtnSendTestNotification.Style.FocusedForeColor = Color.FromArgb(241, 241, 241);
-            BtnSendTestNotification.Style.ForeColor = Color.FromArgb(241, 241, 241);
-            BtnSendTestNotification.Style.HoverBackColor = Color.FromArgb(63, 63, 70);
-            BtnSendTestNotification.Style.HoverForeColor = Color.FromArgb(241, 241, 241);
-            BtnSendTestNotification.Style.PressedForeColor = Color.Black;
             BtnSendTestNotification.TabIndex = 2;
             BtnSendTestNotification.Text = Languages.ConfigNotifications_BtnSendTestNotification;
             BtnSendTestNotification.UseVisualStyleBackColor = false;
@@ -197,9 +185,9 @@ namespace HASS.Agent.Controls.Configuration
 
         private System.Windows.Forms.Label LblInfo2;
         private System.Windows.Forms.Label LblInfo1;
-        internal Syncfusion.WinForms.Controls.SfButton BtnNotificationsReadme;
+        internal System.Windows.Forms.Button BtnNotificationsReadme;
         internal System.Windows.Forms.CheckBox CbAcceptNotifications;
-        internal Syncfusion.WinForms.Controls.SfButton BtnSendTestNotification;
+        internal System.Windows.Forms.Button BtnSendTestNotification;
         internal CheckBox CbNotificationsIgnoreImageCertErrors;
         private Label LblConnectivityDisabled;
         internal CheckBox CbNotificationsOpenActionUri;

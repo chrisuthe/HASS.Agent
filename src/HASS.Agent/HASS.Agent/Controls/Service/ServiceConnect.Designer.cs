@@ -30,7 +30,7 @@ namespace HASS.Agent.Controls.Service
         /// </summary>
         private void InitializeComponent()
         {
-            this.BtnRetryAuthId = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnRetryAuthId = new System.Windows.Forms.Button();
             this.TbRetryAuthId = new System.Windows.Forms.TextBox();
             this.LblRetryAuthId = new System.Windows.Forms.Label();
             this.LblConnectionMessage = new System.Windows.Forms.Label();
@@ -45,25 +45,20 @@ namespace HASS.Agent.Controls.Service
             ((System.ComponentModel.ISupportInitialize)(this.PbStep1Connect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbStep3Config)).BeginInit();
             this.SuspendLayout();
-            // 
+            //
             // BtnRetryAuthId
-            // 
+            //
             this.BtnRetryAuthId.AccessibleDescription = "Applies the new auth ID, and tries to reconnect.";
             this.BtnRetryAuthId.AccessibleName = "Apply auth ID";
             this.BtnRetryAuthId.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnRetryAuthId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnRetryAuthId.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnRetryAuthId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRetryAuthId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnRetryAuthId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnRetryAuthId.Location = new System.Drawing.Point(565, 524);
             this.BtnRetryAuthId.Name = "BtnRetryAuthId";
             this.BtnRetryAuthId.Size = new System.Drawing.Size(147, 25);
-            this.BtnRetryAuthId.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnRetryAuthId.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnRetryAuthId.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRetryAuthId.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRetryAuthId.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnRetryAuthId.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRetryAuthId.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnRetryAuthId.TabIndex = 1;
             this.BtnRetryAuthId.Text = Languages.ServiceConnect_BtnRetryAuthId;
             this.BtnRetryAuthId.UseVisualStyleBackColor = false;
@@ -238,7 +233,7 @@ namespace HASS.Agent.Controls.Service
 
         #endregion
 
-        internal Syncfusion.WinForms.Controls.SfButton BtnRetryAuthId;
+        internal System.Windows.Forms.Button BtnRetryAuthId;
         internal TextBox TbRetryAuthId;
         private Label LblRetryAuthId;
         private Label LblConnectionMessage;

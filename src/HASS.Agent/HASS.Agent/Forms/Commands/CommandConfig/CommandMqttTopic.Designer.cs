@@ -32,10 +32,10 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CommandMqttTopic));
-            this.BtnClose = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnClose = new System.Windows.Forms.Button();
             this.LblInfo1 = new System.Windows.Forms.Label();
             this.TbMqttTopic = new System.Windows.Forms.TextBox();
-            this.BtnCopyClipboard = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnCopyClipboard = new System.Windows.Forms.Button();
             this.LblHelp = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -51,13 +51,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.BtnClose.Location = new System.Drawing.Point(0, 207);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(878, 37);
-            this.BtnClose.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClose.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClose.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClose.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClose.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClose.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClose.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnClose.TabIndex = 2;
             this.BtnClose.Text = Languages.CommandMqttTopic_BtnClose;
             this.BtnClose.UseVisualStyleBackColor = false;
@@ -103,14 +96,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.BtnCopyClipboard.Location = new System.Drawing.Point(588, 110);
             this.BtnCopyClipboard.Name = "BtnCopyClipboard";
             this.BtnCopyClipboard.Size = new System.Drawing.Size(256, 27);
-            this.BtnCopyClipboard.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnCopyClipboard.Style.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnCopyClipboard.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnCopyClipboard.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnCopyClipboard.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnCopyClipboard.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnCopyClipboard.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnCopyClipboard.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnCopyClipboard.TabIndex = 1;
             this.BtnCopyClipboard.Text = Languages.CommandMqttTopic_BtnCopyClipboard;
             this.BtnCopyClipboard.UseVisualStyleBackColor = false;
@@ -139,9 +124,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.CaptionFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(878, 244);
             this.Controls.Add(this.LblHelp);
             this.Controls.Add(this.BtnCopyClipboard);
@@ -153,10 +135,7 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.Name = "CommandMqttTopic";
-            this.ShowMaximizeBox = false;
-            this.ShowMinimizeBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = Languages.CommandMqttTopic_Title;
             this.Load += new System.EventHandler(this.MqttTopic_Load);
@@ -168,10 +147,10 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
         }
 
         #endregion
-        private Syncfusion.WinForms.Controls.SfButton BtnClose;
+        private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.Label LblInfo1;
         private TextBox TbMqttTopic;
-        private Syncfusion.WinForms.Controls.SfButton BtnCopyClipboard;
+        private System.Windows.Forms.Button BtnCopyClipboard;
         private Label LblHelp;
     }
 }

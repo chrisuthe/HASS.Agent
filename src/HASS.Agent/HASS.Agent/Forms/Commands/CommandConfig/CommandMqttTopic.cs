@@ -1,10 +1,9 @@
 ﻿using HASS.Agent.Functions;
 using HASS.Agent.Resources.Localization;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Forms.Commands.CommandConfig
 {
-    public partial class CommandMqttTopic : MetroForm
+    public partial class CommandMqttTopic : Form
     {
         public CommandMqttTopic(string topic)
         {

@@ -31,31 +31,24 @@ namespace HASS.Agent.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Onboarding));
-            this.BtnNext = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnNext = new System.Windows.Forms.Button();
             this.GpOnboardingControl = new HASS.Agent.Controls.CustomGroupBox();
-            this.BtnClose = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnPrevious = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnClose = new System.Windows.Forms.Button();
+            this.BtnPrevious = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
+            //
             // BtnNext
-            // 
+            //
             this.BtnNext.AccessibleDescription = "Shows the next onboarding step, or, completes the onboarding process.";
             this.BtnNext.AccessibleName = "Next";
             this.BtnNext.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnNext.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnNext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnNext.Location = new System.Drawing.Point(619, 469);
             this.BtnNext.Name = "BtnNext";
             this.BtnNext.Size = new System.Drawing.Size(184, 31);
-            this.BtnNext.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnNext.Style.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnNext.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnNext.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnNext.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnNext.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnNext.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnNext.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnNext.TabIndex = 0;
             this.BtnNext.Text = Languages.Onboarding_BtnNext;
             this.BtnNext.UseVisualStyleBackColor = false;
@@ -73,49 +66,37 @@ namespace HASS.Agent.Forms
             this.GpOnboardingControl.Size = new System.Drawing.Size(803, 457);
             this.GpOnboardingControl.TabIndex = 1;
             this.GpOnboardingControl.TabStop = false;
-            // 
+            //
             // BtnClose
-            // 
+            //
             this.BtnClose.AccessibleDescription = "Closes the window, aborting the onboarding. Will ask for confirmation.";
             this.BtnClose.AccessibleName = "Close";
             this.BtnClose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnClose.Location = new System.Drawing.Point(0, 469);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(184, 31);
-            this.BtnClose.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClose.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClose.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClose.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClose.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnClose.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnClose.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnClose.TabIndex = 2;
             this.BtnClose.TabStop = false;
             this.BtnClose.Text = Languages.Onboarding_BtnClose;
             this.BtnClose.UseVisualStyleBackColor = false;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
-            // 
+            //
             // BtnPrevious
-            // 
+            //
             this.BtnPrevious.AccessibleDescription = "Shows the previous onboarding step.";
             this.BtnPrevious.AccessibleName = "Previous";
             this.BtnPrevious.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPrevious.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnPrevious.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnPrevious.Location = new System.Drawing.Point(429, 469);
             this.BtnPrevious.Name = "BtnPrevious";
             this.BtnPrevious.Size = new System.Drawing.Size(184, 31);
-            this.BtnPrevious.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnPrevious.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnPrevious.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnPrevious.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnPrevious.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnPrevious.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnPrevious.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnPrevious.TabIndex = 1;
             this.BtnPrevious.Text = Languages.Onboarding_BtnPrevious;
             this.BtnPrevious.UseVisualStyleBackColor = false;
@@ -130,9 +111,6 @@ namespace HASS.Agent.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.CaptionFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(805, 500);
             this.Controls.Add(this.BtnPrevious);
             this.Controls.Add(this.BtnClose);
@@ -143,10 +121,7 @@ namespace HASS.Agent.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.Name = "Onboarding";
-            this.ShowMaximizeBox = false;
-            this.ShowMinimizeBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = Languages.Onboarding_Title;
             this.TopMost = true;
@@ -159,10 +134,10 @@ namespace HASS.Agent.Forms
 
         #endregion
 
-        internal Syncfusion.WinForms.Controls.SfButton BtnNext;
+        internal System.Windows.Forms.Button BtnNext;
         internal HASS.Agent.Controls.CustomGroupBox GpOnboardingControl;
-        internal Syncfusion.WinForms.Controls.SfButton BtnClose;
-        internal Syncfusion.WinForms.Controls.SfButton BtnPrevious;
+        internal System.Windows.Forms.Button BtnClose;
+        internal System.Windows.Forms.Button BtnPrevious;
     }
 }
 

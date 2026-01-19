@@ -6,7 +6,6 @@ using HASS.Agent.Managers;
 using HASS.Agent.Resources.Localization;
 using HASS.Agent.Shared.Functions;
 using Microsoft.VisualBasic.Logging;
-using Syncfusion.Windows.Forms;
 using DialogResult = System.Windows.Forms.DialogResult;
 
 namespace HASS.Agent.Controls.Onboarding
@@ -55,7 +54,7 @@ namespace HASS.Agent.Controls.Onboarding
             // different?
             if (deviceName != TbDeviceName.Text)
             {
-                var q = MessageBoxAdv.Show(this, string.Format(Languages.OnboardingWelcome_Store_MessageBox1, deviceName),
+                var q = MessageBox.Show(this, string.Format(Languages.OnboardingWelcome_Store_MessageBox1, deviceName),
                     Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (q != DialogResult.Yes) return false;

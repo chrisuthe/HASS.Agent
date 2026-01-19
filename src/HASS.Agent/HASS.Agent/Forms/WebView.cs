@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Syncfusion.Windows.Forms;
 using HASS.Agent.Functions;
 using HASS.Agent.Models.Internal;
 using HASS.Agent.Resources.Localization;
@@ -11,7 +10,7 @@ using Microsoft.Web.WebView2.Core;
 
 namespace HASS.Agent.Forms
 {
-    public partial class WebView : MetroForm
+    public partial class WebView : Form
     {
         private readonly WebViewInfo _webViewInfo;
         private bool _forceClose = false;
@@ -100,7 +99,7 @@ namespace HASS.Agent.Forms
             {
                 Log.Fatal(ex, "[WEBVIEW] WebView2 runtime not found, unable to initialize: {err}", ex.Message);
 
-                var q = MessageBoxAdv.Show(this, Languages.WebView_InitializeAsync_MessageBox1,
+                var q = MessageBox.Show(this, Languages.WebView_InitializeAsync_MessageBox1,
                     Variables.MessageBoxTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 
                 if (q != DialogResult.Yes) return false;
@@ -118,14 +117,14 @@ namespace HASS.Agent.Forms
 
                 Log.Fatal(ex, "[WEBVIEW] WebView2 initialization failed: {err}", ex.Message);
 
-                MessageBoxAdv.Show(this, Languages.WebView_InitializeAsync_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, Languages.WebView_InitializeAsync_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             catch (Exception ex)
             {
                 Log.Fatal(ex, "[WEBVIEW] WebView2 initialization failed: {err}", ex.Message);
 
-                MessageBoxAdv.Show(this, Languages.WebView_InitializeAsync_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, Languages.WebView_InitializeAsync_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }

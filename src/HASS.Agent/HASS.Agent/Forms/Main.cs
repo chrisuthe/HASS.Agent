@@ -22,7 +22,6 @@ using HASS.Agent.Shared.Functions;
 using HASS.Agent.Shared.Managers;
 using HASS.Agent.Shared.Managers.Audio;
 using Serilog;
-using Syncfusion.Windows.Forms;
 using WindowsDesktop;
 using WK.Libraries.HotkeyListenerNS;
 using NativeMethods = HASS.Agent.Functions.NativeMethods;
@@ -32,7 +31,7 @@ using Task = System.Threading.Tasks.Task;
 namespace HASS.Agent.Forms
 {
     [SuppressMessage("ReSharper", "MemberCanBeMadeStatic.Local")]
-    public partial class Main : MetroForm
+    public partial class Main : Form
     {
         private bool _isClosing = false;
 
@@ -68,6 +67,21 @@ namespace HASS.Agent.Forms
                 // catch all key presses
                 KeyPreview = true;
 
+                // set up tooltips for buttons
+                var toolTip = new ToolTip();
+                toolTip.SetToolTip(BtnAppSettings, "Configure HASS.Agent settings");
+                toolTip.SetToolTip(BtnActionsManager, "Manage Quick Actions");
+                toolTip.SetToolTip(BtnServiceManager, "Configure Satellite Service");
+                toolTip.SetToolTip(BtnSensorsManager, "Manage system sensors");
+                toolTip.SetToolTip(BtnCommandsManager, "Manage commands");
+                toolTip.SetToolTip(BtnHelp, "Help and documentation");
+                toolTip.SetToolTip(BtnExit, "Exit, restart, or hide");
+                toolTip.SetToolTip(PbDonate, "Support development");
+
+                // apply visual polish - typography and hover effects
+                ApplyTypographyHierarchy();
+                ApplyHoverEffects();
+
                 // hide donate button?
                 if (SettingsManager.GetHideDonateButton())
                     PbDonate.Visible = false;
@@ -98,7 +112,7 @@ namespace HASS.Agent.Forms
                 var loaded = await SettingsManager.LoadEntitiesAsync();
                 if (!loaded)
                 {
-                    MessageBoxAdv.Show(this, Languages.Main_Load_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, Languages.Main_Load_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     // abort
                     Variables.ShuttingDown = true;
@@ -156,7 +170,7 @@ namespace HASS.Agent.Forms
             catch (Exception ex)
             {
                 Log.Fatal(ex, "[MAIN] Main_Load: {err}", ex.Message);
-                MessageBoxAdv.Show(this, Languages.Main_Load_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, Languages.Main_Load_MessageBox2, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 // we're done
                 Application.Exit();
@@ -245,7 +259,7 @@ namespace HASS.Agent.Forms
             SettingsManager.SetDpiWarningShown(true);
 
             // and show it
-            MessageBoxAdv.Show(this, Languages.Main_CheckDpiScalingFactor_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show(this, Languages.Main_CheckDpiScalingFactor_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void ProcessTrayIcon()
@@ -415,7 +429,7 @@ namespace HASS.Agent.Forms
             Invoke(new MethodInvoker(delegate
             {
                 var icon = error ? MessageBoxIcon.Error : MessageBoxIcon.Information;
-                MessageBoxAdv.Show(this, msg, Variables.MessageBoxTitle, MessageBoxButtons.OK, icon);
+                MessageBox.Show(this, msg, Variables.MessageBoxTitle, MessageBoxButtons.OK, icon);
             }));
         }
 
@@ -836,7 +850,7 @@ namespace HASS.Agent.Forms
                 if (!isAvailable)
                 {
                     var beta = Variables.Beta ? " [BETA]" : string.Empty;
-                    MessageBoxAdv.Show(this, string.Format(Languages.Main_CheckForUpdate_MessageBox1, Variables.Version, beta), Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, string.Format(Languages.Main_CheckForUpdate_MessageBox1, Variables.Version, beta), Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     return;
                 }
@@ -960,7 +974,7 @@ namespace HASS.Agent.Forms
             // check the url
             if (string.IsNullOrEmpty(Variables.AppSettings.TrayIconWebViewUrl))
             {
-                MessageBoxAdv.Show(this, Languages.Main_NotifyIcon_MouseClick_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, Languages.Main_NotifyIcon_MouseClick_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 return;
             }
@@ -990,6 +1004,108 @@ namespace HASS.Agent.Forms
             {
                 PbDonate.Visible = false;
             }));
+        }
+
+        /// <summary>
+        /// Apply typography hierarchy to create visual distinction
+        /// </summary>
+        private void ApplyTypographyHierarchy()
+        {
+            // GroupBox titles - slightly larger font
+            var groupBoxFont = new Font("Segoe UI", 11F, FontStyle.Regular);
+            GpStatus.Font = groupBoxFont;
+            GpControls.Font = groupBoxFont;
+
+            // Status value labels - bold for emphasis
+            var statusFont = new Font("Segoe UI", 10F, FontStyle.Bold);
+            LblStatusLocalApi.Font = statusFont;
+            LblStatusHassApi.Font = statusFont;
+            LblStatusQuickActions.Font = statusFont;
+            LblStatusSensors.Font = statusFont;
+            LblStatusService.Font = statusFont;
+            LblStatusCommands.Font = statusFont;
+            LblStatusMqtt.Font = statusFont;
+
+            // Primary action button - bold
+            BtnHide.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+        }
+
+        /// <summary>
+        /// Apply hover effects to buttons for better interactivity feedback
+        /// </summary>
+        private void ApplyHoverEffects()
+        {
+            // Main control buttons
+            AddHoverEffect(BtnAppSettings);
+            AddHoverEffect(BtnActionsManager);
+            AddHoverEffect(BtnServiceManager);
+            AddHoverEffect(BtnSensorsManager);
+            AddHoverEffect(BtnCommandsManager);
+
+            // Bottom bar buttons
+            AddHoverEffect(BtnExit);
+            AddHoverEffect(BtnHelp);
+            AddHoverEffect(BtnCheckForUpdate);
+            AddHoverEffect(BtnHide);
+
+            // Apply focus indicators for accessibility
+            ApplyFocusIndicator(BtnAppSettings);
+            ApplyFocusIndicator(BtnActionsManager);
+            ApplyFocusIndicator(BtnServiceManager);
+            ApplyFocusIndicator(BtnSensorsManager);
+            ApplyFocusIndicator(BtnCommandsManager);
+            ApplyFocusIndicator(BtnExit);
+            ApplyFocusIndicator(BtnHelp);
+            ApplyFocusIndicator(BtnCheckForUpdate);
+            ApplyFocusIndicator(BtnHide);
+        }
+
+        /// <summary>
+        /// Add hover effect to a button
+        /// </summary>
+        private void AddHoverEffect(Button button)
+        {
+            var originalColor = button.BackColor;
+            var hoverColor = Color.FromArgb(78, 78, 86); // 15% lighter than default
+
+            button.MouseEnter += (s, e) => button.BackColor = hoverColor;
+            button.MouseLeave += (s, e) => button.BackColor = originalColor;
+            button.Cursor = Cursors.Hand;
+        }
+
+        /// <summary>
+        /// Apply focus indicator for keyboard accessibility
+        /// </summary>
+        private void ApplyFocusIndicator(Button button)
+        {
+            var focusColor = Color.FromArgb(0, 122, 204); // Blue focus ring
+            var normalBorderColor = Color.FromArgb(100, 100, 100);
+
+            button.FlatAppearance.BorderColor = normalBorderColor;
+            button.FlatAppearance.BorderSize = 1;
+
+            button.GotFocus += (s, e) =>
+            {
+                button.FlatAppearance.BorderColor = focusColor;
+                button.FlatAppearance.BorderSize = 2;
+            };
+
+            button.LostFocus += (s, e) =>
+            {
+                button.FlatAppearance.BorderColor = normalBorderColor;
+                button.FlatAppearance.BorderSize = 1;
+            };
+        }
+
+        /// <summary>
+        /// Set button enabled state with proper visual feedback
+        /// </summary>
+        private void SetButtonEnabled(Button btn, bool enabled)
+        {
+            btn.Enabled = enabled;
+            btn.ForeColor = enabled
+                ? Color.FromArgb(241, 241, 241)
+                : Color.FromArgb(120, 120, 120);
         }
     }
 }

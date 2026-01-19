@@ -34,18 +34,18 @@ namespace HASS.Agent.Controls.Configuration
             this.LblInfo1 = new System.Windows.Forms.Label();
             this.LblServiceStatus = new System.Windows.Forms.Label();
             this.LblServiceStatusInfo = new System.Windows.Forms.Label();
-            this.BtnStartService = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnDisableService = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnStopService = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnEnableService = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnReinstallService = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnStartService = new System.Windows.Forms.Button();
+            this.BtnDisableService = new System.Windows.Forms.Button();
+            this.BtnStopService = new System.Windows.Forms.Button();
+            this.BtnEnableService = new System.Windows.Forms.Button();
+            this.BtnReinstallService = new System.Windows.Forms.Button();
             this.LblInfo2 = new System.Windows.Forms.Label();
             this.LblInfo3 = new System.Windows.Forms.Label();
-            this.BtnShowLogs = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnRescanStatus = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnShowLogs = new System.Windows.Forms.Button();
+            this.BtnRescanStatus = new System.Windows.Forms.Button();
             this.LblInfo4 = new System.Windows.Forms.Label();
             this.LblInfo5 = new System.Windows.Forms.Label();
-            this.BtnManageService = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnManageService = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LblInfo1
@@ -87,119 +87,89 @@ namespace HASS.Agent.Controls.Configuration
             this.LblServiceStatusInfo.Text = Languages.ConfigService_LblServiceStatusInfo;
             // 
             // BtnStartService
-            // 
+            //
             this.BtnStartService.AccessibleDescription = "Starts the Satellite Service. This will show an UAC prompt, asking for elevation." +
     "";
             this.BtnStartService.AccessibleName = "Start service";
             this.BtnStartService.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnStartService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnStartService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnStartService.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnStartService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnStartService.Location = new System.Drawing.Point(396, 161);
             this.BtnStartService.Name = "BtnStartService";
             this.BtnStartService.Size = new System.Drawing.Size(188, 31);
-            this.BtnStartService.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStartService.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStartService.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStartService.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStartService.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStartService.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStartService.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnStartService.TabIndex = 2;
             this.BtnStartService.Text = Languages.ConfigService_BtnStartService;
             this.BtnStartService.UseVisualStyleBackColor = false;
             this.BtnStartService.Click += new System.EventHandler(this.BtnStartService_Click);
             // 
             // BtnDisableService
-            // 
+            //
             this.BtnDisableService.AccessibleDescription = "Completely disables the Satellite Service. This will show an UAC prompt, asking f" +
     "or elevation.";
             this.BtnDisableService.AccessibleName = "Disable service";
             this.BtnDisableService.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnDisableService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnDisableService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDisableService.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnDisableService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnDisableService.Location = new System.Drawing.Point(154, 418);
             this.BtnDisableService.Name = "BtnDisableService";
             this.BtnDisableService.Size = new System.Drawing.Size(188, 31);
-            this.BtnDisableService.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnDisableService.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnDisableService.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnDisableService.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnDisableService.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnDisableService.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnDisableService.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnDisableService.TabIndex = 3;
             this.BtnDisableService.Text = Languages.ConfigService_BtnDisableService;
             this.BtnDisableService.UseVisualStyleBackColor = false;
             this.BtnDisableService.Click += new System.EventHandler(this.BtnDisableService_Click);
             // 
             // BtnStopService
-            // 
+            //
             this.BtnStopService.AccessibleDescription = "Stops the Satellite Service. This will show an UAC prompt, asking for elevation.";
             this.BtnStopService.AccessibleName = "Stop service";
             this.BtnStopService.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnStopService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnStopService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnStopService.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnStopService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnStopService.Location = new System.Drawing.Point(156, 161);
             this.BtnStopService.Name = "BtnStopService";
             this.BtnStopService.Size = new System.Drawing.Size(188, 31);
-            this.BtnStopService.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStopService.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStopService.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStopService.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStopService.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStopService.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStopService.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnStopService.TabIndex = 1;
             this.BtnStopService.Text = Languages.ConfigService_BtnStopService;
             this.BtnStopService.UseVisualStyleBackColor = false;
             this.BtnStopService.Click += new System.EventHandler(this.BtnStopService_Click);
             // 
             // BtnEnableService
-            // 
+            //
             this.BtnEnableService.AccessibleDescription = "Enables the Satellite Service. This will show an UAC prompt, asking for elevation" +
     ".";
             this.BtnEnableService.AccessibleName = "Enable service";
             this.BtnEnableService.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnEnableService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnEnableService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEnableService.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnEnableService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnEnableService.Location = new System.Drawing.Point(394, 418);
             this.BtnEnableService.Name = "BtnEnableService";
             this.BtnEnableService.Size = new System.Drawing.Size(188, 31);
-            this.BtnEnableService.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnEnableService.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnEnableService.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnEnableService.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnEnableService.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnEnableService.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnEnableService.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnEnableService.TabIndex = 4;
             this.BtnEnableService.Text = Languages.ConfigService_BtnEnableService;
             this.BtnEnableService.UseVisualStyleBackColor = false;
             this.BtnEnableService.Click += new System.EventHandler(this.BtnEnableService_Click);
             // 
             // BtnReinstallService
-            // 
+            //
             this.BtnReinstallService.AccessibleDescription = "Removes and then reinstalls the Satellite Service. This will show an UAC prompt, " +
     "asking for elevation.";
             this.BtnReinstallService.AccessibleName = "Reinstall service";
             this.BtnReinstallService.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnReinstallService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnReinstallService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReinstallService.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnReinstallService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnReinstallService.Location = new System.Drawing.Point(152, 531);
             this.BtnReinstallService.Name = "BtnReinstallService";
             this.BtnReinstallService.Size = new System.Drawing.Size(432, 31);
-            this.BtnReinstallService.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnReinstallService.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnReinstallService.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnReinstallService.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnReinstallService.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnReinstallService.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnReinstallService.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnReinstallService.TabIndex = 5;
             this.BtnReinstallService.Text = Languages.ConfigService_BtnReinstallService;
             this.BtnReinstallService.UseVisualStyleBackColor = false;
@@ -233,48 +203,35 @@ namespace HASS.Agent.Controls.Configuration
             this.LblInfo3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // BtnShowLogs
-            // 
+            //
             this.BtnShowLogs.AccessibleDescription = "Open the Satellite Service logs storage path in Explorer.";
             this.BtnShowLogs.AccessibleName = "Open logs";
             this.BtnShowLogs.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnShowLogs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnShowLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShowLogs.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnShowLogs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnShowLogs.Location = new System.Drawing.Point(152, 619);
             this.BtnShowLogs.Name = "BtnShowLogs";
             this.BtnShowLogs.Size = new System.Drawing.Size(432, 31);
-            this.BtnShowLogs.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnShowLogs.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnShowLogs.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnShowLogs.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnShowLogs.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnShowLogs.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnShowLogs.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnShowLogs.TabIndex = 6;
             this.BtnShowLogs.Text = Languages.ConfigService_BtnShowLogs;
             this.BtnShowLogs.UseVisualStyleBackColor = false;
             this.BtnShowLogs.Click += new System.EventHandler(this.BtnShowLogs_Click);
             // 
             // BtnRescanStatus
-            // 
+            //
             this.BtnRescanStatus.AccessibleDescription = "Refreshes the current Satellite Service status.";
             this.BtnRescanStatus.AccessibleName = "Refresh status";
             this.BtnRescanStatus.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnRescanStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnRescanStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRescanStatus.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnRescanStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRescanStatus.ImageSize = new System.Drawing.Size(24, 24);
+            this.BtnRescanStatus.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.BtnRescanStatus.Location = new System.Drawing.Point(535, 100);
             this.BtnRescanStatus.Name = "BtnRescanStatus";
             this.BtnRescanStatus.Size = new System.Drawing.Size(51, 31);
-            this.BtnRescanStatus.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnRescanStatus.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnRescanStatus.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRescanStatus.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRescanStatus.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnRescanStatus.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnRescanStatus.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.BtnRescanStatus.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnRescanStatus.TabIndex = 0;
             this.BtnRescanStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.BtnRescanStatus.UseVisualStyleBackColor = false;
@@ -307,23 +264,17 @@ namespace HASS.Agent.Controls.Configuration
             this.LblInfo5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // BtnManageService
-            // 
+            //
             this.BtnManageService.AccessibleDescription = "Opens the \'manage satellite service\' window.";
             this.BtnManageService.AccessibleName = "Manage service";
             this.BtnManageService.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnManageService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnManageService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnManageService.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnManageService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnManageService.Location = new System.Drawing.Point(152, 289);
             this.BtnManageService.Name = "BtnManageService";
             this.BtnManageService.Size = new System.Drawing.Size(432, 31);
-            this.BtnManageService.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnManageService.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnManageService.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnManageService.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnManageService.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnManageService.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnManageService.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnManageService.TabIndex = 49;
             this.BtnManageService.Text = Languages.ConfigService_BtnManageService;
             this.BtnManageService.UseVisualStyleBackColor = false;
@@ -366,17 +317,17 @@ namespace HASS.Agent.Controls.Configuration
         private System.Windows.Forms.Label LblInfo1;
         internal Label LblServiceStatus;
         private Label LblServiceStatusInfo;
-        internal Syncfusion.WinForms.Controls.SfButton BtnStartService;
-        internal Syncfusion.WinForms.Controls.SfButton BtnDisableService;
-        internal Syncfusion.WinForms.Controls.SfButton BtnStopService;
-        internal Syncfusion.WinForms.Controls.SfButton BtnEnableService;
-        internal Syncfusion.WinForms.Controls.SfButton BtnReinstallService;
+        internal System.Windows.Forms.Button BtnStartService;
+        internal System.Windows.Forms.Button BtnDisableService;
+        internal System.Windows.Forms.Button BtnStopService;
+        internal System.Windows.Forms.Button BtnEnableService;
+        internal System.Windows.Forms.Button BtnReinstallService;
         private Label LblInfo2;
         private Label LblInfo3;
-        internal Syncfusion.WinForms.Controls.SfButton BtnShowLogs;
-        internal Syncfusion.WinForms.Controls.SfButton BtnRescanStatus;
+        internal System.Windows.Forms.Button BtnShowLogs;
+        internal System.Windows.Forms.Button BtnRescanStatus;
         private Label LblInfo4;
         private Label LblInfo5;
-        internal Syncfusion.WinForms.Controls.SfButton BtnManageService;
+        internal System.Windows.Forms.Button BtnManageService;
     }
 }

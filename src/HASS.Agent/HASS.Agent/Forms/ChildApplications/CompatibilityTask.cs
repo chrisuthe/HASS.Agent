@@ -10,12 +10,11 @@ using HASS.Agent.Settings;
 using HASS.Agent.Shared.Functions;
 using HASS.Agent.Shared.Models.HomeAssistant;
 using Serilog;
-using Syncfusion.Windows.Forms;
 using Task = System.Threading.Tasks.Task;
 
 namespace HASS.Agent.Forms.ChildApplications
 {
-    public partial class CompatibilityTask : MetroForm
+    public partial class CompatibilityTask : Form
     {
         private ICompatibilityTask _comatibilityTask;
 
@@ -45,7 +44,7 @@ namespace HASS.Agent.Forms.ChildApplications
 
             if (!taskDone)
             {
-                MessageBoxAdv.Show(this, errorMessage, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, errorMessage, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

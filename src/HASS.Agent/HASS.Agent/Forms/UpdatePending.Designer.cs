@@ -31,12 +31,12 @@ namespace HASS.Agent.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdatePending));
-            this.BtnDownload = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnDownload = new System.Windows.Forms.Button();
             this.LblNewReleaseInfo = new System.Windows.Forms.Label();
             this.LblVersion = new System.Windows.Forms.Label();
             this.LblInfo1 = new System.Windows.Forms.Label();
             this.LblUpdateQuestion = new System.Windows.Forms.Label();
-            this.BtnIgnore = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnIgnore = new System.Windows.Forms.Button();
             this.PbUpdate = new System.Windows.Forms.PictureBox();
             this.LblRelease = new System.Windows.Forms.Label();
             this.TbReleaseNotes = new System.Windows.Forms.RichTextBox();
@@ -44,28 +44,21 @@ namespace HASS.Agent.Forms
             ((System.ComponentModel.ISupportInitialize)(this.PbUpdate)).BeginInit();
             this.PnlReleaseNotes.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // BtnDownload
-            // 
+            //
             this.BtnDownload.AccessibleDescription = "Continues the update process. Either opens the release page, or downloads and lau" +
     "nches the updater, depending on your update settings.";
             this.BtnDownload.AccessibleName = "Continue";
             this.BtnDownload.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.BtnDownload.Enabled = false;
+            this.BtnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDownload.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnDownload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnDownload.Location = new System.Drawing.Point(165, 465);
             this.BtnDownload.Name = "BtnDownload";
             this.BtnDownload.Size = new System.Drawing.Size(455, 31);
-            this.BtnDownload.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnDownload.Style.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnDownload.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnDownload.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnDownload.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnDownload.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnDownload.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnDownload.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnDownload.TabIndex = 0;
             this.BtnDownload.Text = global::HASS.Agent.Resources.Localization.Languages.UpdatePending_BtnDownload;
             this.BtnDownload.UseVisualStyleBackColor = false;
@@ -121,26 +114,20 @@ namespace HASS.Agent.Forms
             this.LblUpdateQuestion.Size = new System.Drawing.Size(455, 17);
             this.LblUpdateQuestion.TabIndex = 5;
             this.LblUpdateQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
+            //
             // BtnIgnore
-            // 
+            //
             this.BtnIgnore.AccessibleDescription = "Closes the window and ignores this version. Will show a new notification when the" +
     "re\'s a next version.";
             this.BtnIgnore.AccessibleName = "Ignore";
             this.BtnIgnore.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnIgnore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnIgnore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnIgnore.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnIgnore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnIgnore.Location = new System.Drawing.Point(2, 465);
             this.BtnIgnore.Name = "BtnIgnore";
             this.BtnIgnore.Size = new System.Drawing.Size(154, 31);
-            this.BtnIgnore.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnIgnore.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnIgnore.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnIgnore.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnIgnore.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnIgnore.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnIgnore.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnIgnore.TabIndex = 1;
             this.BtnIgnore.Text = Languages.UpdatePending_BtnIgnore;
             this.BtnIgnore.UseVisualStyleBackColor = false;
@@ -211,9 +198,6 @@ namespace HASS.Agent.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.CaptionBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.CaptionFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CaptionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(620, 497);
             this.Controls.Add(this.PnlReleaseNotes);
             this.Controls.Add(this.LblRelease);
@@ -229,10 +213,7 @@ namespace HASS.Agent.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.Name = "UpdatePending";
-            this.ShowMaximizeBox = false;
-            this.ShowMinimizeBox = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = Languages.UpdatePending_Title;
             this.Load += new System.EventHandler(this.UpdatePending_Load);
@@ -245,12 +226,12 @@ namespace HASS.Agent.Forms
         }
 
         #endregion
-        private Syncfusion.WinForms.Controls.SfButton BtnDownload;
+        private System.Windows.Forms.Button BtnDownload;
         private System.Windows.Forms.Label LblNewReleaseInfo;
         private System.Windows.Forms.Label LblVersion;
         private System.Windows.Forms.Label LblInfo1;
         private System.Windows.Forms.Label LblUpdateQuestion;
-        private Syncfusion.WinForms.Controls.SfButton BtnIgnore;
+        private System.Windows.Forms.Button BtnIgnore;
         private System.Windows.Forms.PictureBox PbUpdate;
         private System.Windows.Forms.Label LblRelease;
         private System.Windows.Forms.RichTextBox TbReleaseNotes;

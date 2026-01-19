@@ -2,11 +2,10 @@
 using HASS.Agent.Shared.Models.Config;
 using HASS.Agent.Shared.Models.Config.Service;
 using Serilog;
-using Syncfusion.Windows.Forms;
 
 namespace HASS.Agent.Forms.Service
 {
-    public partial class ServiceConfig : MetroForm
+    public partial class ServiceConfig : Form
     {
         private ServiceConnect _connect;
         private readonly ServiceGeneral _general = new();
@@ -57,10 +56,13 @@ namespace HASS.Agent.Forms.Service
                 // set sensors
                 _sensors?.SetSensors(configuredSensors, deviceName);
 
-                // show tabs
-                TabMqtt.TabVisible = true;
-                TabSensors.TabVisible = true;
-                TabCommands.TabVisible = true;
+                // show tabs (add to TabPages if not already present)
+                if (!ServiceTabs.TabPages.Contains(TabMqtt))
+                    ServiceTabs.TabPages.Add(TabMqtt);
+                if (!ServiceTabs.TabPages.Contains(TabSensors))
+                    ServiceTabs.TabPages.Add(TabSensors);
+                if (!ServiceTabs.TabPages.Contains(TabCommands))
+                    ServiceTabs.TabPages.Add(TabCommands);
             }
             catch (NullReferenceException)
             {

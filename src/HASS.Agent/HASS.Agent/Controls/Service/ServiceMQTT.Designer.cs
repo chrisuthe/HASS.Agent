@@ -30,7 +30,7 @@ namespace HASS.Agent.Controls.Service
         /// </summary>
         private void InitializeComponent()
         {
-            this.NumMqttPort = new Syncfusion.Windows.Forms.Tools.NumericUpDownExt();
+            this.NumMqttPort = new System.Windows.Forms.NumericUpDown();
             this.LblTip2 = new System.Windows.Forms.Label();
             this.TbMqttClientId = new System.Windows.Forms.TextBox();
             this.LblClientId = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@ namespace HASS.Agent.Controls.Service
             this.LblRootCert = new System.Windows.Forms.Label();
             this.CbUseRetainFlag = new System.Windows.Forms.CheckBox();
             this.CbAllowUntrustedCertificates = new System.Windows.Forms.CheckBox();
-            this.BtnMqttClearConfig = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnMqttClearConfig = new System.Windows.Forms.Button();
             this.LblTip1 = new System.Windows.Forms.Label();
             this.LblInfo1 = new System.Windows.Forms.Label();
             this.TbMqttDiscoveryPrefix = new System.Windows.Forms.TextBox();
@@ -54,8 +54,8 @@ namespace HASS.Agent.Controls.Service
             this.LblBrokerUsername = new System.Windows.Forms.Label();
             this.LblBrokerPort = new System.Windows.Forms.Label();
             this.LblBrokerIp = new System.Windows.Forms.Label();
-            this.BtnStore = new Syncfusion.WinForms.Controls.SfButton();
-            this.BtnCopy = new Syncfusion.WinForms.Controls.SfButton();
+            this.BtnStore = new System.Windows.Forms.Button();
+            this.BtnCopy = new System.Windows.Forms.Button();
             this.LblStored = new System.Windows.Forms.Label();
             this.PbShow = new System.Windows.Forms.PictureBox();
             this.LblStatusInfo = new System.Windows.Forms.Label();
@@ -63,16 +63,13 @@ namespace HASS.Agent.Controls.Service
             ((System.ComponentModel.ISupportInitialize)(this.NumMqttPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbShow)).BeginInit();
             this.SuspendLayout();
-            // 
+            //
             // NumMqttPort
-            // 
+            //
             this.NumMqttPort.AccessibleDescription = "The broker\'s port. Only accepts numeric values.";
             this.NumMqttPort.AccessibleName = "Port";
             this.NumMqttPort.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.NumMqttPort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.NumMqttPort.BeforeTouchSize = new System.Drawing.Size(83, 25);
-            this.NumMqttPort.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.NumMqttPort.BorderColor = System.Drawing.SystemColors.WindowFrame;
             this.NumMqttPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumMqttPort.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumMqttPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -82,18 +79,14 @@ namespace HASS.Agent.Controls.Service
             0,
             0,
             0});
-            this.NumMqttPort.MaxLength = 10;
-            this.NumMqttPort.MetroColor = System.Drawing.SystemColors.WindowFrame;
             this.NumMqttPort.Name = "NumMqttPort";
             this.NumMqttPort.Size = new System.Drawing.Size(83, 25);
             this.NumMqttPort.TabIndex = 1;
-            this.NumMqttPort.ThemeName = "Metro";
             this.NumMqttPort.Value = new decimal(new int[] {
             1883,
             0,
             0,
             0});
-            this.NumMqttPort.VisualStyle = Syncfusion.Windows.Forms.VisualStyle.Metro;
             // 
             // LblTip2
             // 
@@ -231,25 +224,20 @@ namespace HASS.Agent.Controls.Service
             this.CbAllowUntrustedCertificates.TabIndex = 9;
             this.CbAllowUntrustedCertificates.Text = global::HASS.Agent.Resources.Localization.Languages.ServiceMqtt_CbAllowUntrustedCertificates;
             this.CbAllowUntrustedCertificates.UseVisualStyleBackColor = true;
-            // 
+            //
             // BtnMqttClearConfig
-            // 
+            //
             this.BtnMqttClearConfig.AccessibleDescription = "Clears the MQTT configuration and resets it to the defaults.";
             this.BtnMqttClearConfig.AccessibleName = "Clear configuration";
             this.BtnMqttClearConfig.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnMqttClearConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnMqttClearConfig.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnMqttClearConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMqttClearConfig.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnMqttClearConfig.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnMqttClearConfig.Location = new System.Drawing.Point(666, 532);
             this.BtnMqttClearConfig.Name = "BtnMqttClearConfig";
             this.BtnMqttClearConfig.Size = new System.Drawing.Size(228, 31);
-            this.BtnMqttClearConfig.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnMqttClearConfig.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnMqttClearConfig.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnMqttClearConfig.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnMqttClearConfig.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnMqttClearConfig.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnMqttClearConfig.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnMqttClearConfig.TabIndex = 12;
             this.BtnMqttClearConfig.Text = global::HASS.Agent.Resources.Localization.Languages.ServiceMqtt_BtnMqttClearConfig;
             this.BtnMqttClearConfig.UseVisualStyleBackColor = false;
@@ -415,51 +403,40 @@ namespace HASS.Agent.Controls.Service
             this.LblBrokerIp.Size = new System.Drawing.Size(197, 19);
             this.LblBrokerIp.TabIndex = 74;
             this.LblBrokerIp.Text = Languages.ServiceMqtt_LblBrokerIp;
-            // 
+            //
             // BtnStore
-            // 
+            //
             this.BtnStore.AccessibleDescription = "Sends the provided configuration to the satellite service.";
             this.BtnStore.AccessibleName = "Store config";
             this.BtnStore.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnStore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.BtnStore.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnStore.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnStore.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnStore.Location = new System.Drawing.Point(0, 575);
             this.BtnStore.Name = "BtnStore";
             this.BtnStore.Size = new System.Drawing.Size(903, 47);
-            this.BtnStore.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStore.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStore.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnStore.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnStore.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnStore.TabIndex = 13;
             this.BtnStore.Text = global::HASS.Agent.Resources.Localization.Languages.ServiceMqtt_BtnStore;
             this.BtnStore.UseVisualStyleBackColor = false;
             this.BtnStore.Click += new System.EventHandler(this.BtnStore_Click);
-            // 
+            //
             // BtnCopy
-            // 
+            //
             this.BtnCopy.AccessibleDescription = "Copies all configuration from the HASS.Agent configuration, only changing the cli" +
     "ent ID.";
             this.BtnCopy.AccessibleName = "Copy configuration";
             this.BtnCopy.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnCopy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnCopy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.BtnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCopy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnCopy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.BtnCopy.Location = new System.Drawing.Point(666, 491);
             this.BtnCopy.Name = "BtnCopy";
             this.BtnCopy.Size = new System.Drawing.Size(228, 31);
-            this.BtnCopy.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnCopy.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnCopy.Style.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnCopy.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnCopy.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.BtnCopy.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.BtnCopy.Style.PressedForeColor = System.Drawing.Color.Black;
             this.BtnCopy.TabIndex = 11;
             this.BtnCopy.Text = global::HASS.Agent.Resources.Localization.Languages.ServiceMqtt_BtnCopy;
             this.BtnCopy.UseVisualStyleBackColor = false;
@@ -574,7 +551,7 @@ namespace HASS.Agent.Controls.Service
 
         #endregion
 
-        internal Syncfusion.Windows.Forms.Tools.NumericUpDownExt NumMqttPort;
+        internal System.Windows.Forms.NumericUpDown NumMqttPort;
         private Label LblTip2;
         internal TextBox TbMqttClientId;
         private Label LblClientId;
@@ -585,7 +562,7 @@ namespace HASS.Agent.Controls.Service
         private Label LblRootCert;
         internal CheckBox CbUseRetainFlag;
         internal CheckBox CbAllowUntrustedCertificates;
-        internal Syncfusion.WinForms.Controls.SfButton BtnMqttClearConfig;
+        internal System.Windows.Forms.Button BtnMqttClearConfig;
         private Label LblTip1;
         private Label LblInfo1;
         internal TextBox TbMqttDiscoveryPrefix;
@@ -598,8 +575,8 @@ namespace HASS.Agent.Controls.Service
         private Label LblBrokerUsername;
         private Label LblBrokerPort;
         private Label LblBrokerIp;
-        private Syncfusion.WinForms.Controls.SfButton BtnStore;
-        internal Syncfusion.WinForms.Controls.SfButton BtnCopy;
+        private System.Windows.Forms.Button BtnStore;
+        internal System.Windows.Forms.Button BtnCopy;
         private Label LblStored;
         private PictureBox PbShow;
         private Label LblStatusInfo;

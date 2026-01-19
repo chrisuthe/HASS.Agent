@@ -3,12 +3,10 @@ using HASS.Agent.Models.Internal;
 using HASS.Agent.Resources.Localization;
 using Newtonsoft.Json;
 using Serilog;
-using Syncfusion.Windows.Forms;
-using Syncfusion.WinForms.Controls.Styles;
 
 namespace HASS.Agent.Forms.Commands.CommandConfig
 {
-    public partial class WebViewCommandConfig : MetroForm
+    public partial class WebViewCommandConfig : Form
     {
         // dragging source: https://stackoverflow.com/a/19357125
         private bool _dragging;
@@ -33,9 +31,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             // catch all key presses
             KeyPreview = true;
 
-            // set default captionbar height
-            CaptionBarHeight = 26;
-            
             // set the size and coords
             if (WebViewInfo == null) SetCurrentVariables();
             else SetStoredVariables();
@@ -81,7 +76,7 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
             {
                 Log.Error("[WEBVIEWCONFIG] Unable to set stored settings: {err}", ex.Message);
 
-                MessageBoxAdv.Show(this, Languages.WebViewCommandConfig_SetStoredVariables_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(this, Languages.WebViewCommandConfig_SetStoredVariables_MessageBox1, Variables.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 SetCurrentVariables();
             }
         }
@@ -133,7 +128,6 @@ namespace HASS.Agent.Forms.Commands.CommandConfig
 
         private void CbShowTitleBar_CheckedChanged(object sender, EventArgs e)
         {
-            CaptionBarHeight = CbShowTitleBar.Checked ? 26 : 1;
             ControlBox = CbShowTitleBar.Checked;
         }
 
