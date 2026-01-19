@@ -233,7 +233,7 @@ namespace HASS.Agent.Controls.Configuration
             BtnWebViewReset.Click += BtnWebViewReset_Click;
             // 
             // CbWebViewKeepLoaded
-            // 
+            //
             CbWebViewKeepLoaded.AccessibleDescription = "Keeps the webview loaded in the background, resulting in faster loading when invoked.";
             CbWebViewKeepLoaded.AccessibleName = "Background loading";
             CbWebViewKeepLoaded.AccessibleRole = AccessibleRole.CheckButton;
@@ -242,6 +242,7 @@ namespace HASS.Agent.Controls.Configuration
             CbWebViewKeepLoaded.CheckState = CheckState.Checked;
             CbWebViewKeepLoaded.Enabled = false;
             CbWebViewKeepLoaded.Font = new Font("Segoe UI", 10F);
+            CbWebViewKeepLoaded.ForeColor = Color.FromArgb(120, 120, 120);
             CbWebViewKeepLoaded.Location = new Point(90, 405);
             CbWebViewKeepLoaded.Name = "CbWebViewKeepLoaded";
             CbWebViewKeepLoaded.Size = new Size(253, 23);
@@ -250,13 +251,14 @@ namespace HASS.Agent.Controls.Configuration
             CbWebViewKeepLoaded.UseVisualStyleBackColor = true;
             // 
             // LblInfo2
-            // 
+            //
             LblInfo2.AccessibleDescription = "Background loading information.";
             LblInfo2.AccessibleName = "Background loading info";
             LblInfo2.AccessibleRole = AccessibleRole.StaticText;
             LblInfo2.AutoSize = true;
             LblInfo2.Enabled = false;
             LblInfo2.Font = new Font("Segoe UI", 10F);
+            LblInfo2.ForeColor = Color.FromArgb(120, 120, 120);
             LblInfo2.Location = new Point(107, 435);
             LblInfo2.Name = "LblInfo2";
             LblInfo2.Size = new Size(330, 19);
@@ -264,13 +266,14 @@ namespace HASS.Agent.Controls.Configuration
             LblInfo2.Text = "(This uses extra resources, but reduces loading time.)";
             // 
             // CbWebViewShowMenuOnLeftClick
-            // 
+            //
             CbWebViewShowMenuOnLeftClick.AccessibleDescription = "If enabled, left clicking the system tray icon will show the default menu.";
             CbWebViewShowMenuOnLeftClick.AccessibleName = "Show default menu on left click";
             CbWebViewShowMenuOnLeftClick.AccessibleRole = AccessibleRole.CheckButton;
             CbWebViewShowMenuOnLeftClick.AutoSize = true;
             CbWebViewShowMenuOnLeftClick.Enabled = false;
             CbWebViewShowMenuOnLeftClick.Font = new Font("Segoe UI", 10F);
+            CbWebViewShowMenuOnLeftClick.ForeColor = Color.FromArgb(120, 120, 120);
             CbWebViewShowMenuOnLeftClick.Location = new Point(90, 487);
             CbWebViewShowMenuOnLeftClick.Name = "CbWebViewShowMenuOnLeftClick";
             CbWebViewShowMenuOnLeftClick.Size = new Size(265, 23);
