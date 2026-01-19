@@ -14,7 +14,7 @@
 # If signing secrets are not configured, the build will still succeed
 # but the installer will be unsigned (users will see SmartScreen warnings).
 
-name: Create Release Draft
+name: Create Release
 
 on:
   workflow_dispatch:
@@ -206,11 +206,11 @@ jobs:
         ls -la
         zip -r HASS.Agent.Satellite.Service.zip ./
         
-    - name: Create Draft Release and Upload Build Artifacts
+    - name: Create Release and Upload Build Artifacts
       uses: ncipollo/release-action@v1.10.0
       with:
         name: ${{ github.event.inputs.releasetitle }}
-        draft: true
+        draft: false
         prerelease: ${{ github.event.inputs.prerelease }}
         tag: ${{ github.event.inputs.releasetag }}
         artifacts:
